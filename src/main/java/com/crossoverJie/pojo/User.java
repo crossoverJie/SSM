@@ -8,29 +8,37 @@ import java.util.Date;
  */
 public class User {
     private Integer id;
-    private String email ;
+    private String email;
     private String username;
     private String password;
-    private String realname ;
-    private String role_id ;
-    private String remark ;
-    private Date last_date ;
-    private String sex ; //0:女        1：男
-    private String img_id ;//对应的图片ID 用户的头像
+    private String realname;
+    private String role_id;
+    private String remark;
+    private Date last_date;
+    private String sex; //0:女        1：男
+    private String img_id;//对应的图片ID 用户的头像
 
-    private Date register_date ;//注册时间
+    private Date register_date;//注册时间
     private String star_news_id;//收藏的帖子ID
 
-    /**用于显示格式化的日期**/
-    private String parsedate ;
+    /**
+     * 用于显示格式化的日期
+     **/
+    private String parsedate;
 
-    /**角色名称**/
-    private String rolename ;
+    /**
+     * 角色名称
+     **/
+    private String rolename;
 
-    /**查询的活用用户数量**/
-    private String post_user_count ;
-    /**用户头像路径**/
-    private String path ;
+    /**
+     * 查询的活用用户数量
+     **/
+    private String post_user_count;
+    /**
+     * 用户头像路径
+     **/
+    private String path;
 
     public Integer getId() {
         return id;
@@ -137,9 +145,8 @@ public class User {
     public void setRegister_date(Date register_date) {
 
         this.register_date = register_date;
-        SimpleDateFormat sm = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss") ;
-        String date = sm.format(register_date) ;
-
+        SimpleDateFormat sm = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String date = sm.format(register_date);
         this.setParsedate(date);
     }
 
