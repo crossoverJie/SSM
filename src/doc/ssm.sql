@@ -26,6 +26,15 @@ CREATE TABLE `user` (
   PRIMARY KEY (`userId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+/**
+插入user数据
+**/
+insert into user values(NULL,'jack','abc123');
+insert into user values(NULL,'zhangsan','abc123');
+insert into user values(NULL,'lisi','abc123');
+insert into user values(NULL,'wangwu','abc123');
+insert into user values(NULL,'xiaolong','abc123');
+
 -- ----------------------------
 -- Records of user
 -- ----------------------------
