@@ -20,6 +20,7 @@ public class UserController {
     @Resource
     private IUserService userService;
 
+
     @RequestMapping("/frontUserSet/{id}")
     public String frontUserSet(@PathVariable int id, Model model) {
         /*User user = userService.getUserById(id);
@@ -99,7 +100,6 @@ public class UserController {
     @RequestMapping("/create")
     public void createUser(User user, HttpServletRequest request, HttpServletResponse response) throws IOException {
         try {
-            user.setImg_id("1001");//设置默认头像
             userService.createUser(user);
             response.getWriter().print("true");
         } catch (Exception e) {
