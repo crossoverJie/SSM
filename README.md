@@ -1,3 +1,5 @@
+> 个人博客：http://crossoverJie.top
 # SSM
-使用Idea搭建的Maven项目入门项目，主要目的是为了熟悉idea搭建项目。
+## 使用Idea搭建的Maven项目项目，适用于初学者。欢迎大神指正。
 - spring springMvc mybatis druid
+- BootStrap EasyUI
