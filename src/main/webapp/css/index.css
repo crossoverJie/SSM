@@ -1,0 +1,92 @@
+@charset "utf-8";
+/* CSS Document */
+.myElement {
+	/* Generated with http://gradient.quasi.ink */
+	
+}
+
+body {
+	padding-top: 50px;
+	padding-bottom: 50px;
+	/**一下采用  http://gradient.quasi.ink/  生成的毛玻璃效果**/
+	background-size: cover;
+	background-image:
+		url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAADCAYAAABfwxXFAAAAYklEQVQIWwFXAKj/AXhrVP+lxuAA9/n4AHxhPAA5KSAA7ezwAK/B1QABqZdt/6a92QDx+/0AfFg7ABkTFwD9BAAAna+9AAHIqoH/tcbTALTW6QBlQyoAMiojAPT18wC5xNQAGH4odF2ybI0AAAAASUVORK5CYII=);
+}
+
+.carousel {
+	height: 460px;
+	background-color: #000;
+}
+
+.carousel .item {
+	height: 460px;
+	background-color: #000;
+}
+
+.carousel img {
+	width: 100%;
+	height: 100%;
+}
+
+.carousel-caption p {
+	margin-bottom: 20px;
+	font-size: 20px;
+	/* 行间距 */
+	line-height: 1.8;
+}
+
+hr .divider {
+	margin: 40px 0;
+}
+
+.hr-right {
+	margin: 80px 0 40px 80px;
+}
+
+.logo {
+	height: 500px;
+	width: 500px
+}
+
+.logo-msg {
+	padding: 40px 0;
+}
+/**改变脚注的高度**/
+.panel-footer {
+	height: 35px;
+}
+
+.panel-body p {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+	/* white-space:nowrap; 注释掉 不然P标签内的文本不会换行了。。 */
+	width: 100%;
+}
+/* 选择thumbnail类内部的所有img元素 */
+.thumbnail img {
+	
+}
+/* 活跃用户 */
+.panel-danger {
+	height: 400px;
+}
+/* 为热门主题面板加上470px的高度 */
+.panel-primary{
+	height: 470px;
+}
+/* 设置导航栏头像的大小 */
+#sm-name {
+	height: 30px;
+	width: 30px;
+}
+
+.logo-img{
+	height: 50px;
+	width: 50px;
+}
+/**logo图片样式 覆盖掉原有的上边距**/
+.navbar-brand {
+    padding: 0px;
+}
