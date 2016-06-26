@@ -62,7 +62,9 @@
                     Spring+SpringMVC+mybatis整合实例
                 </p>
             </div>
-            <img src="<%=path%>/img/spring.png"  alt="...">
+            <a href="<%=path%>/user/showUser/1">
+                <img src="<%=path%>/img/spring.png"  alt="">
+            </a>
         </div>
         <div class="item">
             <img src="<%=path%>/img/ngix.gif" alt="...">
