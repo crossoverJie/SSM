@@ -84,7 +84,7 @@ public class Indexer {
         Document doc = new Document() ;
         doc.add(new TextField("contents",new FileReader(f)));
         doc.add(new TextField("fileName",f.getName(), Field.Store.YES));
-        doc.add(new TextField("fullPath",f.getCanonicalPath(), Field.Store.NO));
+        doc.add(new TextField("fullPath",f.getCanonicalPath(), Field.Store.YES));
         return doc;
     }
 
