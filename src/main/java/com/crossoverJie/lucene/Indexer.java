@@ -1,115 +1,73 @@
 package com.crossoverJie.lucene;
 
-import org.apache.lucene.analysis.Analyzer;
-import org.apache.lucene.analysis.standard.StandardAnalyzer;
+
+import org.apache.lucene.analysis.cn.smart.SmartChineseAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field;
+import org.apache.lucene.document.StringField;
 import org.apache.lucene.document.TextField;
 import org.apache.lucene.index.IndexWriter;
 import org.apache.lucene.index.IndexWriterConfig;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
 import java.nio.file.Paths;
 
-/**
- * Created by Administrator on 2016/7/3.
- */
 public class Indexer {
-    private IndexWriter writer ;
+
+    private Integer ids[]={1,2,3};
+    private String citys[]={"青岛","南京","上海"};
+    private String descs[]={
+            "青岛是一个美丽的城市。",
+            "南京是一个有文化的城市。南京是一个文化的城市南京，简称宁，是江苏省会，地处中国东部地区，长江下游，" +
+                    "濒江近海。全市下辖11个区，总面积6597平方公里，2013年建成区面积752.83平方公里，常住人口818.78万" +
+                    "，其中城镇人口659.1万人。[1-4] “江南佳丽地，金陵帝王州”，南京拥有着6000多年文明史、" +
+                    "近2600年建城史和近500年的建都史，是中国四大古都之一，有“六朝古都”、“十朝都会”之称，" +
+                    "是中华文明的重要发祥地，历史上曾数次庇佑华夏之正朔，长期是中国南方的政治、经济、文化中心，" +
+                    "拥有厚重的文化底蕴和丰富的历史遗存。[5-7] 南京是国家重要的科教中心，" +
+                    "自古以来就是一座崇文重教的城市，有“天下文枢”、" +
+                    "“东南第一学”的美誉。截至2013年，南京有高等院校75所，" +
+                    "其中211高校8所，仅次于北京上海；国家重点实验室25所、" +
+                    "国家重点学科169个、两院院士83人，均居中国第三。[8-10] 。",
+            "上海是一个繁华的城市。"
+    };
+
+    private Directory dir;
 
     /**
-     * 构造器 实例化IndexWriter
-     * @param indexDir
-     * @throws IOException
-     */
-    public Indexer(String indexDir) throws IOException {
-        Directory dir = FSDirectory.open(Paths.get("indexDir")) ;
-        //标准分词器
-        Analyzer analyzer = new StandardAnalyzer() ;
-        IndexWriterConfig config = new IndexWriterConfig(analyzer) ;
-        writer = new IndexWriter(dir,config) ;
-    }
-
-    /**
-     * 关闭索引
-     * @throws IOException
-     */
-    public void closeWriter() throws IOException {
-        writer.close();
-    }
-
-    public void index(File f) throws Exception {
-        System.out.println("索引文件路径" + f.getCanonicalPath()) ;
-//        Document doc = getd
-    }
-
-
-    /**
-     * 索引指定目录的所有文件，返回索引数量
-     * @param dataDir
-     * @return
-     * @throws IOException
-     */
-    public int index(String dataDir) throws Exception {
-        File[] files = new File(dataDir).listFiles() ;
-        for (File f : files){
-            indexFile(f) ;
-        }
-        return writer.numDocs() ;
-    }
-
-    /**
-     * 索引指定的文件
-     * @param f
-     * @throws IOException
-     */
-    private void indexFile(File f) throws Exception {
-        System.out.println("索引文件目录:"+ f.getCanonicalPath());
-        Document doc = getDocument(f) ;
-        writer.addDocument(doc);
-    }
-
-    /**
-     * 获取文档，在文档里面设值
-     * @param f
+     * 获取IndexWriter实例
      * @return
      * @throws Exception
      */
-    private Document getDocument(File f) throws Exception {
-        Document doc = new Document() ;
-        doc.add(new TextField("contents",new FileReader(f)));
-        doc.add(new TextField("fileName",f.getName(), Field.Store.YES));
-        doc.add(new TextField("fullPath",f.getCanonicalPath(), Field.Store.YES));
-        return doc;
+    private IndexWriter getWriter()throws Exception{
+        //Analyzer analyzer=new StandardAnalyzer(); // 标准分词器
+        SmartChineseAnalyzer analyzer=new SmartChineseAnalyzer();
+        IndexWriterConfig iwc=new IndexWriterConfig(analyzer);
+        IndexWriter writer=new IndexWriter(dir, iwc);
+        return writer;
     }
 
-    public static void main(String[] args){
-        String indexDir = "F:\\BaiduYunDownload" ;
-        String dataDir = "F:\\BaiduYunDownload\\data" ;
-        Indexer indexer = null ;
-        int number = 0 ;
-        long start = System.currentTimeMillis() ;
-        try {
-            indexer = new Indexer(indexDir) ;
-            number = indexer.index(dataDir) ;
-
-        }catch (Exception e){
-            e.printStackTrace();
-        }finally {
-            try {
-                indexer.closeWriter();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+    /**
+     * 生成索引
+     * @param indexDir
+     * @throws Exception
+     */
+    private void index(String indexDir)throws Exception{
+        dir=FSDirectory.open(Paths.get(indexDir));
+        IndexWriter writer=getWriter();
+        for(int i=0;i<ids.length;i++){
+            Document doc=new Document();
+            doc.add(new StringField("id", ids[i]+"", Field.Store.YES));
+            doc.add(new StringField("city",citys[i],Field.Store.YES));
+            doc.add(new TextField("desc", descs[i], Field.Store.YES));
+            writer.addDocument(doc); // 添加文档
         }
-        long end  = System.currentTimeMillis() ;
-        System.out.println("总共索引了"+number+"个文件"+"消耗了"+(end - start)+"毫秒") ;
+        writer.close();
     }
 
+
+    public static void main(String[] args) throws Exception {
+        new Indexer().index("E:\\Lucene");
+    }
 
 }
