@@ -1,7 +1,11 @@
 package com.crossoverJie.controller;
 
+import com.crossoverJie.lucene.Indexer;
+import com.crossoverJie.lucene.Searcher;
 import com.crossoverJie.pojo.User;
 import com.crossoverJie.service.IUserService;
+import org.apache.lucene.queryparser.surround.query.SrndPrefixQuery;
+import org.apache.lucene.search.IndexSearcher;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -13,6 +17,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 @RequestMapping("/user")
@@ -57,6 +63,38 @@ public class UserController {
     @RequestMapping("/turnToUserList")
     public String turnToUserList() {
         return "user/userList";
+    }
+
+
+    @RequestMapping("/queryUser")
+    public String queryUser(String q) throws Exception {
+        q = new String(q.getBytes("ISO-8859-1"), "UTF-8");
+        User u = new User() ;
+        List<User> users = userService.findAllByQuery(u) ;
+        List<Integer> ids = new ArrayList<Integer>();
+        List<String> city = new ArrayList<String>() ;
+        List<String> descs = new ArrayList<String>() ;
+        for (User user : users){
+            ids.add(user.getUserId()) ;
+            city.add(user.getUsername()) ;
+            descs.add(user.getDescription()) ;
+        }
+        Indexer indexer = new Indexer() ;
+        Integer[] id = (Integer[])ids.toArray(new Integer[ids.size()]);
+        String[] citys = (String[])city.toArray(new String[city.size()]);
+        String[] desc = (String[])descs.toArray(new String[descs.size()]);
+        indexer.setIds(id);
+        indexer.setCitys(citys);
+        indexer.setDescs(desc);
+        indexer.index("E:\\Lucene");
+        String indexDir="E:\\Lucene";
+        try {
+            Searcher.search(indexDir,q);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return null ;
     }
 
     @RequestMapping("/getUserList")

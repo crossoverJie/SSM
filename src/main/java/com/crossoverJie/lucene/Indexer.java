@@ -52,7 +52,7 @@ public class Indexer {
      * @param indexDir
      * @throws Exception
      */
-    private void index(String indexDir)throws Exception{
+    public void index(String indexDir)throws Exception{
         dir=FSDirectory.open(Paths.get(indexDir));
         IndexWriter writer=getWriter();
         for(int i=0;i<ids.length;i++){
@@ -70,4 +70,27 @@ public class Indexer {
         new Indexer().index("E:\\Lucene");
     }
 
+    public Integer[] getIds() {
+        return ids;
+    }
+
+    public void setIds(Integer[] ids) {
+        this.ids = ids;
+    }
+
+    public String[] getCitys() {
+        return citys;
+    }
+
+    public void setCitys(String[] citys) {
+        this.citys = citys;
+    }
+
+    public String[] getDescs() {
+        return descs;
+    }
+
+    public void setDescs(String[] descs) {
+        this.descs = descs;
+    }
 }

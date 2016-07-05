@@ -18,4 +18,6 @@ public interface IUserService {
     int updateByPrimaryKeySelective(User record);
     int findAllCount(User u) ;
     List<User> findHotUser() ;
+
+    List<User> findAllByQuery(User user) ;
 }

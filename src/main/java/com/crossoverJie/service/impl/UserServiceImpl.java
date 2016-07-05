@@ -67,4 +67,9 @@ public class UserServiceImpl implements IUserService {
     public List<User> findHotUser() {
         return userDao.findHotUser();
     }
+
+    @Override
+    public List<User> findAllByQuery(User user) {
+        return userDao.findAllByQuery(user);
+    }
 }
