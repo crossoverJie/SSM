@@ -52,6 +52,11 @@ public class IndexController {
                          HttpServletRequest request) throws Exception {
         LuceneIndex luceneIndex = new LuceneIndex() ;
         List<User> userList = luceneIndex.searchBlog(q);
+        /**
+         * 关于查询之后的分页我采用的是每次分页发起的请求都是将所有的数据查询出来，
+         * 具体是第几页再截取对应页数的数据，典型的拿空间换时间的做法，如果各位有什么
+         * 高招欢迎受教。
+         */
         Integer toIndex = userList.size() >= Integer.parseInt(page) * 5 ? Integer.parseInt(page) * 5 : userList.size();
         List<User> newList = userList.subList((Integer.parseInt(page) - 1) * 5, toIndex);
         model.addAttribute("userList",newList) ;
