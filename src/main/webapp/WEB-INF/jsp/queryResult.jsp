@@ -97,57 +97,52 @@
     <div class="row">
         <div class="col-md-12">
 
-            <div class="row">
-                <div class="col-md-6">
-                    <p>
-                        <a class="btn btn-primary" href="#">全部</a>
-                        <a class="btn btn-info" href="#">精华</a>
-                        <a class="btn btn-danger" href="#">热门</a>
-                    </p>
-                </div>
-                <div class="col-md-4 col-md-offset-2">
-                    <p class="text-right">
-                        <a class="btn btn-success" onclick="createTopic();" href="javascript:void(0)">发&nbsp;&nbsp;&nbsp;&nbsp;帖</a>
-                        <input type="hidden" id="session_username" value="${user.username }"/>
-                    </p>
-                </div>
-            </div>
-
-
             <div class="panel panel-info">
 
                 <!-- 利用一个栅格系统向右偏移完成布局 -->
-                <c:forEach var="u" items="${users }" varStatus="status">
-                    <div class="panel-heading ">
+                <c:choose>
+                    <c:when test="${userList.size()==0 }">
+                        <div align="center" style="padding-top: 20px">未查询到结果，请换个关键字试试！</div>
+                    </c:when>
+                    <c:otherwise>
+                        <div align="center" style="padding-top: 20px">
+                            查询<font color="red">${q}</font>关键字，约${resultTotal}条记录！
+                        </div>
+                        <c:forEach var="u" items="${userList }" varStatus="status">
+                            <div class="panel-heading ">
 
-                        <div class="row">
-                            <div class="col-md-6">
                                 <div class="row">
-                                    <div class="col-md-12">
-                                        <b>
-                                            <a href="<%=path %>/user/showUser/${u.userId}">${u.username}</a>
-                                        </b>
-                                        <br/>
-                                            ${u.description}
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <b>
+                                                    <a href="<%=path %>/user/showUser/${u.userId}">${u.username}</a>
+                                                </b>
+                                                <br/>
+                                                    ${u.description}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-md-offset-2">
+                                        <p class="text-muted text-right">
+                                                ${u.password}
+                                        </p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4 col-md-offset-2">
-                                <p class="text-muted text-right">
-                                        ${u.password}
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel-footer">
-                        <p class="text-right">
+                            <div class="panel-footer">
+                                <p class="text-right">
 							<span class="label label-default">
 							<span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
 							 ${u.password}
 							</span>
-                        </p>
-                    </div>
-                </c:forEach>
+                                </p>
+                            </div>
+                        </c:forEach>
+                    </c:otherwise>
+                </c:choose>
+
+
                 <hr class="divider"/>
             </div>
 

@@ -52,7 +52,7 @@ public class LuceneIndex {
 		Document doc=new Document();
 		doc.add(new StringField("id",String.valueOf(user.getUserId()), Field.Store.YES));
 		doc.add(new TextField("username", user.getUsername(), Field.Store.YES));
-		doc.add(new StringField("description",user.getDescription(), Field.Store.YES));
+		doc.add(new TextField("description",user.getDescription(), Field.Store.YES));
 		writer.addDocument(doc);
 		writer.close();
 	}
@@ -67,7 +67,7 @@ public class LuceneIndex {
 		Document doc=new Document();
 		doc.add(new StringField("id",String.valueOf(user.getUserId()), Field.Store.YES));
 		doc.add(new TextField("username", user.getUsername(), Field.Store.YES));
-		doc.add(new StringField("description",user.getDescription(), Field.Store.YES));
+		doc.add(new TextField("description",user.getDescription(), Field.Store.YES));
 		writer.updateDocument(new Term("id", String.valueOf(user.getUserId())), doc);
 		writer.close();
 	}
@@ -86,7 +86,7 @@ public class LuceneIndex {
 	}
 
 	/**
-	 * 查询博客信息
+	 * 查询用户
 	 * @param q 查询关键字
 	 * @return
 	 * @throws Exception

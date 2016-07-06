@@ -23,13 +23,13 @@
 
         <div class="collapse navbar-collapse" id="demo-navbar">
             <ul class="nav navbar-nav">
-                <li class="active"><a title="COJ" href="<%=path %>/index/turnToIndex/1">
+                <li class="active"><a title="COJ" href="<%=path %>/index">
                     <span class="glyphicon glyphicon-th" aria-hidden="true"></span>
                     <span class="sr-only">(current)</span>
                 </a></li>
                 <li><a href="#" data-toggle="modal" data-target="#about">关于</a></li>
             </ul>
-            <form class="navbar-form navbar-left" action="<%=path %>/q" target="_blank" method="post"
+            <form class="navbar-form navbar-left" action="<%=path %>/q" method="post"
                   role="search">
                 <div class="form-group">
                     <input type="text" name="q" class="form-control" placeholder="Search">

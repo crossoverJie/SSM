@@ -46,18 +46,18 @@ public class IndexController {
 
 
     @RequestMapping("/q")
-    public String search(@RequestParam(value = "q", required = false) String q,
+    public String search(@RequestParam(value = "q", required = false,defaultValue = "") String q,
                          @RequestParam(value = "page", required = false, defaultValue = "1") String page,
                          Model model,
                          HttpServletRequest request) throws Exception {
         LuceneIndex luceneIndex = new LuceneIndex() ;
         List<User> userList = luceneIndex.searchBlog(q);
-        Integer toIndex = userList.size() >= Integer.parseInt(page) * 10 ? Integer.parseInt(page) * 10 : userList.size();
-        List<User> newList = userList.subList((Integer.parseInt(page) - 1) * 10, toIndex);
+        Integer toIndex = userList.size() >= Integer.parseInt(page) * 5 ? Integer.parseInt(page) * 5 : userList.size();
+        List<User> newList = userList.subList((Integer.parseInt(page) - 1) * 5, toIndex);
         model.addAttribute("userList",newList) ;
-        String s = this.genUpAndDownPageCode(Integer.parseInt(page), userList.size(), q, 10, request.getServletContext().
+        String s = this.genUpAndDownPageCode(Integer.parseInt(page), userList.size(), q, 5, request.getServletContext().
                 getContextPath());
-        model.addAttribute("pageCode",s) ;
+        model.addAttribute("pageHtml",s) ;
         model.addAttribute("q",q) ;
         model.addAttribute("resultTotal",userList.size()) ;
         model.addAttribute("pageTitle","搜索关键字'" + q + "'结果页面") ;
@@ -101,12 +101,12 @@ public class IndexController {
             pageCode.append("<nav>");
             pageCode.append("<ul class='pager' >");
             if(page>1){
-                pageCode.append("<li><a href='"+projectContext+"/blog/q.html?page="+(page-1)+"&q="+q+"'>上一页</a></li>");
+                pageCode.append("<li><a href='"+projectContext+"/q?page="+(page-1)+"&q="+q+"'>上一页</a></li>");
             }else{
                 pageCode.append("<li class='disabled'><a href='#'>上一页</a></li>");
             }
             if(page<totalPage){
-                pageCode.append("<li><a href='"+projectContext+"/blog/q.html?page="+(page+1)+"&q="+q+"'>下一页</a></li>");
+                pageCode.append("<li><a href='"+projectContext+"/q?page="+(page+1)+"&q="+q+"'>下一页</a></li>");
             }else{
                 pageCode.append("<li class='disabled'><a href='#'>下一页</a></li>");
             }

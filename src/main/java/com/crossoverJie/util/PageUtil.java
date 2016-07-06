@@ -24,7 +24,7 @@ public class PageUtil {
 				pageCode.append("<li><a href='"+targetUrl+"?page="+(currentPage-1)+"&"+param+"'>上一页</a></li>");
 			}else{
 				if(currentPage ==1){
-					pageCode.append("<li class='disabled'><a href='"+targetUrl+"?page="+(1)+"&"+param+"'>上一页</a></li>");
+					pageCode.append("<li class='disabled'><a href='#'>上一页</a></li>");
 				}else {
 					pageCode.append("<li class='disabled'><a href='"+targetUrl+"?page="+(currentPage-1)+"&"+param+"'>上一页</a></li>");
 				}
@@ -43,7 +43,7 @@ public class PageUtil {
 				pageCode.append("<li><a href='"+targetUrl+"?page="+(currentPage+1)+"&"+param+"'>下一页</a></li>");
 			}else{
 				if(totalPage == currentPage){
-					pageCode.append("<li class='disabled'><a href='"+targetUrl+"?page="+(currentPage)+"&"+param+"'>下一页</a></li>");
+					pageCode.append("<li class='disabled'><a href='#'>下一页</a></li>");
 				}else {
 					pageCode.append("<li class='disabled'><a href='"+targetUrl+"?page="+(currentPage+1)+"&"+param+"'>下一页</a></li>");
 				}
