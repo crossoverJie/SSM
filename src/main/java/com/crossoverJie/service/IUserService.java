@@ -4,6 +4,7 @@ import com.crossoverJie.pojo.User;
 import com.crossoverJie.util.Page;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Administrator on 2016/6/22.
@@ -20,4 +21,14 @@ public interface IUserService {
     List<User> findHotUser() ;
 
     List<User> findAllByQuery(User user) ;
+
+    /**
+     * 分页查询
+     * @param map
+     * @return
+     */
+    public List<User> list(Map<String,Object> map) ;
+
+    public Long getTotal(Map<String,Object> map);
+
 }

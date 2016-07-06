@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Administrator on 2016/6/22.
@@ -71,5 +72,15 @@ public class UserServiceImpl implements IUserService {
     @Override
     public List<User> findAllByQuery(User user) {
         return userDao.findAllByQuery(user);
+    }
+
+    @Override
+    public List<User> list(Map<String, Object> map) {
+        return userDao.list(map);
+    }
+
+    @Override
+    public Long getTotal(Map<String, Object> map) {
+        return userDao.getTotal(map);
     }
 }

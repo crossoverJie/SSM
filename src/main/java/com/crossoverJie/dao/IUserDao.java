@@ -4,6 +4,7 @@ import com.crossoverJie.pojo.User;
 import org.apache.ibatis.session.RowBounds;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Administrator on 2016/6/22.
@@ -30,4 +31,8 @@ public interface IUserDao {
     List<User> findHotUser();
 
     List<User> findAllByQuery(User user) ;
+
+    List<User> list(Map<String, Object> map);
+
+    Long getTotal(Map<String, Object> map);
 }
