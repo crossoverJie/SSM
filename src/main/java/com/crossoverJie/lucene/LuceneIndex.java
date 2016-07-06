@@ -51,6 +51,10 @@ public class LuceneIndex {
 		IndexWriter writer=getWriter();
 		Document doc=new Document();
 		doc.add(new StringField("id",String.valueOf(user.getUserId()), Field.Store.YES));
+		/**
+		 * yes是会将数据存进索引，如果查询结果中需要将记录显示出来就要存进去，如果查询结果
+		 * 只是显示标题之类的就可以不用存，而且内容过长不建议存进去
+		 */
 		doc.add(new TextField("username", user.getUsername(), Field.Store.YES));
 		doc.add(new TextField("description",user.getDescription(), Field.Store.YES));
 		writer.addDocument(doc);
