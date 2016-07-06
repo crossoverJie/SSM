@@ -102,7 +102,7 @@
                 <!-- 利用一个栅格系统向右偏移完成布局 -->
                 <c:choose>
                     <c:when test="${userList.size()==0 }">
-                        <div align="center" style="padding-top: 20px">未查询到结果，请换个关键字试试！</div>
+                        <div align="center" style="padding-top: 20px"><font color="red">${q}</font>未查询到结果，请换个关键字试试！</div>
                     </c:when>
                     <c:otherwise>
                         <div align="center" style="padding-top: 20px">
