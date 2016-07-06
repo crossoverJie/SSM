@@ -29,12 +29,13 @@
                 </a></li>
                 <li><a href="#" data-toggle="modal" data-target="#about">关于</a></li>
             </ul>
-            <form class="navbar-form navbar-left" action="<%=path %>/index/query" target="_blank" method="post"
+            <form class="navbar-form navbar-left" action="<%=path %>/q" target="_blank" method="post"
                   role="search">
                 <div class="form-group">
-                    <input type="text" name="title" class="form-control" placeholder="Search">
+                    <input type="text" name="q" class="form-control" placeholder="Search">
                 </div>
                 <button type="submit" class="btn btn-default">查询</button>
+                <button type="button" class="btn btn-danger" onclick="refresh();">重新生成索引</button>
             </form>
 
             <ul class="nav navbar-nav navbar-right">
