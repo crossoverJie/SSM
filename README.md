@@ -3,7 +3,7 @@
 使用Idea搭建的Maven项目项目，会不定期更新一些在实际开发中使用的技巧(ps:目前不是很忙基本上一周一更)。
 没有复杂的业务流程，更不是XXXX系统，想要学习XX系统的：
 - [company_open](https://github.com/crossoverJie/company_open)
-- [https://github.com/crossoverJie/SalesStore]
+- [SalesStore](https://github.com/crossoverJie/SalesStore)
 这里有两个完整的项目，都写有注释也比较简单。
 目前使用到的技术：
 - Spring SpringMVC Mybatis Druid Lucene
@@ -23,4 +23,3 @@
 
 
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badge/)
-
