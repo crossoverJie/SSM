@@ -18,6 +18,8 @@
 
 # Lucene全文检索
 博客地址：[SSM(二)Lucene全文检索](http://crossoverjie.top/2016/07/06/SSM2)
+效果实例：
+![](http://i.imgur.com/nRcHFQg.png)
 - [前言](http://crossoverjie.top/2016/07/06/SSM2/#前言)
 - [获取Maven依赖](http://crossoverjie.top/2016/07/06/SSM2/#获取Maven依赖)
 - [编写Lucene工具类](http://crossoverjie.top/2016/07/06/SSM2/#编写Lucene工具类)
