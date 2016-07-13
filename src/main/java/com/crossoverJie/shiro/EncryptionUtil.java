@@ -4,6 +4,7 @@ import org.apache.shiro.crypto.hash.Md5Hash;
 
 /**
  * Created with IDEA
+ * 基于Shiro的MD5加密
  * Created by ${jie.chen} on 2016/7/13.
  */
 public class EncryptionUtil {
