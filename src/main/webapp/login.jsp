@@ -1,3 +1,4 @@
+<%@ page import="java.nio.file.Path" %>
 <%--
   Created by IntelliJ IDEA.
   User: crossoverJie
@@ -12,15 +13,15 @@
 <head>
 
     <meta charset="utf-8">
-    <title>Fullscreen Login</title>
+    <title>后台登录</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/supersized.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/css/reset.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/css/supersized.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/css/style.css">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -32,15 +33,17 @@
 <body oncontextmenu="return false">
 
 <div class="page-container">
+    <input type="hidden" id="error" value="${error}"/>
     <h1>Login</h1>
-    <form action="" method="post">
+    <form action="${pageContext.request.contextPath }/loginAdmin" method="post">
         <div>
-            <input type="text" name="username" class="username" placeholder="Username" autocomplete="off"/>
+            <input type="text" name="userName" class="username" placeholder="Username" autocomplete="off"/>
         </div>
         <div>
-            <input type="password" name="password" class="password" placeholder="Password" oncontextmenu="return false" onpaste="return false" />
+            <input type="password" name="password" class="password" placeholder="Password" oncontextmenu="return false"
+                   onpaste="return false" />
         </div>
-        <button id="submit" type="button">Sign in</button>
+        <button id="submit" type="submit">Sign in</button>
     </form>
     <div class="connect">
         <p>You never know what you can do till you try.</p>
@@ -57,8 +60,8 @@
 
 <!-- Javascript -->
 <script src="http://apps.bdimg.com/libs/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
-<script src="js/supersized.3.2.7.min.js"></script>
-<script src="js/supersized-init.js"></script>
+<script src="${pageContext.request.contextPath }/js/supersized.3.2.7.min.js"></script>
+<script src="${pageContext.request.contextPath }/js/supersized-init.js"></script>
 <script>
     $(".btn").click(function(){
         is_hide();
@@ -84,6 +87,11 @@
     });
     window.onload = function()
     {
+        var error = $("#error").val() ;
+        if(error != ""){
+            $("#ts").html("用户名错误");
+            is_show();
+        }
         $(".connect p").eq(0).animate({"left":"0%"}, 600);
         $(".connect p").eq(1).animate({"left":"0%"}, 400);
     }
