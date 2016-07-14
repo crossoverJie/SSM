@@ -1,5 +1,7 @@
 > 个人博客：http://crossoverJie.top
 
+> 简书：http://www.jianshu.com/users/e2d07947c112/latest_articles
+
 
 # SSM
 使用Idea搭建的Maven项目项目，会不定期更新一些在实际开发中使用的技巧(ps:目前不是很忙基本上一周一更)。
