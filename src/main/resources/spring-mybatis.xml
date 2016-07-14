@@ -85,7 +85,7 @@
         <!-- 身份认证失败，则跳转到登录页面的配置 -->
         <property name="loginUrl" value="/login.jsp"/>
         <!-- 权限认证失败，则跳转到指定页面 -->
-        <property name="unauthorizedUrl" value="/login.jsp"/>
+        <property name="unauthorizedUrl" value="/nopower.jsp"/>
         <!-- Shiro连接约束配置,即过滤链的定义 -->
         <property name="filterChainDefinitions">
             <value>
@@ -94,7 +94,6 @@
 
                 <!--authc表示需要认证 没有进行身份认证是不能进行访问的-->
                 /admin*=authc
-
 
 
                 /student=roles[teacher]
