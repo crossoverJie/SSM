@@ -89,7 +89,7 @@
     {
         var error = $("#error").val() ;
         if(error != ""){
-            $("#ts").html("用户名错误");
+            $("#ts").html("用户名或密码错误！");
             is_show();
         }
         $(".connect p").eq(0).animate({"left":"0%"}, 600);

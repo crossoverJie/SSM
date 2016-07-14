@@ -36,4 +36,19 @@ public class T_userController {
             return "../../login" ;
         }
     }
+
+    @RequestMapping("/admin")
+    public String admin(){
+        return "admin";
+    }
+
+    @RequestMapping("/student")
+    public String student(){
+        return "admin" ;
+    }
+
+    @RequestMapping("/teacher")
+    public String teacher(){
+        return "admin" ;
+    }
 }
