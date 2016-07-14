@@ -83,4 +83,9 @@ public class UserServiceImpl implements IUserService {
     public Long getTotal(Map<String, Object> map) {
         return userDao.getTotal(map);
     }
+
+    @Override
+    public User findUserByUsername(String username) {
+        return userDao.findUserByUsername(username);
+    }
 }

@@ -45,6 +45,8 @@
                             <span class="glyphicon glyphicon-home"></span></a></li>
                         <li><a href="javascriot:void(0)" data-toggle="modal" data-target="#register">注册
                             <span class="glyphicon glyphicon-user"></span></a></li>
+                        <li><a href="<%=path%>/login.jsp" >后台
+                            <span class="glyphicon glyphicon-lock"></span></a></li>
                     </c:when>
                     <c:otherwise>
                         <li class="dropdown">

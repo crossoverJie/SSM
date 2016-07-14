@@ -19,6 +19,11 @@
         userId, username, password,description
     </sql>
 
+    <select id="findUserByUsername" parameterType="String" resultMap="BaseResultMap">
+        select <include refid="Base_Column_List"/>
+        from t_user where userName=#{userName}
+    </select>
+
     <!--分页查询-->
     <select id="list" resultMap="BaseResultMap" parameterType="Map" >
         <!--

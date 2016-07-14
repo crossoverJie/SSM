@@ -31,4 +31,12 @@ public interface IUserService {
 
     public Long getTotal(Map<String,Object> map);
 
+
+    /**
+     * Shiro的登录验证，通过用户名查询用户信息
+     * @param username
+     * @return
+     */
+    public User findUserByUsername(String username) ;
+
 }
