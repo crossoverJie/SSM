@@ -9,6 +9,7 @@ public class T_user {
     private Integer id;
     private String userName;
     private String password;
+    private Integer roleId ;
 
     public Integer getId() {
         return id;
@@ -27,5 +28,13 @@ public class T_user {
     }
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Integer getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(Integer roleId) {
+        this.roleId = roleId;
     }
 }

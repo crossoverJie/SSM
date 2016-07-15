@@ -24,6 +24,11 @@ public class MyRealm extends AuthorizingRealm {
     @Resource
     private T_userService t_userService;
 
+    /**
+     * 用于的权限的认证。
+     * @param principalCollection
+     * @return
+     */
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
         String username = principalCollection.getPrimaryPrincipal().toString() ;
@@ -48,7 +53,7 @@ public class MyRealm extends AuthorizingRealm {
         String username = token.getPrincipal().toString() ;
         T_user user = t_userService.findUserByUsername(username) ;
         if (user != null){
-            //将查询到的用户账号和密码存放到 authenticationInfo用于后面的权限判断。
+            //将查询到的用户账号和密码存放到 authenticationInfo用于后面的权限判断。第三个参数随便放一个就行了。
             AuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(user.getUserName(),user.getPassword(),
                     "a") ;
             return authenticationInfo ;

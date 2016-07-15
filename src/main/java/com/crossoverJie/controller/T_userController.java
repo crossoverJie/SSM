@@ -31,6 +31,7 @@ public class T_userController {
             subject.login(token);
             return "admin" ;
         }catch (Exception e){
+            //这里将异常打印关闭是因为如果登录失败的话会自动抛异常
 //            e.printStackTrace();
             model.addAttribute("error","用户名或密码错误") ;
             return "../../login" ;

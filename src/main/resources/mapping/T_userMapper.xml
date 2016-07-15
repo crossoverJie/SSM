@@ -5,9 +5,10 @@
         <result property="id" column="id"/>
         <result property="userName" column="userName"/>
         <result property="password" column="password"/>
+        <result property="roleId" column="roleId"/>
     </resultMap>
     <sql id="Base_Column_List" >
-        id, username, password
+        id, username, password,roleId
     </sql>
 
     <select id="findUserByUsername" parameterType="String" resultMap="BaseResultMap">
