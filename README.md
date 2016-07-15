@@ -32,5 +32,22 @@
 - [显示界面](http://crossoverjie.top/2016/07/06/SSM2/#显示界面)
 - [总结](http://crossoverjie.top/2016/07/06/SSM2/#总结)
 
+# Shiro使用详解
+博客地址：[SSM(三)Shiro使用详解](http://crossoverjie.top/2016/07/15/SSM3/)
+简书地址：[http://www.jianshu.com/p/6786ddf54582](http://www.jianshu.com/p/6786ddf54582)
+效果实例：
+![1](http://upload-images.jianshu.io/upload_images/2038379-0a22da94ad12e44f.gif?imageMogr2/auto-orient/strip)
+![2](http://upload-images.jianshu.io/upload_images/2038379-2b90febec3a83b5a.gif)
+- [前言](http://crossoverjie.top/2016/07/15/SSM3/#前言)
+- [创建自定义MyRealm类](http://crossoverjie.top/2016/07/15/SSM3/#创建自定义MyRealm类)
+- [整合Spring](http://crossoverjie.top/2016/07/15/SSM3/#整合Spring)
+- [使用Shiro标签库](http://crossoverjie.top/2016/07/15/SSM3/#使用Shiro标签库)
+- [整体测试](http://crossoverjie.top/2016/07/15/SSM3/#整体测试)
+- [MD5加密](http://crossoverjie.top/2016/07/15/SSM3/#MD5加密)
+- [总结](http://crossoverjie.top/2016/07/15/SSM3/#总结)
+
+
+
+
 
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badge/)
