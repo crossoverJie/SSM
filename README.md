@@ -6,7 +6,7 @@
 
 
 # SSM
-使用Idea搭建的Maven项目项目，会不定期更新一些在实际开发中使用的技巧(ps:目前不是很忙基本上一周一更)。
+使用Idea搭建的Maven项目，会不定期更新一些在实际开发中使用的技巧(ps:目前不是很忙基本上一周一更)。
 没有复杂的业务流程，更不是XXXX系统，只有一些技术的分享。想要学习XX系统的：
 - [company_open](https://github.com/crossoverJie/company_open)
 - [SalesStore](https://github.com/crossoverJie/SalesStore)
@@ -38,7 +38,6 @@
 博客地址：[SSM(三)Shiro使用详解](http://crossoverjie.top/2016/07/15/SSM3/)
 简书地址：[http://www.jianshu.com/p/6786ddf54582](http://www.jianshu.com/p/6786ddf54582)
 效果实例：
-![1](http://upload-images.jianshu.io/upload_images/2038379-0a22da94ad12e44f.gif?imageMogr2/auto-orient/strip)
 ![2](http://upload-images.jianshu.io/upload_images/2038379-2b90febec3a83b5a.gif)
 - [前言](http://crossoverjie.top/2016/07/15/SSM3/#前言)
 - [创建自定义MyRealm类](http://crossoverjie.top/2016/07/15/SSM3/#创建自定义MyRealm类)
