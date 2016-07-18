@@ -18,6 +18,8 @@
 - Spring SpringMVC Mybatis Druid Lucene Shiro
 - `BootStrap`,` EasyUI`
 
+*有bug或者是不正确的地方欢迎Issues*
+
 # SSM架构的整合
 博客地址：[SSM(一)框架的整合](http://crossoverjie.top/2016/06/28/SSM1)
 
