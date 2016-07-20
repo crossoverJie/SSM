@@ -38,7 +38,8 @@
 博客地址：[SSM(三)Shiro使用详解](http://crossoverjie.top/2016/07/15/SSM3/)
 简书地址：[http://www.jianshu.com/p/6786ddf54582](http://www.jianshu.com/p/6786ddf54582)
 效果实例：
-![2](http://upload-images.jianshu.io/upload_images/2038379-2b90febec3a83b5a.gif)
+![1](http://img.blog.csdn.net/20160720103946668)
+
 - [前言](http://crossoverjie.top/2016/07/15/SSM3/#前言)
 - [创建自定义MyRealm类](http://crossoverjie.top/2016/07/15/SSM3/#创建自定义MyRealm类)
 - [整合Spring](http://crossoverjie.top/2016/07/15/SSM3/#整合Spring)
