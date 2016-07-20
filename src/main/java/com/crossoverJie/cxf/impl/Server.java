@@ -8,6 +8,7 @@ public class Server {
 	public static void main(String[] args) {
 		System.out.println("web service start");
 		HelloWorld implementor= new HelloWorldImpl();
+		/**修改为自己电脑的IP**/
 		String address="http://192.168.1.19:9000/helloWorld";
 		JaxWsServerFactoryBean factoryBean=new JaxWsServerFactoryBean();
 		factoryBean.setAddress(address); // 设置地址

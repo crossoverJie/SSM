@@ -1,0 +1,18 @@
+# Build Artifacts
+.gradle
+build
+target
+gradle
+classes
+out/
+
+# IDEA artifacts and output dirs
+*.iml
+*.ipr
+*.iws
+*.idea
+
+# Eclipse artifacts
+.classpath
+.project
+.settings/
