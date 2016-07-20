@@ -269,12 +269,13 @@
             <artifactId>cxf-core</artifactId>
             <version>3.1.6</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.apache.cxf/cxf-rt-transports-http-jetty -->
+        <!-- https://mvnrepository.com/artifact/org.apache.cxf/cxf-rt-transports-http -->
         <dependency>
             <groupId>org.apache.cxf</groupId>
-            <artifactId>cxf-rt-transports-http-jetty</artifactId>
+            <artifactId>cxf-rt-transports-http</artifactId>
             <version>3.1.6</version>
         </dependency>
+
 
 
 
