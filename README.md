@@ -38,7 +38,7 @@
 博客地址：[SSM(三)Shiro使用详解](http://crossoverjie.top/2016/07/15/SSM3/)
 简书地址：[http://www.jianshu.com/p/6786ddf54582](http://www.jianshu.com/p/6786ddf54582)
 效果实例：
-![1](http://img.blog.csdn.net/20160720103946668)
+![1](http://i.imgur.com/zbJxEfO.gif)
 
 - [前言](http://crossoverjie.top/2016/07/15/SSM3/#前言)
 - [创建自定义MyRealm类](http://crossoverjie.top/2016/07/15/SSM3/#创建自定义MyRealm类)
@@ -47,6 +47,16 @@
 - [整体测试](http://crossoverjie.top/2016/07/15/SSM3/#整体测试)
 - [MD5加密](http://crossoverjie.top/2016/07/15/SSM3/#MD5加密)
 - [总结](http://crossoverjie.top/2016/07/15/SSM3/#总结)
+
+# WebService入门详解
+博客地址：[SSM(四)WebService入门详解](http://crossoverjie.top/2016/08/02/SSM4/)
+简书地址：[http://www.jianshu.com/p/5c2b01aaa7ac](http://www.jianshu.com/p/5c2b01aaa7ac)
+效果实例：
+![](http://img.blog.csdn.net/20160802170000891)
+
+- [前言](http://crossoverjie.top/2016/08/02/SSM4/#前言)
+- [Spring整合CXF](http://crossoverjie.top/2016/08/02/SSM4/#Spring整合CXF)
+- [总结](http://crossoverjie.top/2016/08/02/SSM4/#总结)
 
 
 
