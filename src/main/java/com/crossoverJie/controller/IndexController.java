@@ -44,6 +44,11 @@ public class IndexController {
         return "index";
     }
 
+    @RequestMapping("/turnToWebSocketIndex")
+    public String turnToWebSocketIndex(){
+        return  "websocket/websocket" ;
+    }
+
 
     @RequestMapping("/q")
     public String search(@RequestParam(value = "q", required = false,defaultValue = "") String q,
