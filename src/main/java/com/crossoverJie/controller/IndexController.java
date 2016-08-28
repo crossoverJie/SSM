@@ -3,6 +3,7 @@ package com.crossoverJie.controller;
 import com.crossoverJie.lucene.LuceneIndex;
 import com.crossoverJie.pojo.PageEntity;
 import com.crossoverJie.pojo.User;
+import com.crossoverJie.service.ContentService;
 import com.crossoverJie.service.IUserService;
 import com.crossoverJie.util.PageUtil;
 import com.crossoverJie.util.StringUtil;
@@ -26,6 +27,7 @@ public class IndexController {
     @Resource
     private IUserService userService;
 
+
     @RequestMapping("/index")
     public String index(@RequestParam(value = "page", required = false, defaultValue = "1") int page,
                         HttpServletRequest request, Model model) {
@@ -33,6 +35,7 @@ public class IndexController {
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("start", pageEntity.getStart());
         map.put("size", pageEntity.getPageSize());
+
 
         List<User> users = userService.list(map);
         Long total = userService.getTotal(map);

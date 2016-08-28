@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.crossoverJie.dao.ContentDao" >
+    <resultMap id="BaseResultMap" type="com.crossoverJie.pojo.Content" >
+        <id column="contentId" property="contentId" jdbcType="INTEGER" />
+        <result property="contentName" column="contentName"/>
+        <result property="content" column="content"/>
+        <result property="createDate" column="createDate"/>
+    </resultMap>
+    <sql id="Base_Column_List" >
+        contentId, contentName, content,createDate
+    </sql>
+
+    <select id="findContentList" parameterType="String" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from Content
+    </select>
+
+    <insert id="insertSelective" parameterType="com.crossoverJie.pojo.Content" >
+        insert into Content
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="contentId != null" >
+                contentId,
+            </if>
+            <if test="contentName != null" >
+                contentName,
+            </if>
+            <if test="content != null" >
+                content,
+            </if>
+            <if test="createDate != null" >
+                createDate,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="contentId != null" >
+                #{contentId,jdbcType=INTEGER},
+            </if>
+            <if test="contentName != null" >
+                #{contentName,jdbcType=VARCHAR},
+            </if>
+            <if test="content != null" >
+                #{content,jdbcType=VARCHAR},
+            </if>
+            <if test="createDate != null" >
+                #{createDate,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+
+
+</mapper>
