@@ -22,10 +22,11 @@
     <!--建议手动加在语言，避免在ie下有时因为加载语言失败导致编辑器加载失败-->
     <!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
     <script type="text/javascript" charset="utf-8" src="<%=path%>/ueditor/lang/zh-cn/zh-cn.js"></script>
+
     <title>聊天室</title>
 </head>
 
-<body>
+<body data="/ssm">
 <input id="text" type="text"/>
 <button onclick="send()">发送</button>
 <button onclick="closeWebSocket()">关闭连接</button>
@@ -91,8 +92,6 @@
     //连接成功建立的回调方法
     websocket.onopen = function (event) {
         setMessageInnerHTML("加入连接");
-        onlineCount ++ ;
-        $("#onlineCount").text(onlineCount);
     };
 
     //接收到消息的回调方法
@@ -142,4 +141,6 @@
 <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="<%=path%>/js/Globals.js"></script>
+<script type="text/javascript" src="<%=path%>/js/websocket.js"></script>
 </html>

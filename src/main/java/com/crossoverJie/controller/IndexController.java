@@ -1,12 +1,15 @@
 package com.crossoverJie.controller;
 
 import com.crossoverJie.lucene.LuceneIndex;
+import com.crossoverJie.pojo.Content;
 import com.crossoverJie.pojo.PageEntity;
 import com.crossoverJie.pojo.User;
 import com.crossoverJie.service.ContentService;
 import com.crossoverJie.service.IUserService;
+import com.crossoverJie.util.CommonUtil;
 import com.crossoverJie.util.PageUtil;
 import com.crossoverJie.util.StringUtil;
+import net.sf.json.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.MatrixVariable;
@@ -27,6 +30,8 @@ public class IndexController {
     @Resource
     private IUserService userService;
 
+    @Resource
+    private ContentService contentService ;
 
     @RequestMapping("/index")
     public String index(@RequestParam(value = "page", required = false, defaultValue = "1") int page,
@@ -50,6 +55,21 @@ public class IndexController {
     @RequestMapping("/turnToWebSocketIndex")
     public String turnToWebSocketIndex(){
         return  "websocket/websocket" ;
+    }
+
+    @RequestMapping("/content_load")
+    public void content_load(HttpServletResponse response){
+        JSONObject jsonObject = new JSONObject() ;
+        try {
+            JSONObject jo = new JSONObject() ;
+            List<Content> list = contentService.findContentList();
+            jo.put("contents",list) ;
+            jsonObject = CommonUtil.parseJson("1","操作成功",jo);
+        }catch (Exception e){
+            e.printStackTrace();
+            CommonUtil.parseJson("2","操作异常","");
+        }
+        CommonUtil.responseBuildJson(response,jsonObject);
     }
 
 
