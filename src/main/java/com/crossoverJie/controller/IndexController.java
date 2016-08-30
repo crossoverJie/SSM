@@ -7,6 +7,7 @@ import com.crossoverJie.pojo.User;
 import com.crossoverJie.service.ContentService;
 import com.crossoverJie.service.IUserService;
 import com.crossoverJie.util.CommonUtil;
+import com.crossoverJie.util.DateUtil;
 import com.crossoverJie.util.PageUtil;
 import com.crossoverJie.util.StringUtil;
 import net.sf.json.JSONObject;
@@ -15,11 +16,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.MatrixVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.File;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -57,6 +60,10 @@ public class IndexController {
         return  "websocket/websocket" ;
     }
 
+    /**
+     * 加载聊天记录
+     * @param response
+     */
     @RequestMapping("/content_load")
     public void content_load(HttpServletResponse response){
         JSONObject jsonObject = new JSONObject() ;
@@ -71,6 +78,7 @@ public class IndexController {
         }
         CommonUtil.responseBuildJson(response,jsonObject);
     }
+
 
 
     @RequestMapping("/q")

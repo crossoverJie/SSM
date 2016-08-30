@@ -28,7 +28,6 @@ import javax.websocket.server.ServerEndpoint;
 
 //该注解用来指定一个URI，客户端可以通过这个URI来连接到WebSocket。
 // 类似Servlet的注解mapping。无需在web.xml中配置。
-@Component
 @ServerEndpoint(value = "/websocket",configurator = SpringConfigurator.class)
 public class MyWebSocket {
     //静态变量，用来记录当前在线连接数。应该把它设计成线程安全的。
@@ -106,18 +105,17 @@ public class MyWebSocket {
      * @throws IOException
      */
     public void sendMessage(String message) throws IOException{
-        this.session.getBasicRemote().sendText(message);
-        //this.session.getAsyncRemote().sendText(message);
-        int onlineCount = getOnlineCount();
-        this.session.getBasicRemote().sendText(onlineCount+"");
-
-
         //保存数据到数据库
         Content content = new Content() ;
         content.setContent(message);
         SimpleDateFormat sm = new SimpleDateFormat("yyyy-MM-dd HH:mm:dd") ;
         content.setCreateDate(sm.format(new Date()));
         contentService.insertSelective(content) ;
+
+        this.session.getBasicRemote().sendText(message);
+        //this.session.getAsyncRemote().sendText(message);
+
+
     }
 
     public static synchronized int getOnlineCount() {
