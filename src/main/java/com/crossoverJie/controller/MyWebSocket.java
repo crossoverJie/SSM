@@ -27,7 +27,10 @@ import javax.websocket.Session;
 import javax.websocket.server.ServerEndpoint;
 
 //该注解用来指定一个URI，客户端可以通过这个URI来连接到WebSocket。
-// 类似Servlet的注解mapping。无需在web.xml中配置。
+/**
+  类似Servlet的注解mapping。无需在web.xml中配置。
+ * configurator = SpringConfigurator.class是为了使该类可以通过Spring注入。
+ */
 @ServerEndpoint(value = "/websocket",configurator = SpringConfigurator.class)
 public class MyWebSocket {
     //静态变量，用来记录当前在线连接数。应该把它设计成线程安全的。
@@ -43,7 +46,7 @@ public class MyWebSocket {
     // 若要实现服务端与单一客户端通信的话，可以使用Map来存放，其中Key可以为用户标识
     private static CopyOnWriteArraySet<MyWebSocket> webSocketSet = new CopyOnWriteArraySet<MyWebSocket>();
 
-    //与某个客户端的连接会话，需要通过它来给客户端发送数据
+    //与客户端的连接会话，需要通过它来给客户端发送数据
     private Session session;
 
     /**
@@ -56,7 +59,6 @@ public class MyWebSocket {
         webSocketSet.add(this);     //加入set中
         addOnlineCount();           //在线数加1
         System.out.println("有新连接加入！当前在线人数为" + getOnlineCount());
-//        System.out.println(this.session.getUserProperties().get("javax.websocket.endpoint.remoteAddress"));
     }
 
     /**
