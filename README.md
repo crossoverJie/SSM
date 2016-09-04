@@ -58,8 +58,21 @@
 - [Spring整合CXF](http://crossoverjie.top/2016/08/02/SSM4/#Spring整合CXF)
 - [总结](http://crossoverjie.top/2016/08/02/SSM4/#总结)
 
+# 基于webSocket的聊天室
+博客地址：[SSM(五)基于webSocket的聊天室](http://crossoverjie.top/2016/09/04/SSM5/)
+简书地址：[http://www.jianshu.com/p/79faa8af6455](http://www.jianshu.com/p/79faa8af6455)
+效果实例：
+![](http://i.imgur.com/6of3Z5K.gif)
 
-# 下期预告---基于websocket的即时聊天室。
+- [前言](http://crossoverjie.top/2016/09/04/SSM5/#前言)
+- [websocket是什么？](http://crossoverjie.top/2016/09/04/SSM5/#websocket是什么？)
+- [后端](http://crossoverjie.top/2016/09/04/SSM5/#后端)
+- [websocket绕坑](http://crossoverjie.top/2016/09/04/SSM5/#websocket绕坑)
+- [前端](http://crossoverjie.top/2016/09/04/SSM5/#前端)
+- [Ueditor相关配置](http://crossoverjie.top/2016/09/04/SSM5/#Ueditor相关配置)
+- [总结](http://crossoverjie.top/2016/09/04/SSM5/#总结)
+
+# 下期预告---memcached缓存应用
 
 
 
