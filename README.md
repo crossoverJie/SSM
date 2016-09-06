@@ -3,6 +3,7 @@
 > 简书：http://www.jianshu.com/users/e2d07947c112/latest_articles
 
 > CSDN: http://blog.csdn.net/qq_18661793
+> 开源中国: http://my.oschina.net/crossoverjie
 
 
 # SSM
