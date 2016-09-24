@@ -176,7 +176,7 @@
                     自由开发者crossoverJie
                 </p>
                 <address>
-                    <a href="mailto:crossoverJie@163.com">crossoverJie@163.com</a>
+                    <a href="mailto:crossoverJie@gmail.com">crossoverJie@gmail.com</a>
                 </address>
             </div>
             <div class="modal-footer">
@@ -201,7 +201,7 @@
                     自由开发者crossoverJie
                 </p>
                 <address>
-                    <a href="mailto:731756881@qq.com">731756881@qq.com</a>
+                    <a href="mailto:crossoverJie@gmail.com">crossoverJie@gmail.com</a>
                 </address>
             </div>
             <div class="modal-footer">

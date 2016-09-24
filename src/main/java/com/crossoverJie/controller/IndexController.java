@@ -108,19 +108,28 @@ public class IndexController {
 
     @RequestMapping("/createAllIndex")
     public void createAllIndex(HttpServletResponse response) throws Exception {
-        Map<String, Object> map = new HashMap<String, Object>();
-        List<User> users = userService.list(map);
-        for (User user : users) {
-            //先删除原有的索引再创建新的
-            LuceneIndex luceneIndex = new LuceneIndex();
-            luceneIndex.deleteIndex(user.getUserId() + "");
+        JSONObject jsonObject = new JSONObject() ;
+        try {
+            JSONObject jo = new JSONObject() ;
+            Map<String, Object> map = new HashMap<String, Object>();
+            List<User> users = userService.list(map);
+            for (User user : users) {
+                //先删除原有的索引再创建新的
+                LuceneIndex luceneIndex = new LuceneIndex();
+                luceneIndex.deleteIndex(user.getUserId() + "");
+            }
+            for (User user : users) {
+                //先删除原有的索引再创建新的
+                LuceneIndex luceneIndex = new LuceneIndex();
+                luceneIndex.addIndex(user);
+            }
+            jsonObject = CommonUtil.parseJson("1", "操作成功", jo);
+        }catch (Exception e){
+            e.printStackTrace();
+            jsonObject = CommonUtil.parseJson("2", "操作异常", "");
         }
-        for (User user : users) {
-            //先删除原有的索引再创建新的
-            LuceneIndex luceneIndex = new LuceneIndex();
-            luceneIndex.addIndex(user);
-        }
-        response.getWriter().print("true");
+        //构建返回
+        CommonUtil.responseBuildJson(response, jsonObject);
     }
 
 

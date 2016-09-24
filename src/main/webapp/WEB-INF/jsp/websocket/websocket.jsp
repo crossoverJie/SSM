@@ -26,7 +26,7 @@
     <title>聊天室</title>
 </head>
 
-<body data="/ssm">
+<body data="/SSM">
 <input id="text" type="text"/>
 <button onclick="send()">发送</button>
 <button onclick="closeWebSocket()">关闭连接</button>

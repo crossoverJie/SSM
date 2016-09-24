@@ -42,7 +42,7 @@
         }
     </style>
 </head>
-<body class="myElement" data="/ssm">
+<body class="myElement" data="/SSM">
 <!-- 顶部导航栏 -->
 <jsp:include page="../../public/nav-top.jsp"></jsp:include>
 
@@ -181,7 +181,7 @@
                     自由开发者crossoverJie
                 </p>
                 <address>
-                    <a href="mailto:crossoverJie@163.com">crossoverJie@163.com</a>
+                    <a href="mailto:crossoverJie@gmail.com">crossoverJie@gmail.com</a>
                 </address>
             </div>
             <div class="modal-footer">
@@ -206,7 +206,7 @@
                     自由开发者crossoverJie
                 </p>
                 <address>
-                    <a href="mailto:731756881@qq.com">731756881@qq.com</a>
+                    <a href="mailto:crossoverJie@gmail.com">crossoverJie@gmail.com</a>
                 </address>
             </div>
             <div class="modal-footer">

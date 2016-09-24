@@ -47,7 +47,7 @@ public class LuceneIndex {
 	}
 
 	/**
-	 * 添加博客索引
+	 * 添加数据
 	 * @param user
 	 */
 	public void addIndex(User user)throws Exception{
