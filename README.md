@@ -8,6 +8,7 @@
 
 > **演示地址: [http://www.crossoverjie.top/SSM](http://www.crossoverjie.top/SSM)**
 
+---
 
 # SSM
 使用Idea搭建的Maven项目，会不定期更新一些在实际开发中使用的技巧(ps:目前不是很忙基本上一周一更)。
@@ -27,6 +28,9 @@
 > **觉得不错的朋友可以点下`star`,`watch`,`fork`也算是对我的鼓励了。**
 
 ---
+
+# 联系作者
+- [crossoverjie@gmail.com](mailto:crossoverjie@gmail.com)
 
 # SSM架构的整合
 博客地址：[SSM(一)框架的整合](http://crossoverjie.top/2016/06/28/SSM1)
