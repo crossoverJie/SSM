@@ -19,10 +19,12 @@
 
 
 目前使用到的技术：
-- Spring SpringMVC Mybatis Druid Lucene Shiro
+- Spring SpringMVC Mybatis Druid Lucene Shiro websocket
 - `BootStrap`,` EasyUI`
 
 *有bug或者是不正确的地方欢迎Issues*
+
+> **觉得不错的朋友可以点下`star`,`watch`,`fork`也算是对我的鼓励了。**
 
 # SSM架构的整合
 博客地址：[SSM(一)框架的整合](http://crossoverjie.top/2016/06/28/SSM1)
