@@ -30,7 +30,7 @@
 ---
 
 # 联系作者
-- [crossoverjie@gmail.com](mailto:crossoverjie@gmail.com)
+- [crossoverJie@gmail.com](mailto:crossoverJie@gmail.com)
 
 # SSM架构的整合
 博客地址：[SSM(一)框架的整合](http://crossoverjie.top/2016/06/28/SSM1)
