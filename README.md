@@ -22,12 +22,16 @@
 - Spring SpringMVC Mybatis Druid Lucene Shiro websocket
 - `BootStrap`,` EasyUI`
 
-*有bug或者是不正确的地方欢迎Issues*
+*有任何问题和欢迎Issues*
 
 > **觉得不错的朋友可以点下`star`,`watch`,`fork`也算是对我的鼓励了。**
 
+---
+
 # SSM架构的整合
 博客地址：[SSM(一)框架的整合](http://crossoverjie.top/2016/06/28/SSM1)
+
+---
 
 # Lucene全文检索
 博客地址：[SSM(二)Lucene全文检索](http://crossoverjie.top/2016/07/06/SSM2)
@@ -39,6 +43,8 @@
 - [查询Controller的编写](http://crossoverjie.top/2016/07/06/SSM2/#查询Controller的编写)
 - [显示界面](http://crossoverjie.top/2016/07/06/SSM2/#显示界面)
 - [总结](http://crossoverjie.top/2016/07/06/SSM2/#总结)
+
+---
 
 # Shiro使用详解
 博客地址：[SSM(三)Shiro使用详解](http://crossoverjie.top/2016/07/15/SSM3/)
@@ -54,6 +60,8 @@
 - [MD5加密](http://crossoverjie.top/2016/07/15/SSM3/#MD5加密)
 - [总结](http://crossoverjie.top/2016/07/15/SSM3/#总结)
 
+---
+
 # WebService入门详解
 博客地址：[SSM(四)WebService入门详解](http://crossoverjie.top/2016/08/02/SSM4/)
 简书地址：[http://www.jianshu.com/p/5c2b01aaa7ac](http://www.jianshu.com/p/5c2b01aaa7ac)
@@ -63,6 +71,8 @@
 - [前言](http://crossoverjie.top/2016/08/02/SSM4/#前言)
 - [Spring整合CXF](http://crossoverjie.top/2016/08/02/SSM4/#Spring整合CXF)
 - [总结](http://crossoverjie.top/2016/08/02/SSM4/#总结)
+
+---
 
 # 基于webSocket的聊天室
 博客地址：[SSM(五)基于webSocket的聊天室](http://crossoverjie.top/2016/09/04/SSM5/)
@@ -77,6 +87,8 @@
 - [前端](http://crossoverjie.top/2016/09/04/SSM5/#前端)
 - [Ueditor相关配置](http://crossoverjie.top/2016/09/04/SSM5/#Ueditor相关配置)
 - [总结](http://crossoverjie.top/2016/09/04/SSM5/#总结)
+
+---
 
 # 下期预告---memcached缓存应用
 
