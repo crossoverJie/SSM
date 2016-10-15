@@ -1,5 +1,6 @@
 package com.crossoverJie.controller;
 
+import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.crossoverJie.lucene.LuceneIndex;
 import com.crossoverJie.pojo.Content;
 import com.crossoverJie.pojo.PageEntity;
@@ -10,12 +11,11 @@ import com.crossoverJie.util.CommonUtil;
 import com.crossoverJie.util.DateUtil;
 import com.crossoverJie.util.PageUtil;
 import com.crossoverJie.util.StringUtil;
+import com.fasterxml.jackson.databind.util.ObjectBuffer;
 import net.sf.json.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.MatrixVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -23,6 +23,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -104,6 +105,14 @@ public class IndexController {
         model.addAttribute("pageTitle","搜索关键字'" + q + "'结果页面") ;
 
         return "queryResult";
+    }
+
+    @RequestMapping(value = "/jsonpInfo",method = { RequestMethod.GET })
+    @ResponseBody
+    public Object jsonpInfo(String callback,Integer userId) throws IOException {
+        User user = userService.getUserById(userId);
+        JSONPObject jsonpObject = new JSONPObject(callback,user) ;
+        return jsonpObject ;
     }
 
     @RequestMapping("/createAllIndex")

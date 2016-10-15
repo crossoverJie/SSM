@@ -100,7 +100,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <p>
-                        <a class="btn btn-primary" href="#">全部</a>
+                        <a class="btn btn-primary" href="<%=path%>/jsonp.jsp">JsonP</a>
                         <a class="btn btn-info" href="#">精华</a>
                         <a class="btn btn-danger" href="#">热门</a>
                     </p>
