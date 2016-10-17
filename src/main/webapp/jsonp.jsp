@@ -35,7 +35,7 @@
             $.ajax({
                 type: "get",
                 async: false,
-                url: "http://localhost:8080/SSM/jsonpInfo?callback=getUser&userId=3",
+                url: "http://www.crossoverjie.top/SSM/jsonpInfo?callback=getUser&userId=3",
                 dataType: "jsonp",
                 jsonp: "callback",//一般默认为:callback
                 jsonpCallback:"getUser",//自定义的jsonp回调函数名称，默认为jQuery自动生成的随机函数名，也可以写"?"，jQuery会自动为你处理数据
