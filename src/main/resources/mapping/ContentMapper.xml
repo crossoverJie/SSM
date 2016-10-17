@@ -14,11 +14,11 @@
     <select id="findContentList" parameterType="String" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List"/>
-        from Content
+        from content
     </select>
 
     <insert id="insertSelective" parameterType="com.crossoverJie.pojo.Content" >
-        insert into Content
+        insert into content
         <trim prefix="(" suffix=")" suffixOverrides="," >
             <if test="contentId != null" >
                 contentId,
