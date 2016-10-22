@@ -94,6 +94,21 @@
 
 ---
 
+# SSM(六)跨域传输
+博客地址：[SSM(六)跨域传输](http://crossoverjie.top/2016/10/18/SSM6/)
+简书地址：[http://www.jianshu.com/p/3e3d9a89fafc](http://www.jianshu.com/p/3e3d9a89fafc)
+效果实例：
+![](http://img.blog.csdn.net/20161018003136470)
+
+- [前言](http://crossoverjie.top/2016/10/18/SSM6/#前言)
+- [什么是跨域传输？](http://crossoverjie.top/2016/10/18/SSM6/#什么是跨域问题？)
+- [JSON](http://crossoverjie.top/2016/10/18/SSM6/#JSON)
+- [PostMan](http://crossoverjie.top/2016/10/18/SSM6/#PostMan)
+- [JSONP](http://crossoverjie.top/2016/10/18/SSM6/#JSONP)
+- [总结](http://crossoverjie.top/2016/10/18/SSM6/#总结)
+
+---
+
 # 下期预告---memcached缓存应用
 
 
