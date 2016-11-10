@@ -318,12 +318,13 @@
         </dependency>
         -->
 
+        <!--
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>dubbo</artifactId>
             <version>2.5.3</version>
         </dependency>
-
+        -->
 
     </dependencies>
 
