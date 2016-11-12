@@ -1,6 +1,5 @@
 package com.crossoverJie.controller;
 
-import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.crossoverJie.lucene.LuceneIndex;
 import com.crossoverJie.pojo.Content;
 import com.crossoverJie.pojo.PageEntity;
@@ -8,21 +7,19 @@ import com.crossoverJie.pojo.User;
 import com.crossoverJie.service.ContentService;
 import com.crossoverJie.service.IUserService;
 import com.crossoverJie.util.CommonUtil;
-import com.crossoverJie.util.DateUtil;
 import com.crossoverJie.util.PageUtil;
-import com.crossoverJie.util.StringUtil;
-import com.fasterxml.jackson.databind.util.ObjectBuffer;
+import com.fasterxml.jackson.databind.util.JSONPObject;
 import net.sf.json.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
@@ -50,6 +47,8 @@ public class IndexController {
         Long total = userService.getTotal(map);
         model.addAttribute("users", users);
         StringBuffer param = new StringBuffer();
+
+
 
         String pageHtml = PageUtil.genPagination(request.getContextPath() + "/index", total, page, 10, param.toString());
         model.addAttribute("pageHtml", pageHtml);
