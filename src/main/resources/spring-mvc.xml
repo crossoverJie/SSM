@@ -9,6 +9,12 @@
                         http://www.springframework.org/schema/context/spring-context-3.1.xsd
                         http://www.springframework.org/schema/mvc
                         http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
+
+    <bean id="propertyConfigurer"
+          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location" value="classpath:redis.properties"/>
+    </bean>
+
     <!-- 自动扫描该包，使SpringMVC认为包下用了@controller注解的类是控制器 -->
     <context:component-scan base-package="com.crossoverJie.controller" />
     <!--避免IE执行AJAX时，返回JSON出现下载文件 -->
@@ -41,6 +47,53 @@
         <!-- 内存中的最大值 -->
         <property name="maxInMemorySize" value="40960" />
     </bean>
+
+
+    <!--&lt;!&ndash; jedis 配置 &ndash;&gt;-->
+    <!--<bean id="poolConfig" class="redis.clients.jedis.JedisPoolConfig" >-->
+    <!--<property name="maxIdle" value="100" />-->
+    <!--<property name="maxWaitMillis" value="1000" />-->
+    <!--<property name="testOnBorrow" value="true" />-->
+    <!--</bean >-->
+    <!--&lt;!&ndash; redis服务器中心 &ndash;&gt;-->
+    <!--<bean id="connectionFactory"  class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory" >-->
+    <!--<property name="poolConfig" ref="poolConfig" />-->
+    <!--<property name="port" value="6379" />-->
+    <!--<property name="hostName" value="27.126.180.210" />-->
+    <!--&lt;!&ndash;<property name="password" value="${redis.password}" />&ndash;&gt;-->
+    <!--<property name="timeout" value="100000" ></property>-->
+    <!--</bean >-->
+    <!--<bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate" >-->
+    <!--<property name="connectionFactory" ref="connectionFactory" />-->
+    <!--<property name="keySerializer" >-->
+    <!--<bean class="org.springframework.data.redis.serializer.StringRedisSerializer" />-->
+    <!--</property>-->
+    <!--<property name="valueSerializer" >-->
+    <!--<bean class="org.springframework.data.redis.serializer.JdkSerializationRedisSerializer" />-->
+    <!--</property>-->
+    <!--</bean >-->
+
+    <!--&lt;!&ndash; cache配置 &ndash;&gt;-->
+    <!--<bean id="methodCacheInterceptor" class="com.crossoverJie.intercept.MethodCacheInterceptor" >-->
+    <!--<property name="redisUtil" ref="redisUtil" />-->
+    <!--</bean >-->
+    <!--<bean id="redisUtil" class="com.crossoverJie.util.RedisUtil" >-->
+    <!--<property name="redisTemplate" ref="redisTemplate" />-->
+    <!--</bean >-->
+
+
+    <!--&lt;!&ndash; 需要加入缓存的类或方法 &ndash;&gt;-->
+    <!--<bean id="methodCachePointCut"  class="org.springframework.aop.support.RegexpMethodPointcutAdvisor" >-->
+    <!--<property name="advice" >-->
+    <!--<ref local="methodCacheInterceptor" />-->
+    <!--</property>-->
+    <!--<property name="patterns" >-->
+    <!--<list>-->
+    <!--&lt;!&ndash; 确定正则表达式列表 &ndash;&gt;-->
+    <!--<value>com\.crossoverjie\.service\.impl\...*ServiceImpl.*</value >-->
+    <!--</list>-->
+    <!--</property>-->
+    <!--</bean >-->
 
     <!-- 配置拦截器 -->
     <!--<mvc:interceptors>
