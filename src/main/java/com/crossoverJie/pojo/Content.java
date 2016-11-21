@@ -1,9 +1,11 @@
 package com.crossoverJie.pojo;
 
+import java.io.Serializable;
+
 /**
  * Created by Administrator on 2016/8/28.
  */
-public class Content {
+public class Content implements Serializable {
     private Integer contentId;
     private String contentName ;
     private String content ;

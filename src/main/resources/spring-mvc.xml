@@ -10,13 +10,18 @@
                         http://www.springframework.org/schema/mvc
                         http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
 
-    <bean id="propertyConfigurer"
-          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-        <property name="location" value="classpath:redis.properties"/>
+    <!-- 引入properties配置文件 -->
+    <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:jdbc.properties</value>
+                <!--要是有多个配置文件，只需在这里继续添加即可 -->
+            </list>
+        </property>
     </bean>
 
     <!-- 自动扫描该包，使SpringMVC认为包下用了@controller注解的类是控制器 -->
-    <context:component-scan base-package="com.crossoverJie.controller" />
+    <context:component-scan base-package="com.crossoverJie.controller"/>
     <!--避免IE执行AJAX时，返回JSON出现下载文件 -->
     <!--<bean id="mappingJacksonHttpMessageConverter"
           class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">
@@ -33,67 +38,68 @@
     <!-- 定义跳转的文件的前后缀 ，视图模式配置-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <!-- 这里的配置我的理解是自动给后面action的方法return的字符串加上前缀和后缀，变成一个 可用的url地址 -->
-        <property name="prefix" value="/WEB-INF/jsp/" />
-        <property name="suffix" value=".jsp" />
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <property name="suffix" value=".jsp"/>
     </bean>
 
     <!-- 配置文件上传，如果没有使用文件上传可以不用配置，当然如果不配，那么配置文件中也不必引入上传组件包 -->
     <bean id="multipartResolver"
           class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
         <!-- 默认编码 -->
-        <property name="defaultEncoding" value="utf-8" />
+        <property name="defaultEncoding" value="utf-8"/>
         <!-- 文件大小最大值 -->
-        <property name="maxUploadSize" value="10485760000" />
+        <property name="maxUploadSize" value="10485760000"/>
         <!-- 内存中的最大值 -->
-        <property name="maxInMemorySize" value="40960" />
+        <property name="maxInMemorySize" value="40960"/>
     </bean>
 
 
-    <!--&lt;!&ndash; jedis 配置 &ndash;&gt;-->
-    <!--<bean id="poolConfig" class="redis.clients.jedis.JedisPoolConfig" >-->
-    <!--<property name="maxIdle" value="100" />-->
-    <!--<property name="maxWaitMillis" value="1000" />-->
-    <!--<property name="testOnBorrow" value="true" />-->
-    <!--</bean >-->
-    <!--&lt;!&ndash; redis服务器中心 &ndash;&gt;-->
-    <!--<bean id="connectionFactory"  class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory" >-->
-    <!--<property name="poolConfig" ref="poolConfig" />-->
-    <!--<property name="port" value="6379" />-->
-    <!--<property name="hostName" value="27.126.180.210" />-->
-    <!--&lt;!&ndash;<property name="password" value="${redis.password}" />&ndash;&gt;-->
-    <!--<property name="timeout" value="100000" ></property>-->
-    <!--</bean >-->
-    <!--<bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate" >-->
-    <!--<property name="connectionFactory" ref="connectionFactory" />-->
-    <!--<property name="keySerializer" >-->
-    <!--<bean class="org.springframework.data.redis.serializer.StringRedisSerializer" />-->
-    <!--</property>-->
-    <!--<property name="valueSerializer" >-->
-    <!--<bean class="org.springframework.data.redis.serializer.JdkSerializationRedisSerializer" />-->
-    <!--</property>-->
-    <!--</bean >-->
+    <!-- jedis 配置 -->
+    <bean id="poolConfig" class="redis.clients.jedis.JedisPoolConfig">
+        <property name="maxIdle" value="${redis.maxIdle}"/>
+        <property name="maxWaitMillis" value="${redis.maxWait}"/>
+        <property name="testOnBorrow" value="${redis.testOnBorrow}"/>
+    </bean>
+    <!-- redis服务器中心 -->
+    <bean id="connectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
+        <property name="poolConfig" ref="poolConfig"/>
+        <property name="port" value="${redis.port}"/>
+        <property name="hostName" value="${redis.host}"/>
+        <property name="password" value="${redis.password}"/>
+        <property name="timeout" value="${redis.timeout}"></property>
+    </bean>
+    <bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate">
+        <property name="connectionFactory" ref="connectionFactory"/>
+        <property name="keySerializer">
+            <bean class="org.springframework.data.redis.serializer.StringRedisSerializer"/>
+        </property>
+        <property name="valueSerializer">
+            <bean class="org.springframework.data.redis.serializer.JdkSerializationRedisSerializer"/>
+        </property>
+    </bean>
 
-    <!--&lt;!&ndash; cache配置 &ndash;&gt;-->
-    <!--<bean id="methodCacheInterceptor" class="com.crossoverJie.intercept.MethodCacheInterceptor" >-->
-    <!--<property name="redisUtil" ref="redisUtil" />-->
-    <!--</bean >-->
-    <!--<bean id="redisUtil" class="com.crossoverJie.util.RedisUtil" >-->
-    <!--<property name="redisTemplate" ref="redisTemplate" />-->
-    <!--</bean >-->
+    <!-- cache配置 -->
+    <bean id="methodCacheInterceptor" class="com.crossoverJie.intercept.MethodCacheInterceptor">
+        <property name="redisUtil" ref="redisUtil"/>
+    </bean>
+    <bean id="redisUtil" class="com.crossoverJie.util.RedisUtil">
+        <property name="redisTemplate" ref="redisTemplate"/>
+    </bean>
 
 
-    <!--&lt;!&ndash; 需要加入缓存的类或方法 &ndash;&gt;-->
-    <!--<bean id="methodCachePointCut"  class="org.springframework.aop.support.RegexpMethodPointcutAdvisor" >-->
-    <!--<property name="advice" >-->
-    <!--<ref local="methodCacheInterceptor" />-->
-    <!--</property>-->
-    <!--<property name="patterns" >-->
-    <!--<list>-->
-    <!--&lt;!&ndash; 确定正则表达式列表 &ndash;&gt;-->
-    <!--<value>com\.crossoverjie\.service\.impl\...*ServiceImpl.*</value >-->
-    <!--</list>-->
-    <!--</property>-->
-    <!--</bean >-->
+    <!-- 需要加入缓存的类或方法 -->
+    <bean id="methodCachePointCut" class="org.springframework.aop.support.RegexpMethodPointcutAdvisor">
+        <property name="advice">
+            <ref local="methodCacheInterceptor"/>
+        </property>
+        <property name="patterns">
+            <list>
+                <!-- 确定正则表达式列表 -->
+                <value>com\.crossoverJie\.service\.impl\...*ServiceImpl.*</value>
+            </list>
+        </property>
+    </bean>
+
 
     <!-- 配置拦截器 -->
     <!--<mvc:interceptors>

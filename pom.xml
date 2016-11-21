@@ -236,12 +236,6 @@
             <version>${lucene.version}</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.apache.activemq/activemq-all -->
-        <dependency>
-            <groupId>org.apache.activemq</groupId>
-            <artifactId>activemq-all</artifactId>
-            <version>5.13.3</version>
-        </dependency>
 
         <!--shiro-->
         <!-- https://mvnrepository.com/artifact/org.apache.shiro/shiro-core -->
@@ -335,13 +329,14 @@
         <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-redis</artifactId>
-            <version>1.7.5.RELEASE</version>
+            <version>1.6.1.RELEASE</version>
         </dependency>
         <dependency>
             <groupId>redis.clients</groupId>
             <artifactId>jedis</artifactId>
-            <version>2.9.0</version>
+            <version>2.7.3</version>
         </dependency>
+
 
     </dependencies>
 

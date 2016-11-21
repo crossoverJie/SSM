@@ -5,26 +5,15 @@ package com.crossoverJie.controller;
  */
 import com.crossoverJie.pojo.Content;
 import com.crossoverJie.service.ContentService;
-import org.apache.camel.BeanInject;
-import org.apache.camel.EndpointInject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 import org.springframework.web.socket.server.standard.SpringConfigurator;
 
+import javax.websocket.*;
+import javax.websocket.server.ServerEndpoint;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.CopyOnWriteArraySet;
-
-import javax.annotation.PostConstruct;
-import javax.websocket.OnClose;
-import javax.websocket.OnError;
-import javax.websocket.OnMessage;
-import javax.websocket.OnOpen;
-import javax.websocket.Session;
-import javax.websocket.server.ServerEndpoint;
 
 //该注解用来指定一个URI，客户端可以通过这个URI来连接到WebSocket。
 /**
