@@ -2,6 +2,7 @@ package com.crossoverjie;
 
 import com.crossoverJie.pojo.Content;
 import com.crossoverJie.service.ContentService;
+import com.crossoverJie.service.IUserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,9 @@ public class RedisTest {
 
     @Autowired
     private ContentService contentService;
+
+    @Autowired
+    private IUserService userService;
 
     @Test
     public void test() {

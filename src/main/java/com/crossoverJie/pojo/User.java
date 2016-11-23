@@ -1,12 +1,11 @@
 package com.crossoverJie.pojo;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.io.Serializable;
 
 /**
  * Created by Administrator on 2016/6/21.
  */
-public class User {
+public class User implements Serializable {
     private int userId ;
     private String username ;
     private String password ;

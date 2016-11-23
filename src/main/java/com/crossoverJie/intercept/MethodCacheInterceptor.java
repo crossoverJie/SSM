@@ -3,7 +3,8 @@ package com.crossoverJie.intercept;
 import com.crossoverJie.util.RedisUtil;
 import org.aopalliance.intercept.MethodInterceptor;
 import org.aopalliance.intercept.MethodInvocation;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +13,7 @@ import java.util.List;
  * Created by chenjie on 2016/11/16.
  */
 public class MethodCacheInterceptor implements MethodInterceptor {
-    private Logger logger = Logger.getLogger(MethodCacheInterceptor.class);
+    private Logger logger = LoggerFactory.getLogger(MethodCacheInterceptor.class);
     private RedisUtil redisUtil;
     private List<String> targetNamesList; // 不加入缓存的service名称
     private List<String> methodNamesList; // 不加入缓存的方法名称
@@ -66,8 +67,7 @@ public class MethodCacheInterceptor implements MethodInterceptor {
         }
         Object[] arguments = invocation.getArguments();
         String key = getCacheKey(targetName, methodName, arguments);
-        System.out.println(key);
-
+        logger.debug("redisKey: ", key);
         try {
             // 判断是否有缓存
             if (redisUtil.exists(key)) {

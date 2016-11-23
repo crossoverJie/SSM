@@ -54,60 +54,27 @@
     </bean>
 
 
-    <!-- jedis 配置 -->
-    <bean id="poolConfig" class="redis.clients.jedis.JedisPoolConfig">
-        <property name="maxIdle" value="${redis.maxIdle}"/>
-        <property name="maxWaitMillis" value="${redis.maxWait}"/>
-        <property name="testOnBorrow" value="${redis.testOnBorrow}"/>
-    </bean>
-    <!-- redis服务器中心 -->
-    <bean id="connectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
-        <property name="poolConfig" ref="poolConfig"/>
-        <property name="port" value="${redis.port}"/>
-        <property name="hostName" value="${redis.host}"/>
-        <property name="password" value="${redis.password}"/>
-        <property name="timeout" value="${redis.timeout}"></property>
-    </bean>
-    <bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate">
-        <property name="connectionFactory" ref="connectionFactory"/>
-        <property name="keySerializer">
-            <bean class="org.springframework.data.redis.serializer.StringRedisSerializer"/>
-        </property>
-        <property name="valueSerializer">
-            <bean class="org.springframework.data.redis.serializer.JdkSerializationRedisSerializer"/>
-        </property>
-    </bean>
-
-    <!-- cache配置 -->
-    <bean id="methodCacheInterceptor" class="com.crossoverJie.intercept.MethodCacheInterceptor">
-        <property name="redisUtil" ref="redisUtil"/>
-    </bean>
-    <bean id="redisUtil" class="com.crossoverJie.util.RedisUtil">
-        <property name="redisTemplate" ref="redisTemplate"/>
-    </bean>
-
-
     <!-- 需要加入缓存的类或方法 -->
-    <bean id="methodCachePointCut" class="org.springframework.aop.support.RegexpMethodPointcutAdvisor">
+    <!--<bean id="methodCachePointCut" class="org.springframework.aop.support.RegexpMethodPointcutAdvisor">
         <property name="advice">
             <ref local="methodCacheInterceptor"/>
         </property>
         <property name="patterns">
             <list>
-                <!-- 确定正则表达式列表 -->
+                &lt;!&ndash; 确定正则表达式列表 &ndash;&gt;
                 <value>com\.crossoverJie\.service\.impl\...*ServiceImpl.*</value>
             </list>
         </property>
-    </bean>
+    </bean>-->
 
 
     <!-- 方法拦截器（拦截Controller包中的所有被RequestMapping注解的方法） MethodInterceptor -->
-    <aop:config proxy-target-class="true">
-        <aop:pointcut id="controllerMethodPointcut" expression="execution(* com.crossoverJie.controller..*(..)) and
-        @annotation(org.springframework.web.bind.annotation.RequestMapping) .contentService*"/>
+    <!--    <aop:config proxy-target-class="true">
+            <aop:pointcut id="controllerMethodPointcut" expression="execution(* com.crossoverJie.controller..*(..)) and
+            @annotation(org.springframework.web.bind.annotation.RequestMapping) .contentService*"/>
 
-        <aop:advisor advice-ref="methodCacheInterceptor" pointcut-ref="controllerMethodPointcut"/>
-    </aop:config>
+            <aop:advisor advice-ref="methodCacheInterceptor" pointcut-ref="controllerMethodPointcut"/>
+        </aop:config>-->
 
 
     <!-- 配置拦截器 -->
