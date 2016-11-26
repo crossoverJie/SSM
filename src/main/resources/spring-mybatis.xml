@@ -163,6 +163,7 @@
         <property name="redisTemplate" ref="redisTemplate"/>
     </bean>
 
+    <!--配置切面拦截方法 -->
     <aop:config proxy-target-class="true">
         <aop:pointcut id="controllerMethodPointcut" expression="
         execution(* com.crossoverJie.service.*.*(..))"/>
