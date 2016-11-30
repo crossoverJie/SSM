@@ -1,0 +1,127 @@
+* {
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: #323232;
+    text-decoration: none;
+}
+
+body {
+    font-family: "Microsoft Yahei";
+    background-color: #fafafa;
+}
+
+.box {
+    width: auto;
+    height: auto;
+    margin: 30px;
+    min-width: 1100px;
+    padding: 14px;
+    border: 1px solid #f2f2f2;
+    overflow: hidden;
+    background: #fff;
+}
+
+.box_top2 {
+    height: 52px;
+    line-height: 52px;
+    overflow: hidden;
+    border-bottom: 1px solid #e7e7e7;
+    background: #fbfbfb;
+    font-size: 14px;
+}
+
+.center {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+#route {
+    width: 100%;
+    font-size: 13px;
+    height: 50px;
+    border-bottom: solid 2px #efefef;
+}
+
+#route span {
+    margin: 0 5px;
+}
+
+#route #typeName {
+    margin: 0;
+    font-size: 13px;
+}
+
+/*------主体的头部文字---------*/
+/*.route_li{float:left;height:28px;line-height:28px;border:1px solid #ccc;font-size:13px;padding:0 10px;overflow-x:visible;position:relative;margin-right:7px;}
+.colse_about_br{border-left:none;border-right:none;padding-left:18px;}
+.colse_lg_br{border-right:none;}*/
+/*箭头*/
+/*.route_li .rg_arrow,.route_li .lg_arrow{position:absolute;top:-1px;right:-8px;width:8px;height:30px;}
+.route_li .lg_arrow{left:0;border-top:1px solid #ccc;}
+.route_li .rg_arrow:after,.route_li .lg_arrow:after{content:"";position:absolute;width:1px;height:17px;background:#ccc;left:3px;top:0;transform:rotate(-30deg);-webkit-transform:rotate(-30deg);}
+.route_li .rg_arrow:before,.route_li .lg_arrow:before{content:"";position:absolute;width:1px;height:17px;background:#ccc;left:3px;bottom:0;transform:rotate(30deg);-webkit-transform:rotate(30deg);}*/
+/*头部*/
+.title_box {
+    height: auto;
+    margin: 35px 30px 0;
+    overflow: hidden;
+}
+
+.title_box .title_txt {
+    font-size: 34px;
+    font-weight: 600;
+    color: #404040;
+    letter-spacing: 4px;
+    margin-bottom: 7px;
+}
+
+.title_box .title_english {
+    font-size: 14px;
+    color: #5b5b5b;
+    letter-spacing: 2px;
+}
+
+/*色块*/
+.hold_page {
+    background: #f39800;
+    border: none;
+    color: #fff;
+    padding-left: 18px;
+    height: 30px;
+    line-height: 30px;
+}
+
+.lg_block {
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 0;
+    top: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 8px solid #fff;
+}
+
+.rg_block {
+    position: absolute;
+    width: 0;
+    height: 0;
+    right: -8px;
+    top: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 8px solid #f39800;
+}
