@@ -1,6 +1,9 @@
 package com.crossoverjie;
 
+import com.alibaba.fastjson.JSON;
+import com.crossoverJie.dao.RediscontentMapper;
 import com.crossoverJie.pojo.Content;
+import com.crossoverJie.pojo.Rediscontent;
 import com.crossoverJie.service.ContentService;
 import com.crossoverJie.service.IUserService;
 import org.junit.Test;
@@ -22,6 +25,9 @@ public class RedisTest {
 
     @Autowired
     private IUserService userService;
+
+    @Autowired
+    private RediscontentMapper rediscontentMapper;
 
     @Test
     public void test() {
@@ -48,6 +54,13 @@ public class RedisTest {
         System.out.println(contentList == contentList1);
 
         System.out.println(contentList.get(0).getContent() + "-----------");
+
+    }
+
+    @Test
+    public void redisMapper() {
+        Rediscontent rediscontent = rediscontentMapper.selectByPrimaryKey(1);
+        System.out.println(JSON.toJSONString(rediscontent));
 
     }
 }
