@@ -2,10 +2,9 @@ package com.crossoverJie.dao;
 
 import com.crossoverJie.pojo.Rediscontent;
 import com.crossoverJie.pojo.RediscontentExample;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
-
-import org.apache.ibatis.annotations.Param;
 
 public interface RediscontentMapper {
     int countByExample(RediscontentExample example);

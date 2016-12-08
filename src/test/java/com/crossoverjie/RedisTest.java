@@ -6,6 +6,7 @@ import com.crossoverJie.pojo.Content;
 import com.crossoverJie.pojo.Rediscontent;
 import com.crossoverJie.service.ContentService;
 import com.crossoverJie.service.IUserService;
+import com.crossoverJie.service.RediscontentService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,9 @@ public class RedisTest {
 
     @Autowired
     private RediscontentMapper rediscontentMapper;
+
+    @Autowired
+    private RediscontentService rediscontentService;
 
     @Test
     public void test() {
@@ -59,7 +63,7 @@ public class RedisTest {
 
     @Test
     public void redisMapper() {
-        Rediscontent rediscontent = rediscontentMapper.selectByPrimaryKey(1);
+        Rediscontent rediscontent = rediscontentService.selectByPrimaryKey(1);
         System.out.println(JSON.toJSONString(rediscontent));
 
     }

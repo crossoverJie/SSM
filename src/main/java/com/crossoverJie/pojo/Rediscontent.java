@@ -1,6 +1,8 @@
 package com.crossoverJie.pojo;
 
-public class Rediscontent {
+import java.io.Serializable;
+
+public class Rediscontent implements Serializable {
     private Integer id;
 
     private String content;

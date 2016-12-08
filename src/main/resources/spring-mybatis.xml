@@ -171,6 +171,9 @@
         <aop:pointcut id="controllerMethodPointcut" expression="
         execution(* com.crossoverJie.service.*.*(..))"/>
 
+        <aop:pointcut id="selectMethodPointcut" expression="
+        execution(* com.crossoverJie.dao..*Mapper.select*(..))"/>
+
         <aop:advisor advice-ref="methodCacheInterceptor" pointcut-ref="controllerMethodPointcut"/>
     </aop:config>
 
