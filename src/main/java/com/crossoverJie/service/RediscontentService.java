@@ -2,6 +2,7 @@ package com.crossoverJie.service;
 
 import com.crossoverJie.pojo.Rediscontent;
 import com.crossoverJie.pojo.RediscontentExample;
+import com.crossoverJie.util.PageEntity;
 
 import java.util.List;
 
@@ -16,4 +17,7 @@ public interface RediscontentService {
     List<Rediscontent> selectByExample(RediscontentExample example);
 
     Rediscontent selectByPrimaryKey(Integer id);
+
+    PageEntity<Rediscontent> queryByPage(Integer pageNum, Integer pageSize);
+
 }

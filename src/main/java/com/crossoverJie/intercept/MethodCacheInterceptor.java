@@ -67,7 +67,7 @@ public class MethodCacheInterceptor implements MethodInterceptor {
         }
         Object[] arguments = invocation.getArguments();
         String key = getCacheKey(targetName, methodName, arguments);
-        logger.debug("redisKey: ", key);
+        logger.debug("redisKey: " + key);
         try {
             // 判断是否有缓存
             if (redisUtil.exists(key)) {

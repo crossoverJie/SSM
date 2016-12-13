@@ -4,6 +4,8 @@ import com.crossoverJie.dao.RediscontentMapper;
 import com.crossoverJie.pojo.Rediscontent;
 import com.crossoverJie.pojo.RediscontentExample;
 import com.crossoverJie.service.RediscontentService;
+import com.crossoverJie.util.PageEntity;
+import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,5 +33,18 @@ public class RediscontentServiceImpl implements RediscontentService {
     @Override
     public Rediscontent selectByPrimaryKey(Integer id) {
         return rediscontentMapper.selectByPrimaryKey(id);
+    }
+
+    @Override
+    public PageEntity<Rediscontent> queryByPage(Integer pageNum, Integer pageSize) {
+        PageHelper.startPage(0, 0);
+        int size = rediscontentMapper.selectByExample(new RediscontentExample()).size();
+        PageHelper.startPage(pageNum, pageSize);
+        //因为是demo，所以这里默认没有查询条件。
+        List<Rediscontent> rediscontents = rediscontentMapper.selectByExample(new RediscontentExample());
+        PageEntity<Rediscontent> rediscontentPageEntity = new PageEntity<Rediscontent>();
+        rediscontentPageEntity.setList(rediscontents);
+        rediscontentPageEntity.setCount(size);
+        return rediscontentPageEntity;
     }
 }
