@@ -15,17 +15,17 @@
     <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
     <meta http-equiv="description" content="This is my page">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/redis_style.css">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/club_list.css">
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.11.1.min.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/Globals.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/jqPaginator.js"></script>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/js/club_list.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/redis_list.js"></script>
 </head>
 <body data='${pageContext.request.contextPath}'>
 <div class="title_box">
-    <div class="title_txt">场馆登记</div>
-    <div class="title_english">ASSIGN CLUB</div>
+    <div class="title_txt">记录</div>
+    <div class="title_english">Record</div>
 </div>
 <div class="box">
 
@@ -34,11 +34,8 @@
         <input type="text" id="name"/>
         <select name="authorization" id="authorization">
             <option value="0">全部</option>
-            <option value="2">已授权</option>
-            <option value="1">未授权</option>
         </select>
         <div class="query_but">查询</div>
-        <div class="query_but go_register">登记</div>
     </div>
     <div class="explain_box">
         <div class="explain_link">场馆标识/名称</div>
@@ -51,7 +48,7 @@
     <div class="product_content">
     </div>
     <ul class="pagination" id="pagination"></ul>
-    <div class="oper_box">共<span class="product_length_number"></span>个场馆</div>
+    <div class="oper_box">共<span class="product_length_number"></span>条记录</div>
 </div>
 </body>
 </html>

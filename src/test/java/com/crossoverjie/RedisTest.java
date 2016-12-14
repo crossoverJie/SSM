@@ -4,12 +4,10 @@ import com.alibaba.fastjson.JSON;
 import com.crossoverJie.dao.RediscontentMapper;
 import com.crossoverJie.pojo.Content;
 import com.crossoverJie.pojo.Rediscontent;
-import com.crossoverJie.pojo.RediscontentExample;
 import com.crossoverJie.service.ContentService;
 import com.crossoverJie.service.IUserService;
 import com.crossoverJie.service.RediscontentService;
 import com.crossoverJie.util.PageEntity;
-import com.github.pagehelper.PageHelper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -73,12 +71,12 @@ public class RedisTest {
 
     @Test
     public void redisPageMapper() {
-        PageEntity<Rediscontent> rediscontentPageEntity = rediscontentService.queryByPage(2, 10);
+        PageEntity<Rediscontent> rediscontentPageEntity = rediscontentService.selectByPage(2, 10);
         System.out.println(JSON.toJSONString(rediscontentPageEntity));
 
     }
 
-    @Test
+    //    @Test
     public void saveData() {
         for (int i = 0; i < 100; i++) {
             Rediscontent rediscontent = new Rediscontent();

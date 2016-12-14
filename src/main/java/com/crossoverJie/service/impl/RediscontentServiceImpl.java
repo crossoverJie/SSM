@@ -36,14 +36,13 @@ public class RediscontentServiceImpl implements RediscontentService {
     }
 
     @Override
-    public PageEntity<Rediscontent> queryByPage(Integer pageNum, Integer pageSize) {
-        PageHelper.startPage(0, 0);
-        int size = rediscontentMapper.selectByExample(new RediscontentExample()).size();
+    public PageEntity<Rediscontent> selectByPage(Integer pageNum, Integer pageSize) {
         PageHelper.startPage(pageNum, pageSize);
         //因为是demo，所以这里默认没有查询条件。
         List<Rediscontent> rediscontents = rediscontentMapper.selectByExample(new RediscontentExample());
         PageEntity<Rediscontent> rediscontentPageEntity = new PageEntity<Rediscontent>();
         rediscontentPageEntity.setList(rediscontents);
+        int size = rediscontentMapper.selectByExample(new RediscontentExample()).size();
         rediscontentPageEntity.setCount(size);
         return rediscontentPageEntity;
     }

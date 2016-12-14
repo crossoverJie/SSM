@@ -167,9 +167,11 @@
 
     <!--配置切面拦截方法 -->
     <aop:config proxy-target-class="true">
-        <!--将com.crossoverJie.service包下的所有方法加入拦截-->
+        <!--将com.crossoverJie.service包下的所有select开头的方法加入拦截
+        去掉select则加入所有方法w
+        -->
         <aop:pointcut id="controllerMethodPointcut" expression="
-        execution(* com.crossoverJie.service.*.*(..))"/>
+        execution(* com.crossoverJie.service.*.select*(..))"/>
 
         <aop:pointcut id="selectMethodPointcut" expression="
         execution(* com.crossoverJie.dao..*Mapper.select*(..))"/>

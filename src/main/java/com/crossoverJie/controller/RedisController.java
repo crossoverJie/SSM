@@ -1,7 +1,6 @@
 package com.crossoverJie.controller;
 
 import com.crossoverJie.pojo.Rediscontent;
-import com.crossoverJie.pojo.RediscontentExample;
 import com.crossoverJie.service.RediscontentService;
 import com.crossoverJie.util.CommonUtil;
 import com.crossoverJie.util.PageEntity;
@@ -16,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletResponse;
-import java.util.List;
 
 
 @Controller
@@ -38,7 +36,7 @@ public class RedisController {
         try {
             JSONArray ja = new JSONArray();
             PageHelper.startPage(1, 10);
-            PageEntity<Rediscontent> rediscontentPageEntity = rediscontentService.queryByPage(page, pageSize);
+            PageEntity<Rediscontent> rediscontentPageEntity = rediscontentService.selectByPage(page, pageSize);
             for (Rediscontent rediscontent : rediscontentPageEntity.getList()) {
                 JSONObject jo1 = new JSONObject();
                 jo1.put("rediscontent", rediscontent);

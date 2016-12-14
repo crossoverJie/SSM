@@ -2,15 +2,11 @@ var page = 1,
     rows = 10;
 $(document).ready(function () {
     initJqPaginator();
-    //加载俱乐部列表
-    load_club_list();
+    //加载
+    load_redis_list();
     $(".query_but").click(function () {//查询按钮
         page = 1;
-        load_club_list();
-    });
-    //跳转到场馆登记
-    $('.go_register').click(function () {
-        window.location.href = getPath() + "/page/club_register.jsp";
+        load_redis_list();
     });
 });
 //初始化分页
@@ -27,7 +23,7 @@ function initJqPaginator() {
         onPageChange: function (num, type) {
             page = num;
             if (type == "change") {
-                load_club_list();
+                load_redis_list();
             }
         }
     });
@@ -36,7 +32,7 @@ function initJqPaginator() {
 function create_club_list(clubs) {
     var club = clubs.club;
     var user = clubs.user;
-    var phone = (club.phone != "" ? (club.phone) : (club.servicePhone));
+    var phone = 0;
     var authText = "未授权";
     if (club.isAuthority == 2) {
         authText = "已授权";
@@ -45,32 +41,31 @@ function create_club_list(clubs) {
         + '<div class="br">'
         + '<div class="product_link">'
         + '<div class="product_phc">'
-        + '<img class="phc" src="' + fileSystemPath + '/Image/club/' + club.logo + '" onerror="imgError(this,\'club_logo\')" >'
+        + '<img class="phc" src="" >'
         + '</div>'
         + '<span class="product_name">' + club.name + '</span></div>'
         + '<div class="product_link toto">' + authText + '</div>'
         + '<div class="product_link toto">'
-        + '<span>' + user.userName + '</span>'
+        + '<span>' + "" + '</span>'
         + '</div>'
         + '<div class="product_link toto">'
         + '<span>' + phone + '</span></div>'
         + '<div class="product_link toto">'
-        + '<span>' + club.coordination + '</span></div>'
+        + '<span>' + 0 + '</span></div>'
         + '<div class="product_link toto product_operation">'
-        + '<span onclick="edit_club(' + club.clubId + ')">编辑</span>'
-        + '<span onclick="edit_del(' + club.clubId + ')">删除</span></div></div>'
+        + '<span onclick="edit_club(' + 0 + ')">编辑</span>'
+        + '<span onclick="edit_del(' + 0 + ')">删除</span></div></div>'
         + '</div>';
     return html;
 }
 //加载俱乐部列表
-function load_club_list() {
+function load_redis_list() {
     var name = $("#name").val();
-    var isAuthority = $("#authorization").val();
     $.ajax({
         type: 'POST',
-        url: getPath() + '/club_list.action',
+        url: getPath() + '/redis/redis_list',
         async: false,
-        data: {name: name, page: page, pageSize: rows, isAuthority: isAuthority},
+        data: {name: name, page: page, pageSize: rows},
         datatype: 'json',
         success: function (data) {
             if (data.result == 1) {
@@ -93,27 +88,4 @@ function load_club_list() {
         }
     });
     $(".product_box:even").css("background", "#e6e6e6");//隔行变色
-}
-function edit_club(clubId) {
-    window.location.href = getPath() + "/page/club_register.jsp?clubId=" + clubId;
-}
-function edit_del(clubId) {
-    var sure = confirm("确认删除吗？");
-    if (sure) {
-        $.ajax({
-            type: 'POST',
-            url: getPath() + '/club_delete.action',
-            async: false,
-            data: {clubId: clubId},
-            datatype: 'json',
-            success: function (data) {
-                if (data.result == 1) {
-                    alert("删除成功");
-                    window.location.reload();
-                } else {
-                    alert(data.msg);
-                }
-            }
-        })
-    }
 }

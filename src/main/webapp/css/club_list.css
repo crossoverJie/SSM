@@ -1,0 +1,181 @@
+.box {
+    width: 96%;
+    height: auto;
+    overflow-y: visible;
+}
+
+/*��ѯҳ��*/
+.query_box {
+    height: 30px;
+    line-height: 30px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.query_txt {
+    float: left;
+}
+
+.query_box input {
+    height: 30px;
+    width: 150px;
+    border: 1px solid #ccc;
+    margin-left: 20px;
+    text-indent: 5px;
+    float: left;
+}
+
+.query_but {
+    width: 80px;
+    height: 100%;
+    background: #f39800;
+    border-radius: 5px;
+    color: #fff;
+    text-align: center;
+    float: left;
+    margin-left: 20px;
+    cursor: pointer;
+    color: white;
+}
+
+/*����˵��*/
+.explain_box {
+    width: auto;
+    height: 40px;
+    background: #3b3838;
+    border: 1px solid #ccc;
+    color: white;
+    font-size: 14px
+}
+
+.explain_link {
+    font-size: 14px;
+    height: 100%;
+    width: 18%;
+    display: inline-block;
+    float: left;
+    line-height: 40px;
+    text-align: center;
+    overflow: hidden;
+    word-wrap: break-word;
+    word-break: normal;
+    color: white;
+}
+
+.product_link {
+    height: 100%;
+    width: 18%;
+    display: inline-block;
+    float: left;
+    line-height: 40px;
+    text-align: center;
+    overflow: hidden;
+    word-wrap: break-word;
+    word-break: normal;
+    color: black;
+}
+
+/*��Ʒ����*/
+.product_content {
+    border: solid 1px #efefef;
+}
+
+.product_box {
+    width: auto;
+    height: 76px;
+    overflow: hidden;
+}
+
+.br {
+    height: 70px;
+    position: relative;
+}
+
+.product_link {
+    line-height: 20px;
+}
+
+.product_name {
+    display: block;
+}
+
+.product_name, .toto {
+    height: auto;
+    line-height: 20px;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.product_phc {
+    position: relative;
+    width: 76px;
+    height: 76px;
+    float: left;
+    overflow: hidden;
+}
+
+.product_phc .phc {
+    width: 90%;
+    height: 90%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.product_2, .product_3, .product_4, .product_5, .product_6, .product_7, .product_8 {
+    height: auto;
+    margin-top: 15px;
+}
+
+#pagination {
+    float: left;
+}
+
+.oper_box {
+    float: left;
+    margin: 28px 0 0 20px;
+}
+
+.previous, .next {
+    cursor: pointer;
+}
+
+.product_data {
+    color: #079bff;
+}
+
+.product_data:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/*��Ʒ����*/
+.product_operation {
+    width: 10%;
+}
+
+.product_operation span {
+    color: #67ccfe;
+    width: 50%;
+    display: block;
+    text-align: center;
+    float: left;
+    cursor: pointer;
+}
+
+.go_register {
+    float: left;
+    background: #f39800;
+    color: white;
+}
+
+#authorization {
+    float: left;
+    height: 30px;
+    margin-left: 20px;
+    text-indent: 5px;
+    width: 100px;
+}

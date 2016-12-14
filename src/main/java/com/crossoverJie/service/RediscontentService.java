@@ -18,6 +18,6 @@ public interface RediscontentService {
 
     Rediscontent selectByPrimaryKey(Integer id);
 
-    PageEntity<Rediscontent> queryByPage(Integer pageNum, Integer pageSize);
+    PageEntity<Rediscontent> selectByPage(Integer pageNum, Integer pageSize);
 
 }
