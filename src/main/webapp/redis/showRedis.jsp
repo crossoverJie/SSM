@@ -38,11 +38,11 @@
         <div class="query_but">查询</div>
     </div>
     <div class="explain_box">
-        <div class="explain_link">场馆标识/名称</div>
-        <div class="explain_link">是否授权</div>
-        <div class="explain_link">老板账号</div>
-        <div class="explain_link">场馆电话</div>
-        <div class="explain_link">详细地址</div>
+        <div class="explain_link">ID</div>
+        <div class="explain_link">content</div>
+        <div class="explain_link">null</div>
+        <div class="explain_link">null</div>
+        <div class="explain_link">null</div>
         <div class="explain_link product_operation">操作</div>
     </div>
     <div class="product_content">

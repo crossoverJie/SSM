@@ -29,22 +29,16 @@ function initJqPaginator() {
     });
 }
 //俱乐部列表
-function create_club_list(clubs) {
-    var club = clubs.club;
-    var user = clubs.user;
+function create_club_list(redisContens) {
     var phone = 0;
-    var authText = "未授权";
-    if (club.isAuthority == 2) {
-        authText = "已授权";
-    }
     var html = '<div class="product_box">'
         + '<div class="br">'
         + '<div class="product_link">'
         + '<div class="product_phc">'
         + '<img class="phc" src="" >'
         + '</div>'
-        + '<span class="product_name">' + club.name + '</span></div>'
-        + '<div class="product_link toto">' + authText + '</div>'
+        + '<span class="product_name">' + redisContens.id + '</span></div>'
+        + '<div class="product_link toto">' + redisContens.content + '</div>'
         + '<div class="product_link toto">'
         + '<span>' + "" + '</span>'
         + '</div>'
@@ -72,9 +66,9 @@ function load_redis_list() {
                 $(".product_length_number").html(data.data.count);
                 var html = "";
                 var count = data.data.count;
-                for (var i = 0; i < data.data.clubs.length; i++) {
-                    var clubs = data.data.clubs[i];
-                    html += create_club_list(clubs);
+                for (var i = 0; i < data.data.redisContents.length; i++) {
+                    var redisContent = data.data.redisContents[i];
+                    html += create_club_list(redisContent.rediscontent);
                 }
                 $(".product_content").html(html);
                 //这里是分页的插件
