@@ -28,7 +28,7 @@ function initJqPaginator() {
         }
     });
 }
-//俱乐部列表
+//列表
 function create_club_list(redisContens) {
     var phone = 0;
     var html = '<div class="product_box">'
@@ -52,7 +52,7 @@ function create_club_list(redisContens) {
         + '</div>';
     return html;
 }
-//加载俱乐部列表
+//加载列表
 function load_redis_list() {
     var name = $("#name").val();
     $.ajax({
