@@ -26,7 +26,7 @@ public class MethodCacheInterceptor implements MethodInterceptor {
      */
     public MethodCacheInterceptor() {
         try {
-            // 分割字符串
+            // 分割字符串 这里没有加入任何方法
             String[] targetNames = {};
             String[] methodNames = {};
 

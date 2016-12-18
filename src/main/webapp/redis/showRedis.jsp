@@ -30,7 +30,7 @@
 <div class="box">
 
     <div class="query_box">
-        <div class="query_txt">场馆名称</div>
+        <div class="query_txt">名称</div>
         <input type="text" id="name"/>
         <select name="authorization" id="authorization">
             <option value="0">全部</option>
