@@ -34,7 +34,9 @@
 
 # 在JavaWeb应用中使用Redis
 博客地址：[SSM(七)在JavaWeb应用中使用Redis](http://crossoverjie.top/2016/12/18/SSM7/)
+
 简书地址：[http://www.jianshu.com/p/77cd4ae50c8b](http://www.jianshu.com/p/77cd4ae50c8b)
+
 效果实例：
 ![01.gif](https://dn-mhke0kuv.qbox.me/6ea54b0dca15c3628c9f.gif)
 
