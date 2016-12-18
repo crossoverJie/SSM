@@ -32,6 +32,20 @@
 # 联系作者
 - [crossoverJie@gmail.com](mailto:crossoverJie@gmail.com)
 
+# 在JavaWeb应用中使用Redis
+博客地址：[SSM(七)在JavaWeb应用中使用Redis](http://crossoverjie.top/2016/12/18/SSM7/)
+简书地址：[http://www.jianshu.com/p/77cd4ae50c8b](http://www.jianshu.com/p/77cd4ae50c8b)
+效果实例：
+![01.gif](https://dn-mhke0kuv.qbox.me/6ea54b0dca15c3628c9f.gif)
+
+- [前言](http://crossoverjie.top/2016/12/18/SSM7/#前言)
+- [Redis安装与使用？](http://crossoverjie.top/2016/12/18/SSM7/#Redis安装与使用)
+- [Spring整合Redis](http://crossoverjie.top/2016/12/18/SSM7/#Spring整合Redis)
+- [前端联调](http://crossoverjie.top/2016/12/18/SSM7/#前端联调)
+- [总结](http://crossoverjie.top/2016/12/18/SSM7/#总结)
+
+---
+
 # 跨域传输
 博客地址：[SSM(六)跨域传输](http://crossoverjie.top/2016/10/18/SSM6/)
 简书地址：[http://www.jianshu.com/p/3e3d9a89fafc](http://www.jianshu.com/p/3e3d9a89fafc)
