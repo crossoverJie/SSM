@@ -7,7 +7,7 @@
     <groupId>com.crossoverJie</groupId>
     <artifactId>SSM</artifactId>
     <packaging>war</packaging>
-    <version>1.6.1</version>
+    <version>1.7.0</version>
     <build>
         <plugins>
             <plugin>
