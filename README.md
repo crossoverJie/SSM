@@ -38,7 +38,7 @@
 简书地址：[http://www.jianshu.com/p/77cd4ae50c8b](http://www.jianshu.com/p/77cd4ae50c8b)
 
 效果实例：
-![01.gif](https://dn-mhke0kuv.qbox.me/6ea54b0dca15c3628c9f.gif)
+![01.gif](http://www.crossoverjie.top/img/01.gif)
 
 - [前言](http://crossoverjie.top/2016/12/18/SSM7/#前言)
 - [Redis安装与使用？](http://crossoverjie.top/2016/12/18/SSM7/#Redis安装与使用)
