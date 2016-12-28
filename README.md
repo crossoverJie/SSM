@@ -9,7 +9,8 @@
 > **演示地址: [http://www.crossoverjie.top/SSM](http://www.crossoverjie.top/SSM)**
 
 ---
-
+# 下期预告---数据源切换(利用Spring AOP动态切换数据源)
+---
 # SSM
 使用Idea搭建的Maven项目，会不定期更新一些在实际开发中使用的技巧(ps:目前不是很忙基本上一周一更)。
 没有复杂的业务流程，更不是XXXX系统，只有一些技术的分享。想要学习XX系统的：
@@ -126,5 +127,4 @@
 
 ---
 
-# 下期预告---数据源切换(利用Spring AOP动态切换数据源)
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badge/)
