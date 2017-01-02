@@ -33,7 +33,7 @@
         <property name="location" value="classpath:jdbc.properties" />
     </bean>
 
-    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
+    <bean id="ssm1DataSource" class="com.alibaba.druid.pool.DruidDataSource"
           init-method="init" destroy-method="close">
         <!-- 指定连接数据库的驱动 -->
         <property name="driverClassName" value="${jdbc.driverClass}" />
@@ -68,6 +68,48 @@
         <!-- 配置监控统计拦截的filters，去掉后监控界面sql无法统计 -->
         <property name="filters" value="stat" />
     </bean>
+
+    <bean id="ssm2DataSource" class="com.alibaba.druid.pool.DruidDataSource"
+          init-method="init" destroy-method="close">
+        <!-- 指定连接数据库的驱动 -->
+        <property name="driverClassName" value="${jdbc.driverClass}"/>
+        <property name="url" value="${jdbc.url2}"/>
+        <property name="username" value="${jdbc.user2}"/>
+        <property name="password" value="${jdbc.password2}"/>
+        <property name="initialSize" value="3"/>
+        <property name="minIdle" value="3"/>
+        <property name="maxActive" value="20"/>
+        <!-- 配置获取连接等待超时的时间 -->
+        <property name="maxWait" value="60000"/>
+        <!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+        <property name="timeBetweenEvictionRunsMillis" value="60000"/>
+        <!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+        <property name="minEvictableIdleTimeMillis" value="300000"/>
+        <property name="validationQuery" value="SELECT 'x'"/>
+        <property name="testWhileIdle" value="true"/>
+        <property name="testOnBorrow" value="false"/>
+        <property name="testOnReturn" value="false"/>
+        <!-- 打开PSCache，并且指定每个连接上PSCache的大小 -->
+        <property name="poolPreparedStatements" value="true"/>
+        <property name="maxPoolPreparedStatementPerConnectionSize"
+                  value="20"/>
+        <!-- 配置监控统计拦截的filters，去掉后监控界面sql无法统计 -->
+        <property name="filters" value="stat"/>
+    </bean>
+
+
+    <bean id="dataSource" class="com.crossoverJie.util.DynamicDataSource">
+        <property name="targetDataSources">
+            <map key-type="java.lang.String">
+                <entry key="ssm1DataSource" value-ref="ssm1DataSource"/>
+                <entry key="ssm2DataSource" value-ref="ssm2DataSource"/>
+            </map>
+        </property>
+        <!--默认数据源
+        <property name="defaultTargetDataSource" ref="ssm1DataSource"/>
+        -->
+    </bean>
+
 
     <!-- spring和MyBatis完美整合，不需要mybatis的配置映射文件 -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
@@ -165,10 +207,11 @@
         <property name="redisTemplate" ref="redisTemplate"/>
     </bean>
 
+
     <!--配置切面拦截方法 -->
-    <aop:config proxy-target-class="true">
+    <aop:config proxy-target-class="false">
         <!--将com.crossoverJie.service包下的所有select开头的方法加入拦截
-        去掉select则加入所有方法w
+        去掉select则加入所有方法
         -->
         <aop:pointcut id="controllerMethodPointcut" expression="
         execution(* com.crossoverJie.service.*.select*(..))"/>
@@ -176,7 +219,7 @@
         <aop:pointcut id="selectMethodPointcut" expression="
         execution(* com.crossoverJie.dao..*Mapper.select*(..))"/>
 
-        <aop:advisor advice-ref="methodCacheInterceptor" pointcut-ref="controllerMethodPointcut"/>
+        <aop:advisor advice-ref="methodCacheInterceptor" pointcut-ref="controllerMethodPointcut" order="1"/>
     </aop:config>
 
 
