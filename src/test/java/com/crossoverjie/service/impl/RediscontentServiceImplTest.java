@@ -27,7 +27,7 @@ public class RediscontentServiceImplTest {
 
     @Test
     public void selectByPrimaryKey() throws Exception {
-        Rediscontent rediscontent = rediscontentService.selectByPrimaryKey(1);
+        Rediscontent rediscontent = rediscontentService.selectByPrimaryKey(30);
         System.out.println(JSON.toJSONString(rediscontent));
     }
 

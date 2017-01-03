@@ -34,4 +34,11 @@ public class DataSourceServiceImplTest {
         System.out.println(JSON.toJSONString(datasource));
     }
 
+
+    @Test
+    public void selectByPrimaryKey2() throws Exception {
+        Datasource datasource = dataSourceService.selectByPrimaryKey(7);
+        System.out.println(JSON.toJSONString(datasource));
+    }
+
 }

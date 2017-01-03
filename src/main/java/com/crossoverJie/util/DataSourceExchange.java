@@ -12,9 +12,14 @@ import org.aspectj.lang.JoinPoint;
 public class DataSourceExchange {
 
 
-    public void befor(JoinPoint joinPoint) {
-        if (DataSourceHolder.getDataSources() != null) {
-            return;
+    public void before(JoinPoint point) {
+
+        Class<?> aClass = point.getTarget().getClass();
+        String whichDataSource = aClass.getName().substring(25, aClass.getName().lastIndexOf("."));
+        if ("ssmone".equals(whichDataSource)) {
+            DataSourceHolder.setDataSources(Constants.DATASOURCE_ONE);
+        } else {
+            DataSourceHolder.setDataSources(Constants.DATASOURCE_TWO);
         }
 
     }
@@ -23,4 +28,5 @@ public class DataSourceExchange {
     public void after() {
         DataSourceHolder.setDataSources(null);
     }
+
 }

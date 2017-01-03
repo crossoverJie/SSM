@@ -1,4 +1,4 @@
-package com.crossoverJie.service.impl;
+package com.crossoverJie.service.ssmone;
 
 import com.crossoverJie.dao.RediscontentMapper;
 import com.crossoverJie.pojo.Rediscontent;

@@ -105,10 +105,11 @@
                 <entry key="ssm2DataSource" value-ref="ssm2DataSource"/>
             </map>
         </property>
-        <!--默认数据源
+        <!--默认数据源-->
         <property name="defaultTargetDataSource" ref="ssm1DataSource"/>
-        -->
+
     </bean>
+
 
 
     <!-- spring和MyBatis完美整合，不需要mybatis的配置映射文件 -->
@@ -169,11 +170,11 @@
      <bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>
 
     <!-- 开启Shiro注解 -->
-     <bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"
-           depends-on="lifecycleBeanPostProcessor"/>
-     <bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
-         <property name="securityManager" ref="securityManager"/>
-     </bean>
+    <!--     <bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"
+               depends-on="lifecycleBeanPostProcessor"/>
+         <bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
+             <property name="securityManager" ref="securityManager"/>
+         </bean>-->
 
     <!-- jedis 配置 -->
     <bean id="poolConfig" class="redis.clients.jedis.JedisPoolConfig">
@@ -208,6 +209,7 @@
     </bean>
 
 
+    <bean id="dataSourceExchange" class="com.crossoverJie.util.DataSourceExchange"/>
     <!--配置切面拦截方法 -->
     <aop:config proxy-target-class="false">
         <!--将com.crossoverJie.service包下的所有select开头的方法加入拦截
@@ -219,7 +221,14 @@
         <aop:pointcut id="selectMethodPointcut" expression="
         execution(* com.crossoverJie.dao..*Mapper.select*(..))"/>
 
-        <aop:advisor advice-ref="methodCacheInterceptor" pointcut-ref="controllerMethodPointcut" order="1"/>
+        <aop:advisor advice-ref="methodCacheInterceptor" pointcut-ref="controllerMethodPointcut"/>
+
+        <aop:aspect ref="dataSourceExchange">
+            <aop:pointcut id="dataSourcePointcut" expression="execution(* com.crossoverJie.service.*.*(..))"/>
+            <aop:before pointcut-ref="dataSourcePointcut" method="before"/>
+            <aop:after pointcut-ref="dataSourcePointcut" method="after"/>
+        </aop:aspect>
+
     </aop:config>
 
 
