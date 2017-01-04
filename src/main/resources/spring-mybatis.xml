@@ -223,6 +223,7 @@
 
         <aop:advisor advice-ref="methodCacheInterceptor" pointcut-ref="controllerMethodPointcut"/>
 
+        <!--所有数据库操作的方法加入切面-->
         <aop:aspect ref="dataSourceExchange">
             <aop:pointcut id="dataSourcePointcut" expression="execution(* com.crossoverJie.service.*.*(..))"/>
             <aop:before pointcut-ref="dataSourcePointcut" method="before"/>
