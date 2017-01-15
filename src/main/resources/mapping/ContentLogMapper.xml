@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.crossoverJie.dao.ContentLogMapper">
+    <resultMap id="BaseResultMap" type="com.crossoverJie.pojo.ContentLog">
+        <id column="log_id" property="logId" jdbcType="INTEGER"/>
+        <result column="contentId" property="contentid" jdbcType="INTEGER"/>
+        <result column="contentName" property="contentname" jdbcType="VARCHAR"/>
+        <result column="content" property="content" jdbcType="VARCHAR"/>
+        <result column="createDate" property="createdate" jdbcType="VARCHAR"/>
+    </resultMap>
+    <sql id="Example_Where_Clause">
+        <where>
+            <foreach collection="oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" suffix=")" prefixOverrides="and">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach collection="criterion.value" item="listItem" open="(" close=")"
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
+    <sql id="Update_By_Example_Where_Clause">
+        <where>
+            <foreach collection="example.oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" suffix=")" prefixOverrides="and">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach collection="criterion.value" item="listItem" open="(" close=")"
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
+    <sql id="Base_Column_List">
+    log_id, contentId, contentName, content, createDate
+  </sql>
+    <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.crossoverJie.pojo.ContentLogExample">
+        select
+        <if test="distinct">
+            distinct
+        </if>
+        <include refid="Base_Column_List"/>
+        from content_log
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+        <if test="orderByClause != null">
+            order by ${orderByClause}
+        </if>
+    </select>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        from content_log
+        where log_id = #{logId,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from content_log
+    where log_id = #{logId,jdbcType=INTEGER}
+  </delete>
+    <delete id="deleteByExample" parameterType="com.crossoverJie.pojo.ContentLogExample">
+        delete from content_log
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+    </delete>
+    <insert id="insert" parameterType="com.crossoverJie.pojo.ContentLog">
+    insert into content_log (log_id, contentId, contentName, 
+      content, createDate)
+    values (#{logId,jdbcType=INTEGER}, #{contentid,jdbcType=INTEGER}, #{contentname,jdbcType=VARCHAR}, 
+      #{content,jdbcType=VARCHAR}, #{createdate,jdbcType=VARCHAR})
+  </insert>
+    <insert id="insertSelective" parameterType="com.crossoverJie.pojo.ContentLog">
+        insert into content_log
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="logId != null">
+                log_id,
+            </if>
+            <if test="contentid != null">
+                contentId,
+            </if>
+            <if test="contentname != null">
+                contentName,
+            </if>
+            <if test="content != null">
+                content,
+            </if>
+            <if test="createdate != null">
+                createDate,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="logId != null">
+                #{logId,jdbcType=INTEGER},
+            </if>
+            <if test="contentid != null">
+                #{contentid,jdbcType=INTEGER},
+            </if>
+            <if test="contentname != null">
+                #{contentname,jdbcType=VARCHAR},
+            </if>
+            <if test="content != null">
+                #{content,jdbcType=VARCHAR},
+            </if>
+            <if test="createdate != null">
+                #{createdate,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <select id="countByExample" parameterType="com.crossoverJie.pojo.ContentLogExample" resultType="java.lang.Integer">
+        select count(*) from content_log
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+    </select>
+    <update id="updateByExampleSelective" parameterType="map">
+        update content_log
+        <set>
+            <if test="record.logId != null">
+                log_id = #{record.logId,jdbcType=INTEGER},
+            </if>
+            <if test="record.contentid != null">
+                contentId = #{record.contentid,jdbcType=INTEGER},
+            </if>
+            <if test="record.contentname != null">
+                contentName = #{record.contentname,jdbcType=VARCHAR},
+            </if>
+            <if test="record.content != null">
+                content = #{record.content,jdbcType=VARCHAR},
+            </if>
+            <if test="record.createdate != null">
+                createDate = #{record.createdate,jdbcType=VARCHAR},
+            </if>
+        </set>
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+    <update id="updateByExample" parameterType="map">
+        update content_log
+        set log_id = #{record.logId,jdbcType=INTEGER},
+        contentId = #{record.contentid,jdbcType=INTEGER},
+        contentName = #{record.contentname,jdbcType=VARCHAR},
+        content = #{record.content,jdbcType=VARCHAR},
+        createDate = #{record.createdate,jdbcType=VARCHAR}
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+    <update id="updateByPrimaryKeySelective" parameterType="com.crossoverJie.pojo.ContentLog">
+        update content_log
+        <set>
+            <if test="contentid != null">
+                contentId = #{contentid,jdbcType=INTEGER},
+            </if>
+            <if test="contentname != null">
+                contentName = #{contentname,jdbcType=VARCHAR},
+            </if>
+            <if test="content != null">
+                content = #{content,jdbcType=VARCHAR},
+            </if>
+            <if test="createdate != null">
+                createDate = #{createdate,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where log_id = #{logId,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.crossoverJie.pojo.ContentLog">
+    update content_log
+    set contentId = #{contentid,jdbcType=INTEGER},
+      contentName = #{contentname,jdbcType=VARCHAR},
+      content = #{content,jdbcType=VARCHAR},
+      createDate = #{createdate,jdbcType=VARCHAR}
+    where log_id = #{logId,jdbcType=INTEGER}
+  </update>
+</mapper>

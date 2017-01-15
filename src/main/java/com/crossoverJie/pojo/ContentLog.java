@@ -1,6 +1,8 @@
 package com.crossoverJie.pojo;
 
-public class Content {
+public class ContentLog {
+    private Integer logId;
+
     private Integer contentid;
 
     private String contentname;
@@ -8,6 +10,14 @@ public class Content {
     private String content;
 
     private String createdate;
+
+    public Integer getLogId() {
+        return logId;
+    }
+
+    public void setLogId(Integer logId) {
+        this.logId = logId;
+    }
 
     public Integer getContentid() {
         return contentid;

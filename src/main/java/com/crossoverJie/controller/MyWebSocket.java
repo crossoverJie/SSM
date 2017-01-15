@@ -100,7 +100,7 @@ public class MyWebSocket {
         Content content = new Content() ;
         content.setContent(message);
         SimpleDateFormat sm = new SimpleDateFormat("yyyy-MM-dd HH:mm:dd") ;
-        content.setCreateDate(sm.format(new Date()));
+        content.setCreatedate(sm.format(new Date()));
         contentService.insertSelective(content) ;
 
         this.session.getBasicRemote().sendText(message);
