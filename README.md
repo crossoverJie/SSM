@@ -9,7 +9,7 @@
 > **演示地址: [http://www.crossoverjie.top/SSM](http://www.crossoverjie.top/SSM)**
 
 ---
-# 下期预告---数据源切换(利用Spring AOP动态切换数据源)
+# 下期预告---反射的实际应用:构建日志对象
 ---
 # SSM
 使用Idea搭建的Maven项目，会不定期更新一些在实际开发中使用的技巧(ps:目前不是很忙基本上一周一更)。
@@ -21,7 +21,7 @@
 
 
 目前使用到的技术：
-- Spring SpringMVC Mybatis Druid Lucene Shiro websocket
+- Spring SpringMVC Mybatis Druid Lucene Shiro websocket Redis 
 - `BootStrap`,` EasyUI`
 
 *有任何问题和欢迎Issues*
@@ -32,6 +32,21 @@
 
 # 联系作者
 - [crossoverJie@gmail.com](mailto:crossoverJie@gmail.com)
+
+# 动态切换数据源
+博客地址：[SSM(八)动态切换数据源](http://crossoverjie.top/2017/01/05/SSM8/)
+
+简书地址：[http://www.jianshu.com/p/9d3d92b37c0a](http://www.jianshu.com/p/9d3d92b37c0a)
+
+效果实例：
+![3](http://img.blog.csdn.net/20170105012845706?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMTg2NjE3OTM=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
+- [前言](http://crossoverjie.top/2017/01/05/SSM8/#前言)
+- [手动切换数据源](http://crossoverjie.top/2017/01/05/SSM8/#手动切换数据源)
+- [自动切换数据源](http://crossoverjie.top/2017/01/05/SSM8/#自动切换数据源)
+- [总结](http://crossoverjie.top/2017/01/05/SSM8/#总结)
+
+---
 
 # 在JavaWeb应用中使用Redis
 博客地址：[SSM(七)在JavaWeb应用中使用Redis](http://crossoverjie.top/2016/12/18/SSM7/)
@@ -128,3 +143,4 @@
 ---
 
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badge/)
+
