@@ -32,7 +32,14 @@ public class ContentLogServiceImplTest {
 
     @Test
     public void insertSelective() throws Exception {
+
+        Content content = new Content();
+        content.setContent("asdsf");
+        content.setCreatedate("2016-12-09");
+        contentService.insertSelective(content);
+
         ContentLog log = new ContentLog();
+        log.setContentid(content.getContentid());
         log.setContent("asdsf");
         log.setCreatedate("2016-12-09");
         contentLogService.insertSelective(log);
