@@ -11,7 +11,7 @@
 > **演示地址: [http://www.crossoverjie.top/SSM](http://www.crossoverjie.top/SSM)**
 
 ---
-# 下期预告---反射的实际应用:构建日志对象
+# 下期预告---:thought_balloon::thought_balloon::thought_balloon:
 ---
 # SSM
 使用Idea搭建的Maven项目，会不定期更新一些在实际开发中使用的技巧(ps:目前不是很忙基本上一周一更)。
