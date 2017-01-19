@@ -6,6 +6,8 @@
 
 > 开源中国: http://my.oschina.net/crossoverjie
 
+> 掘金主页: https://gold.xitu.io/user/576d4aaf7db2a20054ea4544
+
 > **演示地址: [http://www.crossoverjie.top/SSM](http://www.crossoverjie.top/SSM)**
 
 ---
@@ -32,6 +34,35 @@
 
 # 联系作者
 - [crossoverJie@gmail.com](mailto:crossoverJie@gmail.com)
+
+# 动态切换数据源
+博客地址：[SSM(九) 反射的实际应用 - 构建日志对象](http://crossoverjie.top/2017/01/19/SSM9/)
+
+简书地址：[http://www.jianshu.com/p/5a23ff31204f](http://www.jianshu.com/p/5a23ff31204f)
+
+效果实例：
+```java
+    @Test
+    public void insertSelective2() throws Exception {
+        Content content = new Content();
+        content.setContent("你好");
+        content.setContentname("1");
+        content.setCreatedate("2016-09-23");
+
+        contentService.insertSelective(content);
+
+        ContentLog log = new ContentLog();
+        CommonUtil.setLogValueModelToModel(content, log);
+        contentLogService.insertSelective(log);
+    }
+```
+
+- [前言](http://crossoverjie.top/2017/01/19/SSM9/#前言)
+- [传统日志](http://crossoverjie.top/2017/01/19/SSM9/#传统日志)
+- [利用反射构建日志](http://crossoverjie.top/2017/01/19/SSM9/#利用反射构建日志)
+- [总结](http://crossoverjie.top/2017/01/19/SSM9/#总结)
+
+---
 
 # 动态切换数据源
 博客地址：[SSM(八)动态切换数据源](http://crossoverjie.top/2017/01/05/SSM8/)
