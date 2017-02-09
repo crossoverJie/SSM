@@ -35,7 +35,7 @@
 # 联系作者
 - [crossoverJie@gmail.com](mailto:crossoverJie@gmail.com)
 
-# 动态切换数据源
+#  反射的实际应用 - 构建日志对象
 博客地址：[SSM(九) 反射的实际应用 - 构建日志对象](http://crossoverjie.top/2017/01/19/SSM9/)
 
 简书地址：[http://www.jianshu.com/p/5a23ff31204f](http://www.jianshu.com/p/5a23ff31204f)
