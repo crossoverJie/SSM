@@ -2,9 +2,7 @@ package com.crossoverJie.dao;
 
 import com.crossoverJie.pojo.Content;
 import com.crossoverJie.pojo.ContentExample;
-
 import java.util.List;
-
 import org.apache.ibatis.annotations.Param;
 
 public interface ContentMapper {

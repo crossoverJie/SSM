@@ -42,7 +42,7 @@
         }
     </style>
 </head>
-<body class="myElement" data="/ssm">
+<body class="myElement" data="/SSM-WEB">
 <!-- 顶部导航栏 -->
 <jsp:include page="../../public/nav-top.jsp"></jsp:include>
 

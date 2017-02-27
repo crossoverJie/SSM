@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.crossoverJie.dao.ContentDao" >
     <resultMap id="BaseResultMap" type="com.crossoverJie.pojo.Content" >
-        <id column="contentid" property="contentId" jdbcType="INTEGER"/>
+        <id column="contentId" property="contentid" jdbcType="INTEGER"/>
         <result property="contentname" column="contentname"/>
         <result property="content" column="content"/>
         <result property="createdate" column="createdate"/>

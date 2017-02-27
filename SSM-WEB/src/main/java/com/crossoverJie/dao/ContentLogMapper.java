@@ -2,9 +2,7 @@ package com.crossoverJie.dao;
 
 import com.crossoverJie.pojo.ContentLog;
 import com.crossoverJie.pojo.ContentLogExample;
-
 import java.util.List;
-
 import org.apache.ibatis.annotations.Param;
 
 public interface ContentLogMapper {
