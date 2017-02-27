@@ -3,7 +3,7 @@
 <mapper namespace="com.crossoverJie.dao.ContentLogMapper">
     <resultMap id="BaseResultMap" type="com.crossoverJie.pojo.ContentLog">
         <id column="log_id" property="logId" jdbcType="INTEGER"/>
-        <result column="contentId" property="contentid" jdbcType="INTEGER"/>
+        <result column="contentid" property="contentId" jdbcType="INTEGER"/>
         <result column="contentName" property="contentname" jdbcType="VARCHAR"/>
         <result column="content" property="content" jdbcType="VARCHAR"/>
         <result column="createDate" property="createdate" jdbcType="VARCHAR"/>
