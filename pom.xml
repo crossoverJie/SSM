@@ -11,6 +11,7 @@
 
     <modules>
         <module>SSM-WEB</module>
+        <module>SSM-API</module>
     </modules>
 
     <properties>
