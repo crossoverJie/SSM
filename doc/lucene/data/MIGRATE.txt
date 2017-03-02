@@ -1,0 +1,125 @@
+# Apache Lucene Migration Guide
+
+## Lucene 3.x index format no longer supported
+
+Lucene 5 no longer supports the Lucene 3.x index format. Opening
+indexes will result in `IndexFormatTooOldException`. It is recommended
+to either reindex all your data, or upgrade the old indexes with
+the `IndexUpgrader` tool of latest Lucene 4 version (4.10.x).
+Those indexes can then be read (see next section) with Lucene 5.
+
+## Support for previous Lucene 4.x index formats moved to new module
+
+Lucene 5 will by default only read indexes created with Lucene 5.
+To read and upgrade Lucene 4.x indexes, you must add the
+`lucene-backward-codecs.jar` to the classpath. It is recommended
+to upgrade the old indexes with the `IndexUpgrader` tool,
+so you can remove the backward-codecs module from classpath.
+This will also improve performance.
+
+## All file handling APIs changed to Java 7 NIO.2 (LUCENE-5945)
+
+All APIs around Directory and other file-based resources were changed to make
+use of the new Java 7 NIO.2 API. It is no longer possible to pass
+java.io.File onames to FSDirectory classes. FSDirectory classes now requires
+java.nio.file.Path instances. This allows to place index directories also
+on "virtual file systems" like ZIP or TAR files. To migrate existing code
+use java.io.File#toPath().
+
+In addition, make sure that custom directory implementations throw the new
+IOException types, because Lucene cannot understand the old legacy
+IOExceptions (like java.io.FileNotFoundException) instead of the new ones
+like java.nio.file.NoSuchFileException.
+
+## Directory and LockFactory APIs restructured (LUCENE-5953)
+
+Locking is now under the responsibility of the Directory implementation.
+LockFactory is only used by subclasses of BaseDirectory to delegate locking
+to an impl class. LockFactories are responsible to create a Lock on behalf
+of a BaseDirectory subclass.
+
+The following changes in existing code need to be done:
+
+- LockFactory implementations are singletons now and have no state. They only
+  need to implement one method: makeLock(Directory dir, String name).
+  The passed directory can be used to determine the corect file system path
+  for the lock file or similar, so it knows where to create the lock.
+  In addition, the factory may check with instanceof, if the lock factory
+  can be used with the type of directory at all.
+- It was never really supported to place lock files outside of the index
+  directory and this functionality was removed. If you still rely on this,
+  you can use the following trick: Use FileSwitchDirectory and delegate
+  the file extension ".lock" to another Directory instance pointing to
+  another path. FileSwitchDirectory also delegates lock files based on
+  the extension.
+- If you wrap another directory using FilterDirectory, you cannot make use
+  of LockFactories anymore, because only BaseDirectory knows about them.
+  To wrap locking, you must hook into FilterDirectory.makeLock(String name)
+  and wrap the Lock instance returned, as needed. See MockDirectoryWrapper
+  in lucene-test-framework for an example.
+- It is no longer allowed to pass "null" as LockFactory to FSDirectory
+  implementations. You have to explicitely pass the platform default to the
+  directory (currently always NativeFSLockFactory.INSTANCE, but subject to
+  change!). To get the platform default, call FSLockFactory.getDefault().
+
+## Removed Reader from Tokenizer constructor (LUCENE-5388)
+
+The constructor of Tokenizer no longer takes Reader, as this was a leftover
+from before it was reusable. See the org.apache.lucene.analysis package
+documentation for more details.
+
+## Refactored Collector API (LUCENE-5299)
+
+The Collector API has been refactored to use a different Collector instance
+per segment. It is possible to migrate existing collectors painlessly by
+extending SimpleCollector instead of Collector: SimpleCollector is a
+specialization of Collector that returns itself as a per-segment Collector.
+
+## Refactored FieldComparator API (LUCENE-5702)
+
+Like collectors (see above), field comparators have been refactored to
+produce a new comparator (called LeafFieldComparator) per segment. It is
+possible to migrate existing comparators painlessly by extending
+SimpleFieldComparator, which will implements both FieldComparator and
+LeafFieldComparator and return itself as a per-segment comparator.
+
+## Removed ChainedFilter (LUCENE-5984)
+
+Users are advised to switch to BooleanFilter instead.
+
+## Removed OpenBitSet (LUCENE-6010)
+
+OpenBitSet only differs from LongBitSet by its ability to grow automatically.
+In case growth is required, it would need to be managed externally.
+
+## FunctionValues.exist() Behavior Changes due to ValueSource bug fixes (LUCENE-5961)
+
+Bugs fixed in several ValueSource functions may result in different behavior in 
+situations where some documents do not have values for fields wrapped in other 
+ValueSources.  Users who want to preserve the previous behavior may need to wrap 
+their ValueSources in a "DefFunction" along with a ConstValueSource of "0.0".
+
+## PayloadAttributeImpl.clone() (LUCENE-6055)
+
+PayloadAttributeImpl.clone() did a shallow clone which was incorrect, and was
+fixed to do a deep clone. If you require shallow cloning of the underlying bytes,
+you should override PayloadAttributeImpl.clone() to do a shallow clone instead.
+
+## Removed out-of-order scoring (LUCENE-6179)
+
+Bulk scorers must now always collect documents in order. If you have custom
+collectors, the acceptsDocsOutOfOrder method has been removed and collectors
+can safely assume that they will be collected in order.
+
+## Renamed "Atomic" to "Leaf" for segment readers (LUCENE-5569)
+
+AtomicReader and AtomicReaderContext are now called LeafReader and LeafReaderContext, respectively.
+
+## Removed custom Analyzer per-document indexing APIs from IndexWriter (LUCENE-6212)
+
+These methods were removed because they are dangerous since they let
+you analyze each document arbitrarily differently, making it difficult
+to properly analyze text at query time and easy to accidentally "lose"
+search hits.  Instead, you should break out text into separate fields
+and use a different analyzer for each field with
+PerFieldAnalyzerWrapper.
