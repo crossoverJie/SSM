@@ -11,6 +11,7 @@
     </parent>
     <artifactId>SSM-SERVICE</artifactId>
     <name>${project.artifactId}</name>
+    <packaging>war</packaging>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
