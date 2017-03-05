@@ -11,7 +11,7 @@
 > **演示地址: [http://www.crossoverjie.top/SSM](http://www.crossoverjie.top/SSM)**
 
 ---
-# 下期预告---项目重构-互联网项目的Maven结构
+# 下期预告---:thought_balloon::thought_balloon::thought_balloon:
 ---
 # SSM
 使用Idea搭建的Maven项目，会不定期更新一些在实际开发中使用的技巧(ps:目前不是很忙基本上一周一更)。
@@ -34,6 +34,21 @@
 
 # 联系作者
 - [crossoverJie@gmail.com](mailto:crossoverJie@gmail.com)
+
+#  反射的实际应用 - 构建日志对象
+博客地址：[SSM(九) 反射的实际应用 - 构建日志对象](http://crossoverjie.top/2017/01/19/SSM9/)
+
+掘金地址：[https://gold.xitu.io/post/58b98ab01b69e6006b12ab83](https://gold.xitu.io/post/58b98ab01b69e6006b12ab83)
+
+效果实例：
+![1.jpg](https://ooo.0o0.ooo/2017/03/04/58b99366edad6.jpg)
+
+- [前言](https://crossoverjie.top/2017/03/04/SSM10/#前言)
+- [为什么需要分模块](https://crossoverjie.top/2017/03/04/SSM10/#为什么需要分模块)
+- [各个模块的作用](https://crossoverjie.top/2017/03/04/SSM10/#各个模块的作用)
+- [总结](https://crossoverjie.top/2017/03/04/SSM10/#总结)
+
+---
 
 #  反射的实际应用 - 构建日志对象
 博客地址：[SSM(九) 反射的实际应用 - 构建日志对象](http://crossoverjie.top/2017/01/19/SSM9/)
