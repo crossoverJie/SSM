@@ -36,7 +36,7 @@
 - [crossoverJie@gmail.com](mailto:crossoverJie@gmail.com)
 
 #  反射的实际应用 - 构建日志对象
-博客地址：[SSM(九) 反射的实际应用 - 构建日志对象](http://crossoverjie.top/2017/01/19/SSM9/)
+博客地址：[SSM(十) 项目重构-互联网项目的Maven结构](http://crossoverjie.top/2017/03/04/SSM10/)
 
 掘金地址：[https://gold.xitu.io/post/58b98ab01b69e6006b12ab83](https://gold.xitu.io/post/58b98ab01b69e6006b12ab83)
 
