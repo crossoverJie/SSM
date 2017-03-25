@@ -21,11 +21,6 @@
 
 这里有两个完整的项目，都写有注释也比较简单。
 
-
-目前使用到的技术：
-- Spring SpringMVC Mybatis Druid Lucene Shiro websocket Redis 
-- `BootStrap`,` EasyUI`
-
 *有任何问题和欢迎Issues*
 
 > **觉得不错的朋友可以点下`star`,`watch`,`fork`也算是对我的鼓励了。**
@@ -35,7 +30,7 @@
 # 联系作者
 - [crossoverJie@gmail.com](mailto:crossoverJie@gmail.com)
 
-#  反射的实际应用 - 构建日志对象
+#  项目重构-互联网项目的Maven结构
 博客地址：[SSM(十) 项目重构-互联网项目的Maven结构](http://crossoverjie.top/2017/03/04/SSM10/)
 
 掘金地址：[https://gold.xitu.io/post/58b98ab01b69e6006b12ab83](https://gold.xitu.io/post/58b98ab01b69e6006b12ab83)
