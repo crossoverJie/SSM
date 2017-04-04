@@ -13,7 +13,7 @@
     <!-- Spring和mybatis的配置文件 -->
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>classpath:spring-mybatis.xml</param-value>
+        <param-value>classpath*:spring/*.xml</param-value>
     </context-param>
     <!-- 编码过滤器 -->
     <filter>
