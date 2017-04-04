@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+
+    <classPathEntry
+            location="/Users/chenjie/Documents/dev/apache-maven-3.3.9/repository/mysql/mysql-connector-java/5.1.21/mysql-connector-java-5.1.21.jar"/>
+
+
+    <context id="context">
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+        <jdbcConnection
+                connectionURL="jdbc:mysql://127.0.0.1:3306/ssm?characterEncoding=utf8"
+                driverClass="com.mysql.jdbc.Driver" password="tiger" userId="root"/>
+        <javaModelGenerator targetPackage="com.crossoverJie.pojo"
+                            targetProject="src/main/java"/>
+        <sqlMapGenerator targetPackage="com.crossoverJie.dao"
+                         targetProject="src/main/resources/mapping"/>
+        <javaClientGenerator targetPackage="com.crossoverJie.dao"
+                             targetProject="src/main/java" type="XMLMAPPER"/>
+
+        <table schema="ssm" tableName="content">
+        </table>
+        <table schema="ssm" tableName="content_log">
+        </table>
+
+    </context>
+
+    <!--    <context id="context2">
+            <commentGenerator>
+                <property name="suppressDate" value="true"/>
+                <property name="suppressAllComments" value="true"/>
+            </commentGenerator>
+            <jdbcConnection
+                    connectionURL="jdbc:mysql://127.0.0.1:3306/ssm2?characterEncoding=utf8"
+                    driverClass="com.mysql.jdbc.Driver" password="tiger" userId="root"/>
+            <javaModelGenerator targetPackage="com.crossoverJie.pojo"
+                                targetProject="src/main/java"/>
+            <sqlMapGenerator targetPackage="com.crossoverJie.dao"
+                             targetProject="src/main/resources/mapping"/>
+            <javaClientGenerator targetPackage="com.crossoverJie.dao"
+                                 targetProject="src/main/java" type="XMLMAPPER"/>
+
+            <table schema="ssm" tableName="datasource">
+            </table>
+
+        </context>-->
+
+</generatorConfiguration>
