@@ -51,6 +51,9 @@ public class UserInfoApiImpl implements UserInfoApi {
      * @param t_user
      */
     private void buildUserInfoRsp(UserInfoRsp userInfoRsp, T_user t_user) {
+        if (t_user ==  null){
+            t_user = new T_user() ;
+        }
         CommonUtil.setLogValueModelToModel(t_user,userInfoRsp);
     }
 }

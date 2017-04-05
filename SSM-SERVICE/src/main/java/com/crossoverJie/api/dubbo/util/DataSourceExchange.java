@@ -20,7 +20,7 @@ public class DataSourceExchange {
         Class<?> aClass = point.getTarget().getClass();
 
         //获取包名用于区分不同数据源
-        String whichDataSource = aClass.getName().substring(25, aClass.getName().lastIndexOf("."));
+        String whichDataSource = aClass.getName().substring(35, aClass.getName().lastIndexOf("."));
         if ("ssmone".equals(whichDataSource)) {
             DataSourceHolder.setDataSources(Constants.DATASOURCE_ONE);
         } else {

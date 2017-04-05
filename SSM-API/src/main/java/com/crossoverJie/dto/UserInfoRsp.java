@@ -3,51 +3,35 @@ package com.crossoverJie.dto;
 import java.io.Serializable;
 
 public class UserInfoRsp implements Serializable {
-    private int userId ;
-    private String username ;
-    private String password ;
-    private String description ;
-    private int age ;
+    private Integer id;
+    private String userName;
+    private String password;
+    private Integer roleId ;
 
-
-
-    public int getUserId() {
-        return userId;
+    public Integer getId() {
+        return id;
     }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setId(Integer id) {
+        this.id = id;
     }
-
-    public String getUsername() {
-        return username;
+    public String getUserName() {
+        return userName;
     }
-
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
-
     public String getPassword() {
         return password;
     }
-
     public void setPassword(String password) {
         this.password = password;
     }
 
-    public String getDescription() {
-        return description;
+    public Integer getRoleId() {
+        return roleId;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
+    public void setRoleId(Integer roleId) {
+        this.roleId = roleId;
     }
 }
