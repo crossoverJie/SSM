@@ -6,6 +6,8 @@ import com.crossoverJie.api.dubbo.pojo.T_user;
 import com.crossoverJie.api.dubbo.service.T_userService;
 import com.crossoverJie.api.dubbo.util.CommonUtil;
 import com.crossoverJie.dto.UserInfoRsp;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
@@ -16,6 +18,8 @@ import org.springframework.beans.factory.annotation.Autowired;
  */
 @Service
 public class UserInfoApiImpl implements UserInfoApi {
+    private static Logger logger = LoggerFactory.getLogger(UserInfoApiImpl.class);
+
     @Autowired
     private T_userService t_userService ;
 
@@ -28,6 +32,7 @@ public class UserInfoApiImpl implements UserInfoApi {
      */
     @Override
     public UserInfoRsp getUserInfo(int userId) throws Exception {
+        logger.info("用户查询Id="+userId);
 
         //返回对象
         UserInfoRsp userInfoRsp = new UserInfoRsp() ;
