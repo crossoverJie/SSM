@@ -1,14 +1,6 @@
 > 个人博客：http://crossoverJie.top
 
-> 简书：http://www.jianshu.com/users/e2d07947c112/latest_articles
-
-> CSDN: http://blog.csdn.net/qq_18661793
-
-> 开源中国: http://my.oschina.net/crossoverjie
-
 > 掘金主页: https://gold.xitu.io/user/576d4aaf7db2a20054ea4544
-
-> **演示地址: [http://www.crossoverjie.top/SSM](http://www.crossoverjie.top/SSM)**
 
 ---
 # 下期预告---拆分为分布式架构(基于Dubbo)
