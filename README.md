@@ -3,7 +3,7 @@
 > 掘金主页: https://gold.xitu.io/user/576d4aaf7db2a20054ea4544
 
 ---
-# 下期预告---拆分为分布式架构(基于Dubbo)
+# 下期预告---:thought_balloon::thought_balloon::thought_balloon:
 ---
 # SSM
 使用Idea搭建的Maven项目，会不定期更新一些在实际开发中使用的技巧(ps:目前不是很忙基本上一周一更)。
@@ -21,6 +21,30 @@
 
 # 联系作者
 - [crossoverJie@gmail.com](mailto:crossoverJie@gmail.com)
+
+# 基于dubbo的分布式架构
+博客地址：[SSM(十一) 基于dubbo的分布式架构](http://crossoverjie.top/2017/04/07/SSM11/)
+
+掘金地址：[https://juejin.im/post/58e674ec44d904006d35af5c](https://juejin.im/post/58e674ec44d904006d35af5c)
+
+效果实例：
+
+![2.jpg](https://ooo.0o0.ooo/2017/04/07/58e66e4917dd1.jpg)
+
+- [前言](http://crossoverjie.top/2017/04/07/SSM11/#前言)
+- [浅谈分布式架构](http://crossoverjie.top/2017/04/07/SSM11/#浅谈分布式架构)
+  * [单系统](http://crossoverjie.top/2017/04/07/SSM11/#单系统)
+  * [垂直拆分-多应用](http://crossoverjie.top/2017/04/07/SSM11/#垂直拆分-多应用)
+  * [SOA服务化](http://crossoverjie.top/2017/04/07/SSM11/#SOA服务化)
+
+- [基于dubbo的实现](http://crossoverjie.top/2017/04/07/SSM11/#基于dubbo的实现)
+  * [对外提供服务](http://crossoverjie.top/2017/04/07/SSM11/#对外提供服务)
+  * [安装管理控制台](http://crossoverjie.top/2017/04/07/SSM11/#安装管理控制台)
+  * [消费服务](http://crossoverjie.top/2017/04/07/SSM11/#消费服务)
+  
+- [总结](http://crossoverjie.top/2017/04/07/SSM11/#总结)
+
+---
 
 #  项目重构-互联网项目的Maven结构
 博客地址：[SSM(十) 项目重构-互联网项目的Maven结构](http://crossoverjie.top/2017/03/04/SSM10/)
