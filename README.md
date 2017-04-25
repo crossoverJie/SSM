@@ -22,6 +22,9 @@
 # 联系作者
 - [crossoverJie@gmail.com](mailto:crossoverJie@gmail.com)
 
+![weixinchat.jpg](https://ooo.0o0.ooo/2017/04/25/58ff4d5fd9fa3.jpg)
+
+
 # dubbo日志插件
 博客地址：[SSM(十二) 基于dubbo的分布式架构](http://crossoverjie.top/2017/04/25/SSM12/)
 
