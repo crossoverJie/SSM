@@ -10,6 +10,13 @@
                         http://www.springframework.org/schema/mvc
                         http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
+    <context:component-scan base-package="com.crossoverJie.api.controller">
+        <context:include-filter type="annotation"
+                                expression="org.springframework.stereotype.Controller" />
+        <context:include-filter type="annotation"
+                                expression="org.springframework.web.bind.annotation.ControllerAdvice" />
+    </context:component-scan>
+
     <!-- 引入properties配置文件 -->
     <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="locations">
@@ -20,8 +27,18 @@
         </property>
     </bean>
 
+    <bean class="com.crossoverJie.dubbo.http.conf.HttpProviderConf">
+        <property name="usePackage">
+            <list>
+                <value>com.crossoverJie.api</value>
+            </list>
+        </property>
+    </bean>
+    <context:component-scan base-package="com.crossoverJie.dubbo.http"/>
+    <mvc:default-servlet-handler />
+
     <!-- 自动扫描该包，使SpringMVC认为包下用了@controller注解的类是控制器 -->
-    <context:component-scan base-package="com.crossoverJie.controller"/>
+    <!--<context:component-scan base-package="com.crossoverJie.controller"/>-->
     <!--避免IE执行AJAX时，返回JSON出现下载文件 -->
     <!--<bean id="mappingJacksonHttpMessageConverter"
           class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">

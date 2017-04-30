@@ -5,6 +5,7 @@ import com.crossoverJie.api.UserInfoApi;
 import com.crossoverJie.api.dubbo.pojo.T_user;
 import com.crossoverJie.api.dubbo.service.T_userService;
 import com.crossoverJie.api.dubbo.util.CommonUtil;
+import com.crossoverJie.dto.UserInfoReq;
 import com.crossoverJie.dto.UserInfoRsp;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,17 +27,17 @@ public class UserInfoApiImpl implements UserInfoApi {
     /**
      * 获取用户信息
      *
-     * @param userId
+     * @param userInfoReq
      * @return
      * @throws Exception
      */
     @Override
-    public UserInfoRsp getUserInfo(int userId) throws Exception {
-        logger.info("用户查询Id="+userId);
+    public UserInfoRsp getUserInfo(UserInfoReq userInfoReq) throws Exception {
+        logger.info("用户查询Id="+userInfoReq.getId());
 
         //返回对象
         UserInfoRsp userInfoRsp = new UserInfoRsp() ;
-        T_user t_user = t_userService.selectByPrimaryKey(userId) ;
+        T_user t_user = t_userService.selectByPrimaryKey(userInfoReq.getId()) ;
 
         //构建
         buildUserInfoRsp(userInfoRsp,t_user) ;

@@ -1,5 +1,6 @@
 package com.crossoverJie.api;
 
+import com.crossoverJie.dto.UserInfoReq;
 import com.crossoverJie.dto.UserInfoRsp;
 
 /**
@@ -12,9 +13,9 @@ public interface UserInfoApi {
 
     /**
      * 获取用户信息
-     * @param userId
+     * @param userInfoReq
      * @return
      * @throws Exception
      */
-    public UserInfoRsp getUserInfo(int userId) throws Exception;
+    public UserInfoRsp getUserInfo(UserInfoReq userInfoReq) throws Exception;
 }

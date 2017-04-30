@@ -105,6 +105,10 @@
             <groupId>com.crossoverJie</groupId>
             <artifactId>SSM-TRACE-FILTER</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.crossoverJie</groupId>
+            <artifactId>SSM-HTTP-PROVIDER</artifactId>
+        </dependency>
 
 
         <dependency>

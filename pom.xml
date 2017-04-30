@@ -40,6 +40,11 @@
                 <artifactId>SSM-TRACE-FILTER</artifactId>
                 <version>1.0.0</version>
             </dependency>
+            <dependency>
+                <groupId>com.crossoverJie</groupId>
+                <artifactId>SSM-HTTP-PROVIDER</artifactId>
+                <version>1.0.0</version>
+            </dependency>
 
             <dependency>
                 <groupId>junit</groupId>
