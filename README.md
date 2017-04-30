@@ -3,7 +3,7 @@
 > 掘金主页: https://gold.xitu.io/user/576d4aaf7db2a20054ea4544
 
 ---
-# 下期预告---dubbo日志插件
+# 下期预告---将dubbo暴露为http服务
 ---
 # SSM
 使用Idea搭建的Maven项目，会不定期更新一些在实际开发中使用的技巧(ps:目前不是很忙基本上一周一更)。
@@ -21,6 +21,9 @@
 
 # 联系作者
 - [crossoverJie@gmail.com](mailto:crossoverJie@gmail.com)
+
+![weixinchat.jpg](https://ooo.0o0.ooo/2017/04/25/58ff4d5fd9fa3.jpg)
+
 
 # dubbo日志插件
 博客地址：[SSM(十二) 基于dubbo的分布式架构](http://crossoverjie.top/2017/04/25/SSM12/)
@@ -51,8 +54,9 @@
   
 - [总结](http://crossoverjie.top/2017/04/25/SSM12/#总结)
   * [使用方法](http://crossoverjie.top/2017/04/25/SSM12/#使用方法)
-    	- [安装](http://crossoverjie.top/2017/04/25/SSM12/#安装)
-    	- [使用](http://crossoverjie.top/2017/04/25/SSM12/#使用)
+  
+    - [安装](http://crossoverjie.top/2017/04/25/SSM12/#安装)
+    - [使用](http://crossoverjie.top/2017/04/25/SSM12/#使用)
 
 
 ---
