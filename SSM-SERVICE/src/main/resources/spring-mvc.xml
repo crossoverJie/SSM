@@ -27,6 +27,7 @@
         </property>
     </bean>
 
+    <!--dubbo服务暴露为http服务-->
     <bean class="com.crossoverJie.dubbo.http.conf.HttpProviderConf">
         <property name="usePackage">
             <list>
@@ -34,6 +35,7 @@
             </list>
         </property>
     </bean>
+    <!--扫描暴露包-->
     <context:component-scan base-package="com.crossoverJie.dubbo.http"/>
     <mvc:default-servlet-handler />
 
