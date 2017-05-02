@@ -38,6 +38,8 @@
     </bean>
     <!--扫描暴露包-->
     <context:component-scan base-package="com.crossoverJie.dubbo.http"/>
+
+    <!--处理静态资源-->
     <mvc:default-servlet-handler />
 
     <!-- 自动扫描该包，使SpringMVC认为包下用了@controller注解的类是控制器 -->
