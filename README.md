@@ -3,7 +3,7 @@
 > 掘金主页: https://gold.xitu.io/user/576d4aaf7db2a20054ea4544
 
 ---
-# 下期预告---将dubbo暴露为http服务
+# 下期预告---将dubbo暴露出http服务
 ---
 # SSM
 使用Idea搭建的Maven项目，会不定期更新一些在实际开发中使用的技巧(ps:目前不是很忙基本上一周一更)。
