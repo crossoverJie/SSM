@@ -1,6 +1,6 @@
-> 个人博客：http://crossoverJie.top
+**个人博客：http://crossoverJie.top**
 
-> 掘金主页: https://gold.xitu.io/user/576d4aaf7db2a20054ea4544
+**掘金主页: https://gold.xitu.io/user/576d4aaf7db2a20054ea4544**
 
 ---
 # 下期预告---:thought_balloon::thought_balloon::thought_balloon:
@@ -23,6 +23,25 @@
 
 ![weixinchat.jpg](https://ooo.0o0.ooo/2017/04/25/58ff4d5fd9fa3.jpg)
 
+# 将dubbo暴露出HTTP服务
+博客地址：[SSM(十三) 将dubbo暴露出HTTP服务](http://crossoverjie.top/2017/05/02/SSM13/)
+
+掘金地址：[https://juejin.im/post/5908a811da2f60005d188aee)(https://juejin.im/post/5908a811da2f60005d188aee)
+
+效果实例：
+
+![dubbo-http封面.jpg](https://user-gold-cdn.xitu.io/2017/5/3/fa1a532f5289bb58f887a8561ec236ed.jpg)
+
+- [前言](http://crossoverjie.top/2017/05/02/SSM13/#前言)
+- [准备工作](http://crossoverjie.top/2017/05/02/SSM13/#准备工作)
+  * [HttpProviderConf配置类](http://crossoverjie.top/2017/05/02/SSM13/#HttpProviderConf配置类)
+  * [请求响应入参、出参](http://crossoverjie.top/2017/05/02/SSM13/#请求响应入参、出参)
+  * [暴露服务controller](http://crossoverjie.top/2017/05/02/SSM13/#暴露服务controller)
+  
+- [总结](http://crossoverjie.top/2017/05/02/SSM13/#总结)
+
+
+---
 
 # dubbo日志插件
 博客地址：[SSM(十二) 基于dubbo的分布式架构](http://crossoverjie.top/2017/04/25/SSM12/)
