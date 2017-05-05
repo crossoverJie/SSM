@@ -26,7 +26,7 @@
 # 将dubbo暴露出HTTP服务
 博客地址：[SSM(十三) 将dubbo暴露出HTTP服务](http://crossoverjie.top/2017/05/02/SSM13/)
 
-掘金地址：[https://juejin.im/post/5908a811da2f60005d188aee)(https://juejin.im/post/5908a811da2f60005d188aee)
+掘金地址：[https://juejin.im/post/5908a811da2f60005d188aee](https://juejin.im/post/5908a811da2f60005d188aee)
 
 效果实例：
 
