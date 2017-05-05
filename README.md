@@ -3,19 +3,18 @@
 > 掘金主页: https://gold.xitu.io/user/576d4aaf7db2a20054ea4544
 
 ---
-# 下期预告---将dubbo暴露出http服务
+# 下期预告---:thought_balloon::thought_balloon::thought_balloon:
 ---
 # SSM
 使用Idea搭建的Maven项目，会不定期更新一些在实际开发中使用的技巧(ps:目前不是很忙基本上一周一更)。
 没有复杂的业务流程，更不是XXXX系统，只有一些技术的分享。想要学习XX系统的：
+
 - [company_open](https://github.com/crossoverJie/company_open)
 - [SalesStore](https://github.com/crossoverJie/SalesStore)
 
-这里有两个完整的项目。
-
 *有任何问题和欢迎Issues*
 
-> **觉得不错的朋友可以点下`star`,`watch`,`fork`也算是对我的鼓励了。**
+**觉得不错的朋友可以点下`star`,`watch`,`fork`**
 
 ---
 
