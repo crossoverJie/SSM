@@ -3,7 +3,7 @@
 **掘金主页: https://gold.xitu.io/user/576d4aaf7db2a20054ea4544**
 
 ---
-# 下期预告---:thought_balloon::thought_balloon::thought_balloon:
+# 下期预告---: 基于注解的防重插件
 ---
 # SSM
 使用Idea搭建的Maven项目，会不定期更新一些在实际开发中使用的技巧(ps:目前不是很忙基本上一周一更)。
@@ -14,7 +14,7 @@
 
 *有任何问题和欢迎Issues*
 
-**觉得不错的朋友可以点下`star`,`watch`,`fork`**
+**觉得不错的朋友可以点下`star`,`fork`**
 
 ---
 
