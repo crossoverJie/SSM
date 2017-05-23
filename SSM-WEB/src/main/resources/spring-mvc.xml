@@ -20,17 +20,11 @@
         </property>
     </bean>
 
+    <aop:aspectj-autoproxy proxy-target-class="true"></aop:aspectj-autoproxy>
+
     <!-- 自动扫描该包，使SpringMVC认为包下用了@controller注解的类是控制器 -->
     <context:component-scan base-package="com.crossoverJie.controller"/>
-    <!--避免IE执行AJAX时，返回JSON出现下载文件 -->
-    <!--<bean id="mappingJacksonHttpMessageConverter"
-          class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">
-        <property name="supportedMediaTypes">
-            <list>
-                <value>text/html;charset=UTF-8</value>
-            </list>
-        </property>
-    </bean>-->
+
     <mvc:annotation-driven/>
     <!-- 启动SpringMVC的注解功能，完成请求和注解POJO的映射
     -->
@@ -52,42 +46,5 @@
         <!-- 内存中的最大值 -->
         <property name="maxInMemorySize" value="40960"/>
     </bean>
-
-
-    <!-- 需要加入缓存的类或方法 -->
-    <!--<bean id="methodCachePointCut" class="org.springframework.aop.support.RegexpMethodPointcutAdvisor">
-        <property name="advice">
-            <ref local="methodCacheInterceptor"/>
-        </property>
-        <property name="patterns">
-            <list>
-                &lt;!&ndash; 确定正则表达式列表 &ndash;&gt;
-                <value>com\.crossoverJie\.service\.impl\...*ServiceImpl.*</value>
-            </list>
-        </property>
-    </bean>-->
-
-
-    <!-- 方法拦截器（拦截Controller包中的所有被RequestMapping注解的方法） MethodInterceptor -->
-    <!--    <aop:config proxy-target-class="true">
-            <aop:pointcut id="controllerMethodPointcut" expression="execution(* com.crossoverJie.controller..*(..)) and
-            @annotation(org.springframework.web.bind.annotation.RequestMapping) .contentService*"/>
-
-            <aop:advisor advice-ref="methodCacheInterceptor" pointcut-ref="controllerMethodPointcut"/>
-        </aop:config>-->
-
-
-    <!-- 配置拦截器 -->
-    <!--<mvc:interceptors>
-        <mvc:interceptor>
-            &lt;!&ndash; <mvc:mapping path="/**"/>拦截所有 &ndash;&gt;
-            <mvc:mapping path="/user/**"/>
-            <mvc:mapping path="/role/**"/>
-            <mvc:mapping path="/function/**"/>
-            <mvc:mapping path="/news/**"/>
-            <mvc:mapping path="/img/**"/>
-            <bean class="com.crossoverJie.intercept.Intercept"></bean>
-        </mvc:interceptor>
-    </mvc:interceptors>-->
 
 </beans>

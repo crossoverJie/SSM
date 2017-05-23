@@ -55,6 +55,16 @@
             <scope>test</scope>
         </dependency>
 
+        <dependency>
+            <groupId>com.crossoverJie</groupId>
+            <artifactId>SSM-API</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.crossoverJie</groupId>
+            <artifactId>SSM-REQUEST-CHECK</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
 
         <!-- 添加Servlet支持 -->
         <dependency>

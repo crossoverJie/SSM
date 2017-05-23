@@ -211,7 +211,7 @@
 
     <bean id="dataSourceExchange" class="com.crossoverJie.util.DataSourceExchange"/>
     <!--配置切面拦截方法 -->
-    <aop:config proxy-target-class="false">
+    <aop:config>
         <!--将com.crossoverJie.service包下的所有select开头的方法加入拦截
         去掉select则加入所有方法
         -->

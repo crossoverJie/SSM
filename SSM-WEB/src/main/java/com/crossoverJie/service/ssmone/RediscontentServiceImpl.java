@@ -46,4 +46,6 @@ public class RediscontentServiceImpl implements RediscontentService {
         rediscontentPageEntity.setCount(size);
         return rediscontentPageEntity;
     }
+
+
 }

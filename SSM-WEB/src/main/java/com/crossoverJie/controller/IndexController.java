@@ -96,8 +96,7 @@ public class IndexController {
         Integer toIndex = userList.size() >= Integer.parseInt(page) * 5 ? Integer.parseInt(page) * 5 : userList.size();
         List<User> newList = userList.subList((Integer.parseInt(page) - 1) * 5, toIndex);
         model.addAttribute("userList",newList) ;
-        String s = this.genUpAndDownPageCode(Integer.parseInt(page), userList.size(), q, 5, request.getServletContext().
-                getContextPath());
+        String s = this.genUpAndDownPageCode(Integer.parseInt(page), userList.size(), q, 5, "");
         model.addAttribute("pageHtml",s) ;
         model.addAttribute("q",q) ;
         model.addAttribute("resultTotal",userList.size()) ;

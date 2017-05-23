@@ -1,9 +1,15 @@
 package com.crossoverJie.controller;
 
+import com.crossoverJie.dao.RediscontentMapper;
+import com.crossoverJie.enums.StatusEnum;
 import com.crossoverJie.pojo.Rediscontent;
+import com.crossoverJie.req.RedisContentReq;
+import com.crossoverJie.request.anotation.ReqNoDesc;
+import com.crossoverJie.res.BaseResponse;
 import com.crossoverJie.service.RediscontentService;
 import com.crossoverJie.util.CommonUtil;
 import com.crossoverJie.util.PageEntity;
+import com.crossoverJie.vo.NULLBody;
 import com.github.pagehelper.PageHelper;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
@@ -11,8 +17,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
 
@@ -25,6 +30,10 @@ public class RedisController {
 
     @Autowired
     private RediscontentService rediscontentService;
+
+
+    @Autowired
+    private RediscontentMapper rediscontentMapper;
 
 
     @RequestMapping("/redis_list")
@@ -52,6 +61,30 @@ public class RedisController {
         }
         //构建返回
         CommonUtil.responseBuildJson(response, jsonObject);
+    }
+
+    @ReqNoDesc
+    @RequestMapping(value = "/createRedisContent",method = RequestMethod.POST)
+    @ResponseBody
+    public BaseResponse<NULLBody> createRedisContent(@RequestBody RedisContentReq redisContentReq){
+        BaseResponse<NULLBody> response = new BaseResponse<NULLBody>() ;
+
+        Rediscontent rediscontent = new Rediscontent() ;
+        try {
+            CommonUtil.setLogValueModelToModel(redisContentReq,rediscontent);
+            rediscontentMapper.insertSelective(rediscontent) ;
+            response.setReqNo(redisContentReq.getReqNo());
+            response.setCode(StatusEnum.SUCCESS.getCode());
+            response.setMessage(StatusEnum.SUCCESS.getMessage());
+        }catch (Exception e){
+            logger.error("system error",e);
+            response.setReqNo(response.getReqNo());
+            response.setCode(StatusEnum.FAIL.getCode());
+            response.setMessage(StatusEnum.FAIL.getMessage());
+        }
+
+        return response ;
+
     }
 
 }

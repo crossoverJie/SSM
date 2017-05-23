@@ -8,6 +8,15 @@ package com.crossoverJie.util;
 public class StringUtil {
 
     /**
+     * 字符串是否为空，包括blank
+     * @param str
+     * @return
+     */
+    public static boolean isNullOrEmpty(String str){
+        return null != str && 0 != str.trim().length() ? false : true;
+    }
+
+    /**
      * 判断是否是空
      * @param str
      * @return
