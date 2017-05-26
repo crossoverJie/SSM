@@ -3,7 +3,7 @@
 **掘金主页: https://gold.xitu.io/user/576d4aaf7db2a20054ea4544**
 
 ---
-# 下期预告---: 基于注解的防重插件
+# 下期预告---::thought_balloon::thought_balloon::thought_balloon:
 ---
 # SSM
 使用Idea搭建的Maven项目，会不定期更新一些在实际开发中使用的技巧(ps:目前不是很忙基本上一周一更)。
@@ -22,6 +22,30 @@
 - [crossoverJie@gmail.com](mailto:crossoverJie@gmail.com)
 
 ![weixinchat.jpg](https://ooo.0o0.ooo/2017/04/25/58ff4d5fd9fa3.jpg)
+
+# 基于annotation的http防重插件
+博客地址：[SSM(十四) 基于annotation的http防重插件](https://crossoverjie.top/2017/05/24/SSM14/)
+
+掘金地址：[https://juejin.im/post/59255a2ca22b9d0058aaba4a](https://juejin.im/post/59255a2ca22b9d0058aaba4a)
+
+**插件地址:https://github.com/crossoverJie/SSM-REQUEST-CHECK**
+
+效果实例：
+
+![封面.jpg](https://ooo.0o0.ooo/2017/05/24/59253bc0291c1.jpg)
+
+
+- [前言](https://crossoverjie.top/2017/05/24/SSM14/#前言)
+- [自定义注解](https://crossoverjie.top/2017/05/24/SSM14/#自定义注解)
+- [切面注解](https://crossoverjie.top/2017/05/24/SSM14/#切面注解)
+- [使用注解](https://crossoverjie.top/2017/05/24/SSM14/#使用注解)
+  * [统一异常controller](https://crossoverjie.top/2017/05/24/SSM14/#统一异常controller)
+  
+  
+- [总结](https://crossoverjie.top/2017/05/24/SSM14/#总结)
+
+
+---
 
 # 将dubbo暴露出HTTP服务
 博客地址：[SSM(十三) 将dubbo暴露出HTTP服务](http://crossoverjie.top/2017/05/02/SSM13/)
