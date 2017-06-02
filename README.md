@@ -16,6 +16,16 @@
 
 **觉得不错的朋友可以点下`star`,`fork`**
 
+**最近好几位朋友咨询我关于项目Clone下来之后找不到`CheckReqNo.java`之类的问题**
+
+> 这是由于我再项目中有依赖 https://github.com/crossoverJie/SSM-REQUEST-CHECK 去重插件。以及 https://github.com/crossoverJie/SSM-DUBBO-HTTP 这个dubbo日志拓展插件。
+
+*解决方案*
+
+- 如果不需要这两个插件再`pom`依赖中去掉相关依赖即可。
+- 如果需要则按照 https://github.com/crossoverJie/SSM-REQUEST-CHECK https://github.com/crossoverJie/SSM-DUBBO-HTTP `install`到本地即可。
+- 不要clone`master`分支，使用https://github.com/crossoverJie/SSM/releases/tag/2.1.0 或之前的tag即可。
+
 ---
 
 # 联系作者
