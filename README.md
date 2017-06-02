@@ -21,7 +21,7 @@
 > 这是由于我再项目中有依赖 https://github.com/crossoverJie/SSM-REQUEST-CHECK 去重插件。
 > 以及 https://github.com/crossoverJie/SSM-DUBBO-HTTP 这个dubbo日志拓展插件。
 
-*解决方案*
+*解决方案:*
 
 - 如果不需要这两个插件再 `pom` 依赖中去掉相关依赖即可。
 - 如果需要则按照 https://github.com/crossoverJie/SSM-REQUEST-CHECK , https://github.com/crossoverJie/SSM-DUBBO-HTTP `install` 到本地即可。
