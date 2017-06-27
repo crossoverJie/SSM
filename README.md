@@ -46,6 +46,9 @@
 │   ├── ├──resources
 │   ├── ├──├──mapping                          // *.mapper配置文件
 │   ├── ├──webapp                              // 前端文件
+├── doc
+│   ├──lucene                                  // lucene文件
+│   ├──sql                                     // sql脚本
 ├── .gitignore                                 // git忽略项
 ├── pom.xml                                    // 父pom
 ├── LICENSE               
@@ -72,6 +75,7 @@
 
 --- 
 
+# 常见问题
 最近好几位朋友咨询我关于项目Clone下来之后找不到`CheckReqNo.java`之类的问题
 
 这是由于我再项目中有依赖 
