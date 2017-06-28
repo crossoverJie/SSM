@@ -75,9 +75,9 @@
 
 --- 
 
-# 常见问题
+# 常见问题/注意事项
 
-## 找不到`CheckReqNo.java`类
+#### 找不到`CheckReqNo.java`类
 
 这是由于我再项目中有依赖: 
 
@@ -98,6 +98,7 @@ https://github.com/crossoverJie/SSM-DUBBO-HTTP
 
 `install` 到本地即可。
 - 不要clone `master`分支，使用https://github.com/crossoverJie/SSM/releases/tag/2.1.0 或之前的tag即可。
+
 
 ---
 
