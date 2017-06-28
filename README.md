@@ -76,9 +76,10 @@
 --- 
 
 # 常见问题
-最近好几位朋友咨询我关于项目Clone下来之后找不到`CheckReqNo.java`之类的问题
 
-这是由于我再项目中有依赖 
+## 找不到`CheckReqNo.java`类
+
+这是由于我再项目中有依赖: 
 
 https://github.com/crossoverJie/SSM-REQUEST-CHECK 
 
