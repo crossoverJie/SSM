@@ -1,7 +1,9 @@
 package com.crossoverJie.controller;
 
+import com.crossoverJie.dao.PriceMapper;
 import com.crossoverJie.dao.RediscontentMapper;
 import com.crossoverJie.enums.StatusEnum;
+import com.crossoverJie.pojo.Price;
 import com.crossoverJie.pojo.Rediscontent;
 import com.crossoverJie.req.RedisContentReq;
 import com.crossoverJie.request.anotation.CheckReqNo;
@@ -9,6 +11,7 @@ import com.crossoverJie.res.BaseResponse;
 import com.crossoverJie.service.RediscontentService;
 import com.crossoverJie.util.CommonUtil;
 import com.crossoverJie.util.PageEntity;
+import com.crossoverJie.util.ThreadPoolConfig;
 import com.crossoverJie.vo.NULLBody;
 import com.github.pagehelper.PageHelper;
 import net.sf.json.JSONArray;
@@ -20,6 +23,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
+import java.math.BigDecimal;
+import java.util.Random;
 
 
 @Controller
@@ -31,10 +36,14 @@ public class RedisController {
     @Autowired
     private RediscontentService rediscontentService;
 
+    @Autowired
+    private PriceMapper priceMapper ;
 
     @Autowired
     private RediscontentMapper rediscontentMapper;
 
+    @Autowired
+    private ThreadPoolConfig config ;
 
     @RequestMapping("/redis_list")
     public void club_list(HttpServletResponse response,
@@ -73,6 +82,84 @@ public class RedisController {
         try {
             CommonUtil.setLogValueModelToModel(redisContentReq,rediscontent);
             rediscontentMapper.insertSelective(rediscontent) ;
+            response.setReqNo(redisContentReq.getReqNo());
+            response.setCode(StatusEnum.SUCCESS.getCode());
+            response.setMessage(StatusEnum.SUCCESS.getMessage());
+        }catch (Exception e){
+            logger.error("system error",e);
+            response.setReqNo(response.getReqNo());
+            response.setCode(StatusEnum.FAIL.getCode());
+            response.setMessage(StatusEnum.FAIL.getMessage());
+        }
+
+        return response ;
+
+    }
+
+
+    @RequestMapping(value = "/price",method = RequestMethod.POST)
+    @ResponseBody
+    public BaseResponse<NULLBody> price(@RequestBody RedisContentReq redisContentReq){
+        BaseResponse<NULLBody> response = new BaseResponse<NULLBody>() ;
+
+        try {
+
+            for (int i=0 ;i<50 ;i++){
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Price price = priceMapper.selectByPrimaryKey(1);
+                        int ron = 20;
+                        price.setFront(price.getFront().subtract(new BigDecimal(ron)));
+                        price.setEnd(price.getEnd().add(new BigDecimal(ron)));
+
+                        priceMapper.updateByPrimaryKey(price) ;
+
+                        price.setId(null);
+                        priceMapper.insertSelective(price) ;
+                    }
+                }).start();
+
+            }
+
+            response.setReqNo(redisContentReq.getReqNo());
+            response.setCode(StatusEnum.SUCCESS.getCode());
+            response.setMessage(StatusEnum.SUCCESS.getMessage());
+        }catch (Exception e){
+            logger.error("system error",e);
+            response.setReqNo(response.getReqNo());
+            response.setCode(StatusEnum.FAIL.getCode());
+            response.setMessage(StatusEnum.FAIL.getMessage());
+        }
+
+        return response ;
+
+    }
+    @RequestMapping(value = "/threadPrice",method = RequestMethod.POST)
+    @ResponseBody
+    public BaseResponse<NULLBody> threadPrice(@RequestBody RedisContentReq redisContentReq){
+        BaseResponse<NULLBody> response = new BaseResponse<NULLBody>() ;
+
+        try {
+
+            for (int i=0 ;i<50 ;i++){
+                Thread t = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Price price = priceMapper.selectByPrimaryKey(1);
+                        int ron = new Random().nextInt(20);
+                        price.setFront(price.getFront().subtract(new BigDecimal(ron)));
+                        price.setEnd(price.getEnd().add(new BigDecimal(ron)));
+
+                        priceMapper.updateByPrimaryKey(price) ;
+
+                    }
+                });
+
+                config.submit(t);
+
+            }
+
             response.setReqNo(redisContentReq.getReqNo());
             response.setCode(StatusEnum.SUCCESS.getCode());
             response.setMessage(StatusEnum.SUCCESS.getMessage());

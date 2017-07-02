@@ -76,8 +76,8 @@
         <property name="url" value="${jdbc.url2}"/>
         <property name="username" value="${jdbc.user2}"/>
         <property name="password" value="${jdbc.password2}"/>
-        <property name="initialSize" value="3"/>
-        <property name="minIdle" value="3"/>
+        <property name="initialSize" value="1"/>
+        <property name="minIdle" value="1"/>
         <property name="maxActive" value="20"/>
         <!-- 配置获取连接等待超时的时间 -->
         <property name="maxWait" value="60000"/>
