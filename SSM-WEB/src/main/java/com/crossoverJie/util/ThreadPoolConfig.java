@@ -7,7 +7,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Function:
+ * Function:线程池
  *
  * @author crossoverJie
  *         Date: 2017/7/2 21:30
