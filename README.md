@@ -5,7 +5,7 @@
 - [https://github.com/crossoverJie/company_open](https://github.com/crossoverJie/company_open)
 - [https://github.com/crossoverJie/SalesStore](https://github.com/crossoverJie/SalesStore)
 
-## 目录结构
+## Directory Structure
 
 ```shell
 ├── SSM-API                                    // 通用API  
@@ -72,11 +72,11 @@
 * [x] [SSM(十二) SSM(十二) dubbo日志插件](http://crossoverjie.top/2017/04/25/SSM12/)
 * [x] [SSM(十三) 将dubbo暴露出HTTP服务](http://crossoverjie.top/2017/05/02/SSM13/)
 * [x] [SSM(十四) 基于annotation的http防重插件](https://crossoverjie.top/2017/05/24/SSM14/)
-* [ ] [乐观锁与悲观锁的实际应用](https://crossoverjie.top/)
+* [x] [乐观锁与悲观锁的实际应用](https://crossoverjie.top/2017/07/09/SSM15/)
 
 --- 
 
-# 常见问题/注意事项
+# Common Problem
 
 #### 找不到`CheckReqNo.java`类
 
@@ -103,7 +103,7 @@ https://github.com/crossoverJie/SSM-DUBBO-HTTP
 
 ---
 
-# 部分截图
+# Partial Screenshots
 
 ![封面.jpg](https://ooo.0o0.ooo/2017/05/24/59253bc0291c1.jpg)
 
@@ -113,7 +113,12 @@ https://github.com/crossoverJie/SSM-DUBBO-HTTP
 
 ![](http://i.imgur.com/nRcHFQg.png)
 
-# 联系作者
+
+# More Information
+
+[使用`springBoot+SpringCloud`构建微服务项目](https://github.com/crossoverJie/springboot-cloud)
+
+# Contact Author
 - [crossoverJie@gmail.com](mailto:crossoverJie@gmail.com)
 
 ![weixinchat.jpg](https://ooo.0o0.ooo/2017/07/05/595c77b2a080d.jpg)
