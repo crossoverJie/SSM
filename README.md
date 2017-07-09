@@ -69,7 +69,7 @@
 * [x] [SSM(九) 反射的实际应用 - 构建日志对象](http://crossoverjie.top/2017/01/19/SSM9/)
 * [x] [SSM(十) 项目重构-互联网项目的Maven结构](http://crossoverjie.top/2017/03/04/SSM10/)
 * [x] [SSM(十一) 基于dubbo的分布式架构](http://crossoverjie.top/2017/04/07/SSM11/)
-* [x] [SSM(十二) 基于dubbo的分布式架构](http://crossoverjie.top/2017/04/25/SSM12/)
+* [x] [SSM(十二) SSM(十二) dubbo日志插件](http://crossoverjie.top/2017/04/25/SSM12/)
 * [x] [SSM(十三) 将dubbo暴露出HTTP服务](http://crossoverjie.top/2017/05/02/SSM13/)
 * [x] [SSM(十四) 基于annotation的http防重插件](https://crossoverjie.top/2017/05/24/SSM14/)
 * [ ] [乐观锁与悲观锁的实际应用](https://crossoverjie.top/)
@@ -116,7 +116,8 @@ https://github.com/crossoverJie/SSM-DUBBO-HTTP
 # 联系作者
 - [crossoverJie@gmail.com](mailto:crossoverJie@gmail.com)
 
-![weixinchat.jpg](https://ooo.0o0.ooo/2017/04/25/58ff4d5fd9fa3.jpg)
+![weixinchat.jpg](https://ooo.0o0.ooo/2017/07/05/595c77b2a080d.jpg)
+
 
 
 ---
