@@ -1,6 +1,6 @@
 # SSM
 
-使用Idea搭建的Maven项目，会不定期更新一些在实际开发中使用的技巧)。没有复杂的业务流程，更不是XXXX系统，只有一些实用技术的分享。
+I'll update some skills in actual development aperiodically,there aren't any complicated operation flows or xxx system,just some practical shares about skills.
 
 ## Directory Structure
 
