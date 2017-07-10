@@ -1,6 +1,6 @@
 # SSM
 
-I'll update some skills in actual development aperiodically,there aren't any complicated operation flows or xxx system,just some practical shares about skills.
+I'll aperiodically update some skills in actual development aperiodically.There aren't any complicated operation flows or xxx system.Just some practical shares about skills.
 
 ## Directory Structure
 
