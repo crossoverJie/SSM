@@ -73,6 +73,14 @@ I'll update some skills in actual development aperiodically.There are no complic
 
 --- 
 
+# Quick Start
+
+1. Import SQL Script
+
+导入以下两个`SQL脚本`:
+[https://github.com/crossoverJie/SSM/tree/master/doc/sql](https://github.com/crossoverJie/SSM/tree/master/doc/sql)
+
+
 # Common Problem
 
 #### 找不到`CheckReqNo.java`类
