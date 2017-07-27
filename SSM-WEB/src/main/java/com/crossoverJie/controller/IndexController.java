@@ -10,6 +10,9 @@ import com.crossoverJie.util.CommonUtil;
 import com.crossoverJie.util.PageUtil;
 import com.fasterxml.jackson.databind.util.JSONPObject;
 import net.sf.json.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,7 +20,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -28,10 +30,13 @@ import java.util.Map;
 @Controller
 @RequestMapping("/")
 public class IndexController {
-    @Resource
+
+    private Logger logger = LoggerFactory.getLogger(IndexController.class);
+
+    @Autowired
     private IUserService userService;
 
-    @Resource
+    @Autowired
     private ContentService contentService ;
 
     @RequestMapping("/index")
@@ -73,7 +78,7 @@ public class IndexController {
             jo.put("contents",list) ;
             jsonObject = CommonUtil.parseJson("1","操作成功",jo);
         }catch (Exception e){
-            e.printStackTrace();
+            logger.error("操作异常",e);
             CommonUtil.parseJson("2","操作异常","");
         }
         CommonUtil.responseBuildJson(response,jsonObject);
@@ -132,7 +137,7 @@ public class IndexController {
             }
             jsonObject = CommonUtil.parseJson("1", "操作成功", jo);
         }catch (Exception e){
-            e.printStackTrace();
+            logger.error("操作异常",e);
             jsonObject = CommonUtil.parseJson("2", "操作异常", "");
         }
         //构建返回
