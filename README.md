@@ -69,7 +69,7 @@ I'll update some skills in actual development aperiodically.There are no complic
 * [x] [SSM(十二) SSM(十二) dubbo日志插件](http://crossoverjie.top/2017/04/25/SSM12/)
 * [x] [SSM(十三) 将dubbo暴露出HTTP服务](http://crossoverjie.top/2017/05/02/SSM13/)
 * [x] [SSM(十四) 基于annotation的http防重插件](https://crossoverjie.top/2017/05/24/SSM14/)
-* [x] [乐观锁与悲观锁的实际应用](https://crossoverjie.top/2017/07/09/SSM15/)
+* [x] [SSM(十五)乐观锁与悲观锁的实际应用](https://crossoverjie.top/2017/07/09/SSM15/)
 
 --- 
 
