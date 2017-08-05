@@ -79,7 +79,6 @@ I'll update some skills in actual development aperiodically.There are no complic
 
 1. Import SQL Script
 
-导入以下两个`SQL脚本`:
 [https://github.com/crossoverJie/SSM/tree/master/doc/sql](https://github.com/crossoverJie/SSM/tree/master/doc/sql)
 
 
