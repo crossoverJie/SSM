@@ -1,53 +1,55 @@
 # SSM
 
+
+
 I'll update some skills in actual development aperiodically.There are no complicated operation flows or xxx system,just some practical shares about skills.
 
 ## Directory Structure
 
 ```shell
-├── SSM-API                                    // 通用API  
+├── SSM-API                                    // common API  
 │   ├── src/main
-│   ├── ├──java/com/crossoverJie               // 具体代码。  
+│   ├── ├──java/com/crossoverJie               // specific code。  
 │   ├── ├──resources
-├── SSM-BOOT                                   // 提供给内部使用的dubbo依赖
-│   ├── ├──resources/spring                    // dubbo consumer相关配置
-├── SSM-SERVICE                                // dubbo应用的service实现
+├── SSM-BOOT                                   // Available for internal use of dubbo dependencies 
+│   ├── ├──resources/spring                    // dubbo consumer configuration
+├── SSM-SERVICE                                // The service implementation of the dubbo application 
 │   ├── src/main
-│   ├── ├──java/com/crossoverJie/api           // 具体代码
-│   ├── ├──├──controller                       // 心跳检测接口
-│   ├── ├──├──dubbo                            // dubbo相关代码
-│   ├── ├──├──├──dao                           // dao层
-│   ├── ├──├──├──pojo                          // pojo包
-│   ├── ├──├──├──service                       // service层
-│   ├── ├──├──├──util                          // 工具类
-│   ├── ├──├──impl                             // dubbo API实现
-│   ├── ├──resources                           // 配置文件
-│   ├── ├──├──mapping                          // *.mapper配置文件
-│   ├── ├──├──spring                           // spring相关配置文件
-├── SSM-WEB                                    // web应用
+│   ├── ├──java/com/crossoverJie/api           // specific code
+│   ├── ├──├──controller                       // Heartbeat detection interface
+│   ├── ├──├──dubbo                            // Dubbo related code
+│   ├── ├──├──├──dao                           // dao package
+│   ├── ├──├──├──pojo                          // pojo package
+│   ├── ├──├──├──service                       // service package
+│   ├── ├──├──├──util                          // Toolkit
+│   ├── ├──├──impl                             // implement dubbo API
+│   ├── ├──resources                           // configuration file
+│   ├── ├──├──mapping                          // *.mapper configuration file
+│   ├── ├──├──spring                           // Spring related configuration file
+├── SSM-WEB                                    // web application
 │   ├── src/main
-│   ├── ├──java/com/crossoverJie               // 具体代码
-│   ├── ├──├──controller                       // 控制器层
-│   ├── ├──├──cxf                              // CXF相关代码
-│   ├── ├──├──dao                              // dao层
-│   ├── ├──├──enums                            // 枚举包
-│   ├── ├──├──intercept                        // 拦截器
-│   ├── ├──├──lucene                           // Lucene 相关包
-│   ├── ├──├──pojo                             // pojo包
-│   ├── ├──├──req                              // 请求类
-│   ├── ├──├──res                              // 响应类
-│   ├── ├──├──service                          // service层
-│   ├── ├──├──shiro                            // shiro相关代码
-│   ├── ├──├──util                             // 工具类
-│   ├── ├──├──vo                               // vo包
+│   ├── ├──java/com/crossoverJie               // specific code
+│   ├── ├──├──controller                       // controller package
+│   ├── ├──├──cxf                              // CXF related code
+│   ├── ├──├──dao                              // dao package
+│   ├── ├──├──enums                            // enum package
+│   ├── ├──├──intercept                        // Interceptor
+│   ├── ├──├──lucene                           // Lucene related code
+│   ├── ├──├──pojo                             // pojo package
+│   ├── ├──├──req                              // request package
+│   ├── ├──├──res                              // response package
+│   ├── ├──├──service                          // service pachage
+│   ├── ├──├──shiro                            // shiro related code
+│   ├── ├──├──util                             // Toolkit
+│   ├── ├──├──vo                               // vo package
 │   ├── ├──resources
-│   ├── ├──├──mapping                          // *.mapper配置文件
-│   ├── ├──webapp                              // 前端文件
+│   ├── ├──├──mapping                          // *.mapper configuration file
+│   ├── ├──webapp                              // front code
 ├── doc
-│   ├──lucene                                  // lucene文件
-│   ├──sql                                     // sql脚本
-├── .gitignore                                 // git忽略项
-├── pom.xml                                    // 父pom
+│   ├──lucene                                  // lucene related code
+│   ├──sql                                     // sql scripts
+├── .gitignore                                 // gitignore 
+├── pom.xml                                    // parent pom
 ├── LICENSE               
 ├── README.md               
 
