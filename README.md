@@ -101,7 +101,7 @@ jar。
 
 *solution:*
 
-- if you do not this them, please remove it.
+- if you do not need this them, please remove it.
 - if you need,flow: 
 
 https://github.com/crossoverJie/SSM-REQUEST-CHECK 
