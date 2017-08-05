@@ -1,6 +1,6 @@
 # SSM
 
-
+[中文简介](https://github.com/crossoverJie/SSM/blob/master/README-ZH.md)
 
 I'll update some skills in actual development aperiodically.There are no complicated operation flows or xxx system,just some practical shares about skills.
 
@@ -74,6 +74,11 @@ I'll update some skills in actual development aperiodically.There are no complic
 * [x] [SSM(十五)乐观锁与悲观锁的实际应用](https://crossoverjie.top/2017/07/09/SSM15/)
 
 --- 
+
+# Special Note 
+
+On the project `SSM-SERVICE`, `SSM-WEB` module is only used to demonstrate the use of normal circumstances will only appear a service or web module.
+
 
 # Quick Start
 
