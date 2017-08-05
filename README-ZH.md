@@ -53,6 +53,10 @@
 
 ```
 
+## 特别说明
+
+关于项目中的`SSM-SERVICE `,`SSM-WEB`模块只是为了演示使用，正常情况只会出现一个service或者是web模块。
+
 ## TODO LIST
 
 * [x] [SSM(一)架构的整合](http://crossoverjie.top/2016/06/28/SSM1)
