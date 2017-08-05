@@ -81,30 +81,28 @@ I'll update some skills in actual development aperiodically.There are no complic
 [https://github.com/crossoverJie/SSM/tree/master/doc/sql](https://github.com/crossoverJie/SSM/tree/master/doc/sql)
 
 
-# Common Problem
+# Q&A
 
-#### 找不到`CheckReqNo.java`类
+#### ClassNotFoundException: *CheckReqNo*
 
-这是由于我再项目中有依赖: 
-
-https://github.com/crossoverJie/SSM-REQUEST-CHECK 
-
-https://github.com/crossoverJie/SSM-DUBBO-HTTP 
-
-这个两个插件。
-
-*解决方案:*
-
-- 如果不需要这两个插件再 `pom` 依赖中去掉相关依赖即可。
-- 如果需要则按照 
+Because there is dependence: 
 
 https://github.com/crossoverJie/SSM-REQUEST-CHECK 
 
 https://github.com/crossoverJie/SSM-DUBBO-HTTP 
 
-`install` 到本地即可。
-- 不要clone `master`分支，使用https://github.com/crossoverJie/SSM/releases/tag/2.1.0 或之前的tag即可。
+jar。
 
+*solution:*
+
+- if you do not this them, please remove it.
+- if you need,flow: 
+
+https://github.com/crossoverJie/SSM-REQUEST-CHECK 
+
+https://github.com/crossoverJie/SSM-DUBBO-HTTP 
+
+and Installed locally。
 
 ---
 
