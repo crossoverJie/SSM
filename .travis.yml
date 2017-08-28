@@ -2,4 +2,4 @@ language: java
 sudo: false
 install: mvn install -DskipTests=true
 script: mvn clean verify
-script:  mvn -DskipTests=true clean package
+script:  mvn -DskipTests=true clean install
