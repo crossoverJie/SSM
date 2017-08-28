@@ -1,5 +1,5 @@
 language: java
 sudo: false
-script: mvn clean verify
 install: mvn install -DskipTests=true
+script: mvn clean verify
 script:  mvn -DskipTests=true clean package
