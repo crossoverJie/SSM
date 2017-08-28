@@ -1,5 +1,2 @@
 language: java
-sudo: false
-install: mvn install -DskipTests=true
-script: mvn clean verify
-script:  mvn -DskipTests=true clean install
+install: mvn clean verify -Dgpg.skip=true
