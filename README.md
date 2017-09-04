@@ -2,6 +2,8 @@
 [![](https://badge.juejin.im/entry/5856c00061ff4b0063be6be0/likes.svg?style=flat-square)](https://juejin.im/post/585677f561ff4b00685aff42)
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badge/)
 
+
+
 # SSM
 
 [中文简介](https://github.com/crossoverJie/SSM/blob/master/README-ZH.md)
@@ -136,9 +138,4 @@ and Installed locally。
 - [crossoverJie@gmail.com](mailto:crossoverJie@gmail.com)
 
 ![weixinchat.jpg](https://ooo.0o0.ooo/2017/07/05/595c77b2a080d.jpg)
-
-
-
-
----
 

@@ -1,6 +1,8 @@
+
 [![Build Status](https://travis-ci.org/crossoverJie/SSM.svg?branch=master)](https://travis-ci.org/crossoverJie/SSM)
 [![](https://badge.juejin.im/entry/5856c00061ff4b0063be6be0/likes.svg?style=flat-square)](https://juejin.im/post/585677f561ff4b00685aff42)
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badge/)
+
 
 # SSM
 
@@ -129,7 +131,4 @@ https://github.com/crossoverJie/SSM-DUBBO-HTTP
 
 ![weixinchat.jpg](https://ooo.0o0.ooo/2017/07/05/595c77b2a080d.jpg)
 
-
-
----
 
