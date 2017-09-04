@@ -12,9 +12,9 @@ fi
 LANG="zh_CN.UTF-8"
 nohup /opt/java/jdk1.7.0_80/bin/java -d64 -Djava.security.egd=file:/dev/./urandom
 -Djava.ext.dirs=/opt/tomcat/webapps/ROOT/WEB-INF/lib
--Dtopic=TOPIC_SMS_PUSH_A
+-Dtopic=TOPIC_A
 -Dlogback.configurationFile=/data/schedule/kafka/logback.xml
--DkafkaConfig=/opt/tomcat/file_and_util_tomcat/iopconf/easyframe-msg.properties
--classpath /opt/tomcat/file_and_util_tomcat/webapps/ROOT/WEB-INF/classes com.cqmc.kafka.SMSMsgConsumer >> /data/schedule/kafka/smslog/kafka.log 2>&1 &
+-DkafkaConfig=/opt/tomcat/iopconf/easyframe-msg.properties
+-classpath /opt/tomcat/webapps/ROOT/WEB-INF/classes com.crossoverJie.kafka.SMSMsgConsumer >> /data/schedule/kafka/smslog/kafka.log 2>&1 &
 
 echo "`date +'%Y-%m-%d %H:%M:%S'`  KafkaMsgConsumer running...."
