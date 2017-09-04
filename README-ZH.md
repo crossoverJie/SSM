@@ -1,3 +1,8 @@
+
+[![](https://badge.juejin.im/entry/5856c00061ff4b0063be6be0/likes.svg?style=flat-square)](https://juejin.im/post/585677f561ff4b00685aff42)
+[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badge/)
+---
+
 # SSM
 
 使用Idea搭建的Maven项目，会不定期更新一些在实际开发中使用的技巧)。没有复杂的业务流程，更不是XXXX系统，只有一些技术的分享
@@ -74,6 +79,7 @@
 * [x] [SSM(十三) 将dubbo暴露出HTTP服务](http://crossoverjie.top/2017/05/02/SSM13/)
 * [x] [SSM(十四) 基于annotation的http防重插件](https://crossoverjie.top/2017/05/24/SSM14/)
 * [x] [乐观锁与悲观锁的实际应用](https://crossoverjie.top/2017/07/09/SSM15/)
+* [ ] SSM(十六)`Kafka consumer`消费异常处理
 
 --- 
 
@@ -126,7 +132,4 @@ https://github.com/crossoverJie/SSM-DUBBO-HTTP
 
 
 
----
-
-[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badge/)
 

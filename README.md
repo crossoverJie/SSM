@@ -1,3 +1,8 @@
+
+[![](https://badge.juejin.im/entry/5856c00061ff4b0063be6be0/likes.svg?style=flat-square)](https://juejin.im/post/585677f561ff4b00685aff42)
+[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badge/)
+---
+
 # SSM
 
 [中文简介](https://github.com/crossoverJie/SSM/blob/master/README-ZH.md)
@@ -72,6 +77,7 @@ I'll update some skills in actual development aperiodically.There are no complic
 * [x] [SSM(十三) 将dubbo暴露出HTTP服务](http://crossoverjie.top/2017/05/02/SSM13/)
 * [x] [SSM(十四) 基于annotation的http防重插件](https://crossoverjie.top/2017/05/24/SSM14/)
 * [x] [SSM(十五)乐观锁与悲观锁的实际应用](https://crossoverjie.top/2017/07/09/SSM15/)
+* [ ] SSM(十六)`Kafka consumer`消费异常处理
 
 --- 
 
@@ -132,10 +138,4 @@ and Installed locally。
 
 ![weixinchat.jpg](https://ooo.0o0.ooo/2017/07/05/595c77b2a080d.jpg)
 
-
-
-
----
-[![](https://badge.juejin.im/entry/5856c00061ff4b0063be6be0/likes.svg?style=flat-square)](https://juejin.im/post/585677f561ff4b00685aff42)
-[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badge/)
 
