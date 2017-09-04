@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.org/crossoverJie/SSM.svg?branch=master)](https://travis-ci.org/crossoverJie/SSM)
+[![](https://badge.juejin.im/entry/5856c00061ff4b0063be6be0/likes.svg?style=flat-square)](https://juejin.im/post/585677f561ff4b00685aff42)
+[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badge/)
+
 # SSM
 
 使用Idea搭建的Maven项目，会不定期更新一些在实际开发中使用的技巧)。没有复杂的业务流程，更不是XXXX系统，只有一些技术的分享
@@ -127,6 +131,4 @@ https://github.com/crossoverJie/SSM-DUBBO-HTTP
 
 
 ---
-
-[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badge/)
 
