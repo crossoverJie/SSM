@@ -105,7 +105,6 @@ public class KafkaMsgConsumer {
                     LOGGER.error("Thread InterruptedException", e1);
                 }
             } finally {
-                //此逻辑主要是解决kafka消费程序无故取不到消息，这是临时的解决办法
                 //此处关闭之后，由crontab每分钟检查一次，挂掉的话会重新拉起来
                 if (DateUtil.getLongTime() - LAST_MESSAGE_TIME.get() > 10 * 60) { //10分钟
                     fixedThreadPool.shutdown();
