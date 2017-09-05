@@ -80,7 +80,7 @@
 * [x] [SSM(十三) 将dubbo暴露出HTTP服务](http://crossoverjie.top/2017/05/02/SSM13/)
 * [x] [SSM(十四) 基于annotation的http防重插件](https://crossoverjie.top/2017/05/24/SSM14/)
 * [x] [乐观锁与悲观锁的实际应用](https://crossoverjie.top/2017/07/09/SSM15/)
-* [ ] [SSM(十六)曲线救国-`Kafka consumer`消费异常处理](https://crossoverjie.top/2017/09/05/SSM16/)
+* [x] [SSM(十六)曲线救国-`Kafka consumer`消费异常处理](https://crossoverjie.top/2017/09/05/SSM16/)
 
 --- 
 
