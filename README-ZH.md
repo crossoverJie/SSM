@@ -11,57 +11,57 @@
 ## 目录结构
 
 ```shell
-├── SSM-API                                    // 通用API  
-│   ├── src/main
-│   ├── ├──java/com/crossoverJie               // 具体代码。  
-│   ├── ├──resources
-├── SSM-BOOT                                   // 提供给内部使用的dubbo依赖
-│   ├── ├──resources/spring                    // dubbo consumer相关配置
-├── SSM-SERVICE                                // dubbo应用的service实现
-│   ├── src/main
-│   ├── ├──java/com/crossoverJie/api           // 具体代码
-│   ├── ├──├──controller                       // 心跳检测接口
-│   ├── ├──├──dubbo                            // dubbo相关代码
-│   ├── ├──├──├──dao                           // dao层
-│   ├── ├──├──├──pojo                          // pojo包
-│   ├── ├──├──├──service                       // service层
-│   ├── ├──├──├──util                          // 工具类
-│   ├── ├──├──impl                             // dubbo API实现
-│   ├── ├──resources                           // 配置文件
-│   ├── ├──├──mapping                          // *.mapper配置文件
-│   ├── ├──├──spring                           // spring相关配置文件
-├── SSM-WEB                                    // web应用
-│   ├── src/main
-│   ├── ├──java/com/crossoverJie               // 具体代码
-│   ├── ├──├──controller                       // 控制器层
-│   ├── ├──├──cxf                              // CXF相关代码
-│   ├── ├──├──dao                              // dao层
-│   ├── ├──├──enums                            // 枚举包
-│   ├── ├──├──intercept                        // 拦截器
-│   ├── ├──├──lucene                           // Lucene 相关包
-│   ├── ├──├──pojo                             // pojo包
-│   ├── ├──├──req                              // 请求类
-│   ├── ├──├──res                              // 响应类
-│   ├── ├──├──service                          // service层
-│   ├── ├──├──shiro                            // shiro相关代码
-│   ├── ├──├──util                             // 工具类
-│   ├── ├──├──vo                               // vo包
-│   ├── ├──resources
-│   ├── ├──├──mapping                          // *.mapper配置文件
-│   ├── ├──webapp                              // 前端文件
+├── SSM-API                                    // 通用API  
+│   ├── src/main
+│   ├── ├──java/com/crossoverJie               // 具体代码。  
+│   ├── ├──resources
+├── SSM-BOOT                                   // 提供给内部使用的dubbo依赖
+│   ├── ├──resources/spring                    // dubbo consumer相关配置
+├── SSM-SERVICE                                // dubbo应用的service实现
+│   ├── src/main
+│   ├── ├──java/com/crossoverJie/api           // 具体代码
+│   ├── ├──├──controller                       // 心跳检测接口
+│   ├── ├──├──dubbo                            // dubbo相关代码
+│   ├── ├──├──├──dao                           // dao层
+│   ├── ├──├──├──pojo                          // pojo包
+│   ├── ├──├──├──service                       // service层
+│   ├── ├──├──├──util                          // 工具类
+│   ├── ├──├──impl                             // dubbo API实现
+│   ├── ├──resources                           // 配置文件
+│   ├── ├──├──mapping                          // *.mapper配置文件
+│   ├── ├──├──spring                           // spring相关配置文件
+├── SSM-WEB                                    // web应用
+│   ├── src/main
+│   ├── ├──java/com/crossoverJie               // 具体代码
+│   ├── ├──├──controller                       // 控制器层
+│   ├── ├──├──cxf                              // CXF相关代码
+│   ├── ├──├──dao                              // dao层
+│   ├── ├──├──enums                            // 枚举包
+│   ├── ├──├──intercept                        // 拦截器
+│   ├── ├──├──lucene                           // Lucene 相关包
+│   ├── ├──├──pojo                             // pojo包
+│   ├── ├──├──req                              // 请求类
+│   ├── ├──├──res                              // 响应类
+│   ├── ├──├──service                          // service层
+│   ├── ├──├──shiro                            // shiro相关代码
+│   ├── ├──├──util                             // 工具类
+│   ├── ├──├──vo                               // vo包
+│   ├── ├──resources
+│   ├── ├──├──mapping                          // *.mapper配置文件
+│   ├── ├──webapp                              // 前端文件
 ├── doc
-│   ├──lucene                                  // lucene文件
-│   ├──sql                                     // sql脚本
-├── .gitignore                                 // git忽略项
-├── pom.xml                                    // 父pom
-├── LICENSE               
+│   ├──lucene                                  // lucene文件
+│   ├──sql                                     // sql脚本
+├── .gitignore                                 // git忽略项
+├── pom.xml                                    // 父pom
+├── LICENSE               
 ├── README.md               
 
 ```
 
 ## 特别说明
 
-关于项目中的`SSM-SERVICE `,`SSM-WEB`模块只是为了演示使用，正常情况只会出现一个service或者是web模块。
+关于项目中的`SSM-SERVICE `,`SSM-WEB`模块只是为了演示使用，正常情况只会出现一个service或者是web模块。
 
 ## TODO LIST
 
@@ -80,7 +80,7 @@
 * [x] [SSM(十三) 将dubbo暴露出HTTP服务](http://crossoverjie.top/2017/05/02/SSM13/)
 * [x] [SSM(十四) 基于annotation的http防重插件](https://crossoverjie.top/2017/05/24/SSM14/)
 * [x] [乐观锁与悲观锁的实际应用](https://crossoverjie.top/2017/07/09/SSM15/)
-* [ ] SSM(十六)曲线救国`Kafka consumer`消费异常处理
+* [ ] [SSM(十六)曲线救国-`Kafka consumer`消费异常处理](https://crossoverjie.top/2017/09/05/SSM16/)
 
 --- 
 
