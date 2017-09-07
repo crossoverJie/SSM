@@ -217,10 +217,6 @@
         -->
         <aop:pointcut id="controllerMethodPointcut" expression="
         execution(* com.crossoverJie.service.*.select*(..))"/>
-          
-          <!-- 这句是多余的  -->
-       <!--  <aop:pointcut id="selectMethodPointcut" expression="
-        execution(* com.crossoverJie.dao..*Mapper.select*(..))"/> -->
 
         <aop:advisor advice-ref="methodCacheInterceptor" pointcut-ref="controllerMethodPointcut"/>
 
