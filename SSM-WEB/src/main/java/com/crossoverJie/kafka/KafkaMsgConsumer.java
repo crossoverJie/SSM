@@ -90,7 +90,7 @@ public class KafkaMsgConsumer {
 
     public static void main(String[] args) {
         topic = System.getProperty("topic");
-        checkArguments(!StringUtils.isBlank(topic), "system property topic or log_path is must!");
+        checkArguments(!StringUtils.isBlank(topic), "system property topic or log_path is necessary!");
         while (true) {
             try {
                 iteratorTopic();
