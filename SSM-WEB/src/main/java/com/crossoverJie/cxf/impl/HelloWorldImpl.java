@@ -9,7 +9,8 @@ import javax.jws.WebService;
 @WebService
 public class HelloWorldImpl implements HelloWorld {
 
-	public String say(String str) {
+	@Override
+    public String say(String str) {
 		return "Hello"+str;
 	}
 

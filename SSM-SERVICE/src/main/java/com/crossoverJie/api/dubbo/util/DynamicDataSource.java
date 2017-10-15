@@ -17,6 +17,7 @@ public class DynamicDataSource extends AbstractRoutingDataSource {
         return DataSourceHolder.getDataSources();
     }
 
+    @Override
     public Logger getParentLogger() {
         return Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
     }

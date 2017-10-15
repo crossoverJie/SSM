@@ -46,9 +46,13 @@ public class AbstractController {
 
 
     public void getIndex() {
-        if(pageNum==null)pageNum=1;
+        if(pageNum==null) {
+            pageNum = 1;
+        }
 //		if(pageSize==null) pageSize = WebUtil.pageSize;
-        if(pageSize==null) pageSize = 6;
+        if(pageSize==null) {
+            pageSize = 6;
+        }
         int sqlPage=(int)Math.ceil((double)rowCount/(double)pageSize);
         this.setTotalPage(sqlPage);//设置总页数
         if(pageNum >  sqlPage)
