@@ -11,14 +11,15 @@ import java.io.IOException;
 import java.util.Properties;
 
 /**
- * This producer will send a bunch of messages to topic "fast-messages". Every so often,
- * it will send a message to "slow-messages". This shows how messages can be sent to
- * multiple topics. On the receiving end, we will see both kinds of messages but will
- * also see how the two topics aren't really synchronized.
+ * @author crossoverJie
  */
 public class Producer {
     private static final Logger LOGGER = LoggerFactory.getLogger(Producer.class);
-    private static String consumerProPath;//消费配置文件
+
+    /**
+     * 消费配置文件
+     */
+    private static String consumerProPath;
 
     public static void main(String[] args) throws IOException {
         // set up the producer

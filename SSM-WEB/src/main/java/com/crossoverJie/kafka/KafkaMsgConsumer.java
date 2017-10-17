@@ -35,13 +35,24 @@ public class KafkaMsgConsumer {
     private static final int MAXIMUM_POOL_SIZE = 4;
     private static final int BLOCKING_QUEUE_CAPACITY = 4000;
     private static final String KAFKA_CONFIG = "kafkaConfig";
-    private static final ExecutorService fixedThreadPool = new ThreadPoolExecutor(CORE_POOL_SIZE, MAXIMUM_POOL_SIZE, 0L, TimeUnit.MILLISECONDS, new ArrayBlockingQueue<Runnable>(BLOCKING_QUEUE_CAPACITY));
+    private static final ExecutorService FIXED_THREAD_POOL = new ThreadPoolExecutor(CORE_POOL_SIZE, MAXIMUM_POOL_SIZE, 0L, TimeUnit.MILLISECONDS, new ArrayBlockingQueue<Runnable>(BLOCKING_QUEUE_CAPACITY));
 
-    //最后更新时间
+    /**
+     * 最后更新时间
+     */
     private static AtomicLong LAST_MESSAGE_TIME = new AtomicLong(DateUtil.getLongTime());
 
-    private static MsgIterator iter = null;
-    private static String topic;//主题名称
+    private static MsgIterator iterator = null;
+
+    /**
+     * 主题名称
+     */
+    private static String topic;
+
+    /**
+     * 检测时间
+     */
+    private final static int CHECK_MIN = 10 ;
 
 
     static {
@@ -58,17 +69,17 @@ public class KafkaMsgConsumer {
     }
 
     private static void iteratorTopic() {
-        if (iter == null) {
-            iter = MsgUtil.consume(topic);
+        if (iterator == null) {
+            iterator = MsgUtil.consume(topic);
         }
         long i = 0L;
-        while (iter.hasNext()) {
+        while (iterator.hasNext()) {
             i++;
             if (i % 10000 == 0) {
                 LOGGER.info("consume i:" + i);
             }
             try {
-                String message = iter.next();
+                String message = iterator.next();
                 if (StringUtils.isEmpty(message)) {
                     continue;
                 }
@@ -96,7 +107,7 @@ public class KafkaMsgConsumer {
                 iteratorTopic();
             } catch (Exception e) {
                 MsgUtil.shutdownConsummer();
-                iter = null;
+                iterator = null;
 
                 LOGGER.error("KafkaMsgConsumer err:", e);
                 try {
@@ -105,19 +116,19 @@ public class KafkaMsgConsumer {
                     LOGGER.error("Thread InterruptedException", e1);
                 }
             } finally {
-                //此处关闭之后，由crontab每分钟检查一次，挂掉的话会重新拉起来
-                if (DateUtil.getLongTime() - LAST_MESSAGE_TIME.get() > 10 * 60) { //10分钟
-                    fixedThreadPool.shutdown();
-                    LOGGER.info("线程池是否关闭：" + fixedThreadPool.isShutdown());
+                //此处关闭之后，由crontab每分钟检查一次，挂掉的话会重新拉起来 10分钟检测一次
+                if (DateUtil.getLongTime() - LAST_MESSAGE_TIME.get() > 10 * 60) {
+                    FIXED_THREAD_POOL.shutdown();
+                    LOGGER.info("线程池是否关闭：" + FIXED_THREAD_POOL.isShutdown());
                     try {
                         //当前线程阻塞10ms后，去检测线程池是否终止，终止则返回true
-                        while (!fixedThreadPool.awaitTermination(10, TimeUnit.MILLISECONDS)) {
-                            LOGGER.info("检测线程池是否终止：" + fixedThreadPool.isTerminated());
+                        while (!FIXED_THREAD_POOL.awaitTermination(CHECK_MIN, TimeUnit.MILLISECONDS)) {
+                            LOGGER.info("检测线程池是否终止：" + FIXED_THREAD_POOL.isTerminated());
                         }
                     } catch (InterruptedException e) {
                         LOGGER.error("等待线程池关闭错误", e);
                     }
-                    LOGGER.info("线程池是否终止：" + fixedThreadPool.isTerminated());
+                    LOGGER.info("线程池是否终止：" + FIXED_THREAD_POOL.isTerminated());
                     LOGGER.info("in 10 min dont have data break");
                     break;
                 }
