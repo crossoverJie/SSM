@@ -149,6 +149,6 @@ https://github.com/crossoverJie/SSM-DUBBO-HTTP
 # 联系作者
 - [crossoverJie@gmail.com](mailto:crossoverJie@gmail.com)
 
-![weixinchat.jpg](https://ooo.0o0.ooo/2017/07/05/595c77b2a080d.jpg)
+![weixinchat.jpg](https://crossoverjie.top/uploads/weixinchat.jpg)
 
 
