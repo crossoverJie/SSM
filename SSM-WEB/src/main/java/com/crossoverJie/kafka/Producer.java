@@ -37,9 +37,11 @@ public class Producer {
 
         try {
             // send lots of messages
-            producer.send(new ProducerRecord<String, String>(
-                    "TOPIC_USER_URL",
-                    String.format("{\"type\":\"test\", \"t\":%.3f, \"k\":%d}", System.nanoTime() * 1e-9, 1)));
+            for (int i=0 ;i<10;i++){
+                producer.send(new ProducerRecord<String, String>(
+                        "TOPIC_USER_URL", "12345"));
+
+            }
         } catch (Throwable throwable) {
             System.out.printf("%s", throwable.getStackTrace());
         } finally {
