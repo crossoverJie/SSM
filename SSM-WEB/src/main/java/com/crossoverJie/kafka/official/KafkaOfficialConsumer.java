@@ -25,7 +25,6 @@ import java.util.Properties;
 public class KafkaOfficialConsumer {
     private static final Logger LOGGER = LoggerFactory.getLogger(KafkaOfficialConsumer.class);
 
-
     /**
      * 日志文件地址
      */
@@ -40,7 +39,6 @@ public class KafkaOfficialConsumer {
      * 消费配置文件
      */
     private static String consumerProPath ;
-
 
 
     /**
