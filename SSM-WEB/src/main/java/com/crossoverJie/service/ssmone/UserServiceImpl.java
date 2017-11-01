@@ -19,14 +19,17 @@ public class UserServiceImpl implements IUserService {
     @Resource
     private IUserDao userDao;
 
+    @Override
     public User getUserById(int userId) {
         return this.userDao.selectByPrimaryKey(userId);
     }
 
+    @Override
     public int createUser(User user) {
         return this.userDao.insertSelective(user) ;
     }
 
+    @Override
     public User findByLogin(User user) {
         return userDao.findByLogin(user) ;
     }
@@ -34,7 +37,8 @@ public class UserServiceImpl implements IUserService {
     /**
      * 分页查询
      */
-    public Page<User> findByParams(User u,int pageNo,int limit) {
+    @Override
+    public Page<User> findByParams(User u, int pageNo, int limit) {
         Page<User> page = new Page<User>();
         page.setPageNo(pageNo);
         page.setLimit(limit);
@@ -52,19 +56,23 @@ public class UserServiceImpl implements IUserService {
         return page ;
     }
 
+    @Override
     public int deleteByPrimaryKey(Integer id) {
         return userDao.deleteByPrimaryKey(id) ;
     }
 
+    @Override
     public int updateByPrimaryKeySelective(User record) {
         return userDao.updateByPrimaryKeySelective(record);
     }
 
+    @Override
     public int findAllCount(User u) {
         // TODO Auto-generated method stub
         return userDao.findAllCount(u) ;
     }
 
+    @Override
     public List<User> findHotUser() {
         return userDao.findHotUser();
     }

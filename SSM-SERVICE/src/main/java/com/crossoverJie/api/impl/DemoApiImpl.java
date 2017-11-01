@@ -19,6 +19,7 @@ public class DemoApiImpl implements DemoApi {
      * @return
      * @throws RuntimeException
      */
+    @Override
     public String readMsg(int userId) throws RuntimeException {
         return null;
     }
