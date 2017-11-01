@@ -37,9 +37,9 @@ public class Producer {
 
         try {
             // send lots of messages
-            for (int i=0 ;i<10;i++){
+            for (int i=0 ;i<100 ; i++){
                 producer.send(new ProducerRecord<String, String>(
-                        "TOPIC_USER_URL", "12345"));
+                        "topic_optimization", i+"", i+""));
 
             }
         } catch (Throwable throwable) {

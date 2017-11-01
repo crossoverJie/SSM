@@ -1,9 +1,7 @@
 package com.crossoverJie.kafka.official;
 
 import com.crossoverJie.util.StringUtil;
-import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.slf4j.Logger;
@@ -75,20 +73,40 @@ public class KafkaOfficialConsumer {
         return consumer;
     }
 
-
-
     public static void main(String[] args) {
         if (initCheck()){
             return;
         }
 
+        int totalCount = 0 ;
+        long totalMin = 0L ;
+        int count = 0;
         ObjectMapper mapper = new ObjectMapper();
         KafkaConsumer<String, String> consumer = initKafkaConsumer();
 
+        long startTime = System.currentTimeMillis() ;
         //消费消息
         while (true) {
             ConsumerRecords<String, String> records = consumer.poll(200);
-            for (ConsumerRecord<String, String> record : records) {
+            if (records.count() <= 0){
+                continue ;
+            }
+            LOGGER.debug("本次获取:"+records.count());
+            count += records.count() ;
+
+            long endTime = System.currentTimeMillis() ;
+            LOGGER.debug("count=" +count) ;
+            if (count >= 10000 ){
+                totalCount += count ;
+                LOGGER.info("this consumer {} record，use {} milliseconds",count,endTime-startTime);
+                totalMin += (endTime-startTime) ;
+                startTime = System.currentTimeMillis() ;
+                count = 0 ;
+            }
+            LOGGER.debug("end totalCount={},min={}",totalCount,totalMin);
+
+            /*for (ConsumerRecord<String, String> record : records) {
+                record.value() ;
                 JsonNode msg = null;
                 try {
                     msg = mapper.readTree(record.value());
@@ -96,7 +114,9 @@ public class KafkaOfficialConsumer {
                     LOGGER.error("消费消息出错", e);
                 }
                 LOGGER.info("kafka receive = "+msg.toString());
-            }
+            }*/
+
+
         }
     }
 }
