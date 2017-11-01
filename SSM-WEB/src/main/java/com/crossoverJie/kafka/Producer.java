@@ -10,7 +10,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
-/**
+/** Kafka生产者
  * @author crossoverJie
  */
 public class Producer {
