@@ -1,7 +1,6 @@
 package com.crossoverJie.kafka.official;
 
 import com.crossoverJie.util.StringUtil;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.slf4j.Logger;
@@ -81,7 +80,6 @@ public class KafkaOfficialConsumer {
         int totalCount = 0 ;
         long totalMin = 0L ;
         int count = 0;
-        ObjectMapper mapper = new ObjectMapper();
         KafkaConsumer<String, String> consumer = initKafkaConsumer();
 
         long startTime = System.currentTimeMillis() ;
