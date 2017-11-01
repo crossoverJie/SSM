@@ -79,6 +79,7 @@ I'll update some skills in actual development aperiodically.There are no complic
 * [x] [SSM(十四) 基于annotation的http防重插件](https://crossoverjie.top/2017/05/24/SSM14/)
 * [x] [SSM(十五)乐观锁与悲观锁的实际应用](https://crossoverjie.top/2017/07/09/SSM15/)
 * [x] [SSM(十六)曲线救国-`Kafka consumer`消费异常处理](https://crossoverjie.top/2017/09/05/SSM16/)
+* [x] [SSM(十七) MQ应用](https://crossoverjie.top/2017/10/20/SSM17/)
 
 --- 
 
