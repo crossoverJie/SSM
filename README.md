@@ -8,7 +8,7 @@
 
 [中文简介](https://github.com/crossoverJie/SSM/blob/master/README-ZH.md)
  
-I'll update some skills in actual development aperiodically.There are no complicated operation flows or xxx system,just some practical shares about skills.
+I'll update some skills in actual development aperiodically.There are no complicated operation flows or **xxx system**,just some practical shares about skills.
 
 ## Directory Structure
 
