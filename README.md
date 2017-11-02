@@ -40,6 +40,9 @@ I'll update some skills in actual development aperiodically.There are no complic
 │   ├── ├──├──dao                              // dao package
 │   ├── ├──├──enums                            // enum package
 │   ├── ├──├──intercept                        // Interceptor
+│   ├── ├──├──kafka                            // Kafka
+│   ├── ├──├──├──official                      // Official consumption
+│   ├── ├──├──├──optimization                  // Multi-threaded consumption
 │   ├── ├──├──lucene                           // Lucene related code
 │   ├── ├──├──pojo                             // pojo package
 │   ├── ├──├──req                              // request package
