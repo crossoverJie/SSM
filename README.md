@@ -8,7 +8,7 @@
 
 [中文简介](https://github.com/crossoverJie/SSM/blob/master/README-ZH.md)
  
-I'll update some skills in actual development aperiodically.There are no complicated operation flows or xxx system,just some practical shares about skills.
+I'll update some skills in actual development aperiodically.There are no complicated operation flows or **xxx system**,just some practical shares about skills.
 
 ## Directory Structure
 
@@ -40,6 +40,9 @@ I'll update some skills in actual development aperiodically.There are no complic
 │   ├── ├──├──dao                              // dao package
 │   ├── ├──├──enums                            // enum package
 │   ├── ├──├──intercept                        // Interceptor
+│   ├── ├──├──kafka                            // Kafka
+│   ├── ├──├──├──official                      // Official consumption
+│   ├── ├──├──├──optimization                  // Multi-threaded consumption
 │   ├── ├──├──lucene                           // Lucene related code
 │   ├── ├──├──pojo                             // pojo package
 │   ├── ├──├──req                              // request package
