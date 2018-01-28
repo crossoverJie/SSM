@@ -40,4 +40,14 @@ public class Content {
     public void setCreatedate(String createdate) {
         this.createdate = createdate;
     }
+
+    @Override
+    public String toString() {
+        return "Content{" +
+                "contentid=" + contentid +
+                ", contentname='" + contentname + '\'' +
+                ", content='" + content + '\'' +
+                ", createdate='" + createdate + '\'' +
+                '}';
+    }
 }

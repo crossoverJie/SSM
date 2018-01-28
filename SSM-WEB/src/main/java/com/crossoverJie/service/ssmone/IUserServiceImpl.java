@@ -68,7 +68,6 @@ public class IUserServiceImpl implements IUserService {
 
     @Override
     public int findAllCount(User u) {
-        // TODO Auto-generated method stub
         return userDao.findAllCount(u) ;
     }
 

@@ -2,7 +2,7 @@ package com.crossoverJie.pojo;
 
 import java.io.Serializable;
 
-public class Rediscontent implements Serializable {
+public class RedisContent implements Serializable {
     private Integer id;
 
     private String content;

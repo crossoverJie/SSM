@@ -11,5 +11,11 @@ import com.crossoverJie.pojo.ContentLog;
  * @since JDK 1.7
  */
 public interface ContentLogService {
+
+    /**
+     * 根据条件新增
+     * @param record
+     * @return
+     */
     int insertSelective(ContentLog record);
 }

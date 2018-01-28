@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.crossoverJie.dao.RediscontentMapper">
-    <resultMap id="BaseResultMap" type="com.crossoverJie.pojo.Rediscontent">
+    <resultMap id="BaseResultMap" type="com.crossoverJie.pojo.RedisContent">
         <id column="id" property="id" jdbcType="INTEGER"/>
         <result column="content" property="content" jdbcType="VARCHAR"/>
     </resultMap>
@@ -98,11 +98,11 @@
             <include refid="Example_Where_Clause"/>
         </if>
     </delete>
-    <insert id="insert" parameterType="com.crossoverJie.pojo.Rediscontent">
+    <insert id="insert" parameterType="com.crossoverJie.pojo.RedisContent">
     insert into redisContent (id, content)
     values (#{id,jdbcType=INTEGER}, #{content,jdbcType=VARCHAR})
   </insert>
-    <insert id="insertSelective" parameterType="com.crossoverJie.pojo.Rediscontent">
+    <insert id="insertSelective" parameterType="com.crossoverJie.pojo.RedisContent">
         insert into redisContent
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="id != null">
@@ -150,7 +150,7 @@
             <include refid="Update_By_Example_Where_Clause"/>
         </if>
     </update>
-    <update id="updateByPrimaryKeySelective" parameterType="com.crossoverJie.pojo.Rediscontent">
+    <update id="updateByPrimaryKeySelective" parameterType="com.crossoverJie.pojo.RedisContent">
         update redisContent
         <set>
             <if test="content != null">
@@ -159,7 +159,7 @@
         </set>
         where id = #{id,jdbcType=INTEGER}
     </update>
-    <update id="updateByPrimaryKey" parameterType="com.crossoverJie.pojo.Rediscontent">
+    <update id="updateByPrimaryKey" parameterType="com.crossoverJie.pojo.RedisContent">
     update redisContent
     set content = #{content,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}

@@ -1,7 +1,7 @@
 package com.crossoverJie.service.ssmone;
 
 import com.crossoverJie.dao.RediscontentMapper;
-import com.crossoverJie.pojo.Rediscontent;
+import com.crossoverJie.pojo.RedisContent;
 import com.crossoverJie.pojo.RedisContentExample;
 import com.crossoverJie.service.RediscontentService;
 import com.crossoverJie.util.PageEntity;
@@ -26,22 +26,22 @@ public class RediscontentServiceImpl implements RediscontentService {
 
 
     @Override
-    public List<Rediscontent> selectByExample(RedisContentExample example) {
+    public List<RedisContent> selectByExample(RedisContentExample example) {
         return rediscontentMapper.selectByExample(example);
     }
 
     @Override
-    public Rediscontent selectByPrimaryKey(Integer id) {
+    public RedisContent selectByPrimaryKey(Integer id) {
         return rediscontentMapper.selectByPrimaryKey(id);
     }
 
     @Override
-    public PageEntity<Rediscontent> selectByPage(Integer pageNum, Integer pageSize) {
+    public PageEntity<RedisContent> selectByPage(Integer pageNum, Integer pageSize) {
         PageHelper.startPage(pageNum, pageSize);
         //因为是demo，所以这里默认没有查询条件。
-        List<Rediscontent> rediscontents = rediscontentMapper.selectByExample(new RedisContentExample());
-        PageEntity<Rediscontent> rediscontentPageEntity = new PageEntity<Rediscontent>();
-        rediscontentPageEntity.setList(rediscontents);
+        List<RedisContent> redisContents = rediscontentMapper.selectByExample(new RedisContentExample());
+        PageEntity<RedisContent> rediscontentPageEntity = new PageEntity<RedisContent>();
+        rediscontentPageEntity.setList(redisContents);
         int size = rediscontentMapper.selectByExample(new RedisContentExample()).size();
         rediscontentPageEntity.setCount(size);
         return rediscontentPageEntity;

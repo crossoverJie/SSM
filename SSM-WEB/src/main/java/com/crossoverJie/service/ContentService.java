@@ -1,10 +1,8 @@
 package com.crossoverJie.service;
 
 import com.crossoverJie.pojo.Content;
-import com.crossoverJie.pojo.T_user;
 
 import java.util.List;
-import java.util.Set;
 
 /**
  * Created with IDEA
@@ -12,7 +10,16 @@ import java.util.Set;
  * 后台登录Service
  */
 public interface ContentService {
+    /**
+     * 获取内容list
+     * @return
+     */
     List<Content> findContentList();
 
+    /**
+     * 根据条件新增
+     * @param content
+     * @return
+     */
     int insertSelective(Content content) ;
 }

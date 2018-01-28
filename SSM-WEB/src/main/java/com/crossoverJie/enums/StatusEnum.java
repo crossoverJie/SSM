@@ -9,13 +9,19 @@ import java.util.List;
  */
 public enum StatusEnum {
 	
-	/** 成功 */
+	/**
+	 * 成功
+	 */
 	SUCCESS("9000", "成功"),
 	
-	/** 失败 */
+	/**
+	 * 失败
+	 */
 	FAIL("4000", "失败"),
 
-	/** 重复请求 */
+	/**
+	 * 重复请求
+	 */
 	REPEAT_REQUEST("5000", "重复请求"),
 	;
 	

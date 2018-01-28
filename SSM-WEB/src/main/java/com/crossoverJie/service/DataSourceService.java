@@ -13,8 +13,19 @@ import java.util.List;
  * @since JDK 1.7
  */
 public interface DataSourceService {
+
+    /**
+     * 根据条件查询
+     * @param example
+     * @return
+     */
     List<Datasource> selectByExample(DatasourceExample example);
 
+    /**
+     * 根据主键查询
+     * @param id
+     * @return
+     */
     Datasource selectByPrimaryKey(Integer id);
 
 
