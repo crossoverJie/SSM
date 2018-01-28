@@ -2,9 +2,6 @@ package com.crossoverJie.service;
 
 import com.crossoverJie.pojo.Datasource;
 import com.crossoverJie.pojo.DatasourceExample;
-import com.crossoverJie.pojo.Rediscontent;
-import com.crossoverJie.pojo.RediscontentExample;
-import com.crossoverJie.util.PageEntity;
 
 import java.util.List;
 

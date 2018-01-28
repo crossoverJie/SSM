@@ -23,4 +23,12 @@ public class Datasource implements Serializable {
     public void setName(String name) {
         this.name = name;
     }
+
+    @Override
+    public String toString() {
+        return "Datasource{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }

@@ -68,7 +68,7 @@
     <sql id="Base_Column_List">
     id, content
   </sql>
-    <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.crossoverJie.pojo.RediscontentExample">
+    <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.crossoverJie.pojo.RedisContentExample">
         select
         <if test="distinct">
             distinct
@@ -92,7 +92,7 @@
     delete from redisContent
     where id = #{id,jdbcType=INTEGER}
   </delete>
-    <delete id="deleteByExample" parameterType="com.crossoverJie.pojo.RediscontentExample">
+    <delete id="deleteByExample" parameterType="com.crossoverJie.pojo.RedisContentExample">
         delete from redisContent
         <if test="_parameter != null">
             <include refid="Example_Where_Clause"/>
@@ -121,7 +121,7 @@
             </if>
         </trim>
     </insert>
-    <select id="countByExample" parameterType="com.crossoverJie.pojo.RediscontentExample"
+    <select id="countByExample" parameterType="com.crossoverJie.pojo.RedisContentExample"
             resultType="java.lang.Integer">
         select count(*) from redisContent
         <if test="_parameter != null">

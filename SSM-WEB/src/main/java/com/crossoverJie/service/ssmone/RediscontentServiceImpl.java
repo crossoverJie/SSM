@@ -2,7 +2,7 @@ package com.crossoverJie.service.ssmone;
 
 import com.crossoverJie.dao.RediscontentMapper;
 import com.crossoverJie.pojo.Rediscontent;
-import com.crossoverJie.pojo.RediscontentExample;
+import com.crossoverJie.pojo.RedisContentExample;
 import com.crossoverJie.service.RediscontentService;
 import com.crossoverJie.util.PageEntity;
 import com.github.pagehelper.PageHelper;
@@ -26,7 +26,7 @@ public class RediscontentServiceImpl implements RediscontentService {
 
 
     @Override
-    public List<Rediscontent> selectByExample(RediscontentExample example) {
+    public List<Rediscontent> selectByExample(RedisContentExample example) {
         return rediscontentMapper.selectByExample(example);
     }
 
@@ -39,10 +39,10 @@ public class RediscontentServiceImpl implements RediscontentService {
     public PageEntity<Rediscontent> selectByPage(Integer pageNum, Integer pageSize) {
         PageHelper.startPage(pageNum, pageSize);
         //因为是demo，所以这里默认没有查询条件。
-        List<Rediscontent> rediscontents = rediscontentMapper.selectByExample(new RediscontentExample());
+        List<Rediscontent> rediscontents = rediscontentMapper.selectByExample(new RedisContentExample());
         PageEntity<Rediscontent> rediscontentPageEntity = new PageEntity<Rediscontent>();
         rediscontentPageEntity.setList(rediscontents);
-        int size = rediscontentMapper.selectByExample(new RediscontentExample()).size();
+        int size = rediscontentMapper.selectByExample(new RedisContentExample()).size();
         rediscontentPageEntity.setCount(size);
         return rediscontentPageEntity;
     }

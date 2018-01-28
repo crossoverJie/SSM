@@ -5,7 +5,7 @@ import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;
 import java.util.logging.Logger;
 
 /**
- * Function:
+ * Function:动态切换数据源
  *
  * @author chenjiec
  *         Date: 2017/1/2 上午12:22

@@ -3,14 +3,14 @@ package com.crossoverJie.pojo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RediscontentExample {
+public class RedisContentExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public RediscontentExample() {
+    public RedisContentExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
