@@ -31,13 +31,6 @@ public class UserController {
 
     @RequestMapping("/frontUserSet/{id}")
     public String frontUserSet(@PathVariable int id, Model model) {
-        /*User user = userService.getUserById(id);
-        model.addAttribute("currentUser", user);
-        String img_id = user.getImg_id();
-        if (img_id != null) {
-            String path = imgService.selectByPrimaryKey(Integer.parseInt(img_id)).getPath();
-            model.addAttribute("headimg", path);
-        }*/
         return "front/user/userSet";
     }
 
@@ -88,8 +81,8 @@ public class UserController {
         indexer.setIds(id);
         indexer.setCitys(citys);
         indexer.setDescs(desc);
-        indexer.index("E:\\Lucene");
-        String indexDir="E:\\Lucene";
+        indexer.index("/data/Lucene");
+        String indexDir="/data/Lucene";
         try {
             Searcher.search(indexDir,q);
         } catch (Exception e) {

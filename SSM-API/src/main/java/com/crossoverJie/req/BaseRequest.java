@@ -35,4 +35,12 @@ public abstract class BaseRequest implements Serializable {
     public void setTimeStamp(int timeStamp) {
         this.timeStamp = timeStamp;
     }
+
+    @Override
+    public String toString() {
+        return "BaseRequest{" +
+                "reqNo='" + reqNo + '\'' +
+                ", timeStamp=" + timeStamp +
+                '}';
+    }
 }

@@ -1,7 +1,7 @@
 package com.crossoverJie.controller;
 
 import com.crossoverJie.pojo.T_user;
-import com.crossoverJie.service.T_userService;
+import com.crossoverJie.service.UserService;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class AdminController {
 
     @Autowired
-    private T_userService t_userService ;
+    private UserService userService;
 
     @RequestMapping("/loginAdmin")
     public String login(T_user user, Model model){

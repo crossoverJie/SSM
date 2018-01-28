@@ -42,4 +42,14 @@ public class Price {
     public void setEnd(BigDecimal end) {
         this.end = end;
     }
+
+    @Override
+    public String toString() {
+        return "Price{" +
+                "id=" + id +
+                ", total=" + total +
+                ", front=" + front +
+                ", end=" + end +
+                '}';
+    }
 }

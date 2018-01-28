@@ -6,6 +6,7 @@ import java.io.Serializable;
  * Created with IDEA
  * Created by ${jie.chen} on 2016/7/14.
  * 后台登录User
+ * fixme T_user 命名风格建议更换--crossoverJie
  */
 public class T_user implements Serializable {
     private Integer id;
@@ -38,5 +39,15 @@ public class T_user implements Serializable {
 
     public void setRoleId(Integer roleId) {
         this.roleId = roleId;
+    }
+
+    @Override
+    public String toString() {
+        return "T_user{" +
+                "id=" + id +
+                ", userName='" + userName + '\'' +
+                ", password='" + password + '\'' +
+                ", roleId=" + roleId +
+                '}';
     }
 }

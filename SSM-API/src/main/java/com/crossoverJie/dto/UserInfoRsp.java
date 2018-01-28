@@ -34,4 +34,14 @@ public class UserInfoRsp implements Serializable {
     public void setRoleId(Integer roleId) {
         this.roleId = roleId;
     }
+
+    @Override
+    public String toString() {
+        return "UserInfoRsp{" +
+                "id=" + id +
+                ", userName='" + userName + '\'' +
+                ", password='" + password + '\'' +
+                ", roleId=" + roleId +
+                '}';
+    }
 }

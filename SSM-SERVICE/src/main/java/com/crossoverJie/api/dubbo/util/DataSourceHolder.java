@@ -8,13 +8,13 @@ package com.crossoverJie.api.dubbo.util;
  * @since JDK 1.7
  */
 public class DataSourceHolder {
-    private static final ThreadLocal<String> dataSources = new ThreadLocal<String>();
+    private static final ThreadLocal<String> DATA_SOURCES = new ThreadLocal<String>();
 
     public static void setDataSources(String dataSource) {
-        dataSources.set(dataSource);
+        DATA_SOURCES.set(dataSource);
     }
 
     public static String getDataSources() {
-        return dataSources.get();
+        return DATA_SOURCES.get();
     }
 }

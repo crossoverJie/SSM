@@ -5,6 +5,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
 	http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
+	<!--为了方便内部应用调用不需要依赖 API-->
 	<dubbo:reference id="userInfoApi"
 		interface="com.crossoverJie.api.UserInfoApi" />
 </beans>

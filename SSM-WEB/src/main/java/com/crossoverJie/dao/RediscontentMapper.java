@@ -1,31 +1,31 @@
 package com.crossoverJie.dao;
 
-import com.crossoverJie.pojo.Rediscontent;
-import com.crossoverJie.pojo.RediscontentExample;
+import com.crossoverJie.pojo.RedisContent;
+import com.crossoverJie.pojo.RedisContentExample;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
 public interface RediscontentMapper {
-    int countByExample(RediscontentExample example);
+    int countByExample(RedisContentExample example);
 
-    int deleteByExample(RediscontentExample example);
+    int deleteByExample(RedisContentExample example);
 
     int deleteByPrimaryKey(Integer id);
 
-    int insert(Rediscontent record);
+    int insert(RedisContent record);
 
-    int insertSelective(Rediscontent record);
+    int insertSelective(RedisContent record);
 
-    List<Rediscontent> selectByExample(RediscontentExample example);
+    List<RedisContent> selectByExample(RedisContentExample example);
 
-    Rediscontent selectByPrimaryKey(Integer id);
+    RedisContent selectByPrimaryKey(Integer id);
 
-    int updateByExampleSelective(@Param("record") Rediscontent record, @Param("example") RediscontentExample example);
+    int updateByExampleSelective(@Param("record") RedisContent record, @Param("example") RedisContentExample example);
 
-    int updateByExample(@Param("record") Rediscontent record, @Param("example") RediscontentExample example);
+    int updateByExample(@Param("record") RedisContent record, @Param("example") RedisContentExample example);
 
-    int updateByPrimaryKeySelective(Rediscontent record);
+    int updateByPrimaryKeySelective(RedisContent record);
 
-    int updateByPrimaryKey(Rediscontent record);
+    int updateByPrimaryKey(RedisContent record);
 }

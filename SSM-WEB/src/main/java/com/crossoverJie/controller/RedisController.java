@@ -3,7 +3,7 @@ package com.crossoverJie.controller;
 import com.crossoverJie.dao.PriceMapper;
 import com.crossoverJie.dao.RediscontentMapper;
 import com.crossoverJie.enums.StatusEnum;
-import com.crossoverJie.pojo.Rediscontent;
+import com.crossoverJie.pojo.RedisContent;
 import com.crossoverJie.req.RedisContentReq;
 import com.crossoverJie.request.anotation.CheckReqNo;
 import com.crossoverJie.res.BaseResponse;
@@ -51,10 +51,10 @@ public class RedisController {
         try {
             JSONArray ja = new JSONArray();
             PageHelper.startPage(1, 10);
-            PageEntity<Rediscontent> rediscontentPageEntity = rediscontentService.selectByPage(page, pageSize);
-            for (Rediscontent rediscontent : rediscontentPageEntity.getList()) {
+            PageEntity<RedisContent> rediscontentPageEntity = rediscontentService.selectByPage(page, pageSize);
+            for (RedisContent redisContent : rediscontentPageEntity.getList()) {
                 JSONObject jo1 = new JSONObject();
-                jo1.put("rediscontent", rediscontent);
+                jo1.put("redisContent", redisContent);
                 ja.add(jo1);
             }
             jo.put("redisContents", ja);
@@ -75,10 +75,10 @@ public class RedisController {
     public BaseResponse<NULLBody> createRedisContent(@RequestBody RedisContentReq redisContentReq){
         BaseResponse<NULLBody> response = new BaseResponse<NULLBody>() ;
 
-        Rediscontent rediscontent = new Rediscontent() ;
+        RedisContent redisContent = new RedisContent() ;
         try {
-            CommonUtil.setLogValueModelToModel(redisContentReq,rediscontent);
-            rediscontentMapper.insertSelective(rediscontent) ;
+            CommonUtil.setLogValueModelToModel(redisContentReq, redisContent);
+            rediscontentMapper.insertSelective(redisContent) ;
             response.setReqNo(redisContentReq.getReqNo());
             response.setCode(StatusEnum.SUCCESS.getCode());
             response.setMessage(StatusEnum.SUCCESS.getMessage());

@@ -2,9 +2,13 @@ package com.crossoverJie.dao;
 
 import com.crossoverJie.pojo.Content;
 import com.crossoverJie.pojo.ContentExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.List;
+
+/**
+ * @author chenjie
+ */
 public interface ContentMapper {
     int countByExample(ContentExample example);
 

@@ -7,13 +7,19 @@ import java.io.Serializable;
  * Created by ${jie.chen} on 2016/7/6.
  */
 public class PageEntity implements Serializable {
-    /**第几页**/
+    /**
+     * 第几页
+     */
     private int page ;
 
-    /**起始页**/
+    /**
+     * 起始页
+     */
     private int start ;
 
-    /**每页多少条记录**/
+    /**
+     * 每页多少条记录
+     */
     private int pageSize ;
 
     public PageEntity(int page, int pageSize) {
@@ -43,5 +49,14 @@ public class PageEntity implements Serializable {
 
     public void setPageSize(int pageSize) {
         this.pageSize = pageSize;
+    }
+
+    @Override
+    public String toString() {
+        return "PageEntity{" +
+                "page=" + page +
+                ", start=" + start +
+                ", pageSize=" + pageSize +
+                '}';
     }
 }

@@ -3,7 +3,7 @@ package com.crossoverjie;
 import com.alibaba.fastjson.JSON;
 import com.crossoverJie.dao.RediscontentMapper;
 import com.crossoverJie.pojo.Content;
-import com.crossoverJie.pojo.Rediscontent;
+import com.crossoverJie.pojo.RedisContent;
 import com.crossoverJie.service.ContentService;
 import com.crossoverJie.service.IUserService;
 import com.crossoverJie.service.RediscontentService;
@@ -64,14 +64,14 @@ public class RedisTest {
 
     @Test
     public void redisMapper() {
-        Rediscontent rediscontent = rediscontentService.selectByPrimaryKey(1);
-        System.out.println(JSON.toJSONString(rediscontent));
+        RedisContent redisContent = rediscontentService.selectByPrimaryKey(1);
+        System.out.println(JSON.toJSONString(redisContent));
 
     }
 
     @Test
     public void redisPageMapper() {
-        PageEntity<Rediscontent> rediscontentPageEntity = rediscontentService.selectByPage(2, 10);
+        PageEntity<RedisContent> rediscontentPageEntity = rediscontentService.selectByPage(2, 10);
         System.out.println(JSON.toJSONString(rediscontentPageEntity));
 
     }
@@ -79,9 +79,9 @@ public class RedisTest {
     //    @Test
     public void saveData() {
         for (int i = 0; i < 100; i++) {
-            Rediscontent rediscontent = new Rediscontent();
-            rediscontent.setContent("你好啊" + i);
-            rediscontentMapper.insertSelective(rediscontent);
+            RedisContent redisContent = new RedisContent();
+            redisContent.setContent("你好啊" + i);
+            rediscontentMapper.insertSelective(redisContent);
         }
     }
 

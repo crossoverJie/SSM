@@ -12,4 +12,11 @@ public class UserInfoReq implements Serializable {
     public void setId(Integer id) {
         this.id = id;
     }
+
+    @Override
+    public String toString() {
+        return "UserInfoReq{" +
+                "id=" + id +
+                '}';
+    }
 }
