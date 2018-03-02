@@ -14,7 +14,7 @@ import java.util.Map;
 /**
  * Created by Administrator on 2016/6/22.
  */
-@Service("userService")
+@Service("iUserService")
 public class IUserServiceImpl implements IUserService {
     @Resource
     private IUserDao userDao;

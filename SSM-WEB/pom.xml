@@ -55,14 +55,6 @@
             <scope>test</scope>
         </dependency>
 
-        <!--kafka消费-->
-        <!--https://github.com/linzhaoming/easyframe-msg-->
-        <dependency>
-            <groupId>com.easyfun.easyframe</groupId>
-            <artifactId>easyframe-msg</artifactId>
-            <version>0.0.1</version>
-        </dependency>
-
         <!--kafka消费所依赖的zk-->
         <dependency>
             <groupId>com.github.sgroschupf</groupId>
@@ -309,12 +301,6 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-websocket</artifactId>
-        </dependency>
-
-        <!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
-        <dependency>
-            <groupId>commons-fileupload</groupId>
-            <artifactId>commons-fileupload</artifactId>
         </dependency>
 
         <!--redis-->
