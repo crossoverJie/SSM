@@ -101,7 +101,7 @@
 
 #### 找不到`CheckReqNo.java`类
 
-这是由于我再项目中有依赖: 
+这是由于我在项目中有依赖: 
 
 https://github.com/crossoverJie/SSM-REQUEST-CHECK 
 
