@@ -1,7 +1,7 @@
 
 <p align="center">
                                                                                                                     
- <img src="https://ws2.sinaimg.cn/large/006tNc79gy1fph9mul4dwj30bp04jt9f.jpg" >
+ <img src="https://ws1.sinaimg.cn/large/006tNc79gy1fph9pcn6wej30g30b5myk.jpg" >
  <br/>
  <br/>
  <a href="https://travis-ci.org/crossoverJie/SSM">
