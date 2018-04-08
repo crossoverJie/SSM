@@ -73,7 +73,7 @@
 
 ## 特别说明
 
-关于项目中的`SSM-SERVICE `,`SSM-WEB`模块只是为了演示使用，正常情况只会出现一个service或者是web模块。
+关于项目中的`SSM-SERVICE `,`SSM-WEB`模块只是为了演示使用，正常情况只会出现一个 service 或者是 web 模块。
 
 ## TODO LIST
 
