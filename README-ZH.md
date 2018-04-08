@@ -99,15 +99,9 @@
 
 # 常见问题
 
-#### 找不到`CheckReqNo.java`类
+#### 以 `crossoverJie` 开头的依赖或代码不存在
 
-这是由于我在项目中有依赖: 
-
-https://github.com/crossoverJie/SSM-REQUEST-CHECK 
-
-https://github.com/crossoverJie/SSM-DUBBO-HTTP 
-
-这个两个插件。
+这是由于我在项目中有依赖自己的 jar 包，并没有发布到 maven 中央厂库。
 
 *解决方案:*
 
@@ -118,8 +112,10 @@ https://github.com/crossoverJie/SSM-REQUEST-CHECK
 
 https://github.com/crossoverJie/SSM-DUBBO-HTTP 
 
+https://github.com/crossoverJie/SSM-DUBBO-FILTER
+
 `install` 到本地即可。
-- 不要clone `master`分支，使用https://github.com/crossoverJie/SSM/releases/tag/2.1.0 或之前的tag即可。
+- 不要 clone `master`分支，使用https://github.com/crossoverJie/SSM/releases/tag/2.1.0 或之前的 tag 即可。
 
 
 ---
