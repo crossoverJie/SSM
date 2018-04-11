@@ -110,7 +110,10 @@ On the project,`SSM-SERVICE` `SSM-WEB` module is only used to demonstrate the us
 
 # Q&A
 
-#### ClassNotFoundException: *CheckReqNo*
+#### Does the reliance or code that begins with `crossoverJie` do not exist?
+
+
+This is because I have a dependency on my jar package in the project, which is not published to the maven central factory library.
 
 Because there is dependence: 
 
@@ -118,7 +121,9 @@ https://github.com/crossoverJie/SSM-REQUEST-CHECK
 
 https://github.com/crossoverJie/SSM-DUBBO-HTTP 
 
-jar。
+https://github.com/crossoverJie/SSM-DUBBO-FILTER
+
+jar.
 
 *solution:*
 
