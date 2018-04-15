@@ -16,8 +16,6 @@
     <!--开启cglib代理-->
     <aop:aspectj-autoproxy proxy-target-class="true"></aop:aspectj-autoproxy>
 
-    <!-- 自动扫描该包，使SpringMVC认为包下用了@controller注解的类是控制器 -->
-    <context:component-scan base-package="com.crossoverJie.seconds.kill.controller"/>
 
     <mvc:annotation-driven/>
     <!-- 启动SpringMVC的注解功能，完成请求和注解POJO的映射
