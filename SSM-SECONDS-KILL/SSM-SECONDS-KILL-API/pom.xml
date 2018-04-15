@@ -1,4 +1,4 @@
-<!-- 
+<!--
  - Copyright 1999-2011 Alibaba Group.
  -  
  - Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,18 +14,17 @@
  - limitations under the License.
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<parent>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
         <groupId>com.crossoverJie</groupId>
-        <artifactId>SSM</artifactId>
+        <artifactId>SSM-SECONDS-KILL</artifactId>
         <version>2.2.0-SNAPSHOT</version>
     </parent>
-	<artifactId>SSM-SECONDS-KILL</artifactId>
-	<packaging>pom</packaging>
-	<modules>
-		<module>SSM-SECONDS-KILL-API</module>
-		<module>SSM-SECONDS-KILL-WEB</module>
-		<module>SSM-SECONDS-KILL-SERVICE</module>
-	</modules>
+    <artifactId>SSM-SECONDS-KILL-API</artifactId>
+    <packaging>jar</packaging>
+    <name>${project.artifactId}</name>
+
+
+
 </project>

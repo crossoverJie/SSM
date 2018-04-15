@@ -46,6 +46,12 @@
             </dependency>
 
             <dependency>
+                <groupId>com.crossoverJie</groupId>
+                <artifactId>SSM-SECONDS-KILL-API</artifactId>
+                <version>2.2.0-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
                 <version>4.12</version>
@@ -77,6 +83,14 @@
                         <artifactId>zookeeper</artifactId>
                     </exclusion>
                 </exclusions>
+            </dependency>
+
+
+            <!-- https://mvnrepository.com/artifact/org.apache.curator/curator-framework -->
+            <dependency>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-framework</artifactId>
+                <version>4.0.1</version>
             </dependency>
 
             <dependency>

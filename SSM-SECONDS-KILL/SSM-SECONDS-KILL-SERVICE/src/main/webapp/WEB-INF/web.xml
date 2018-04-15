@@ -10,7 +10,7 @@
     <!-- Spring 配置文件 -->
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>classpath:spring-*.xml</param-value>
+        <param-value>classpath*:spring-*.xml</param-value>
     </context-param>
 
 
@@ -60,6 +60,7 @@
     <session-config>
         <session-timeout>30</session-timeout>
     </session-config>
+
 
 
     <!-- 确保静态资源可以被访问 -->
