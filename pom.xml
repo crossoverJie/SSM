@@ -21,7 +21,7 @@
         <spring.version>4.1.4.RELEASE</spring.version>
         <jackson.version>2.5.0</jackson.version>
         <lucene.version>6.0.1</lucene.version>
-        <dubbo.version>2.5.3</dubbo.version>
+        <dubbo.version>2.6.1</dubbo.version>
         <jetty.version>8.1.16.v20140903</jetty.version>
     </properties>
 
