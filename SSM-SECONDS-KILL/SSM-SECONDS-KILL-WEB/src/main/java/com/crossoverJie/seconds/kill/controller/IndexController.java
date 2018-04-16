@@ -1,6 +1,8 @@
 package com.crossoverJie.seconds.kill.controller;
 
 import com.crossoverJie.seconds.kill.api.StockService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,20 +19,23 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping(value = "/")
 public class IndexController {
 
+    private Logger logger = LoggerFactory.getLogger(IndexController.class);
+
     @Autowired
-    private StockService stockService ;
+    private StockService stockService;
 
     @RequestMapping("/health")
     @ResponseBody
-    public String health(){
-        return "OK" ;
+    public String health() {
+        logger.info("heath");
+        return "OK";
     }
 
     @RequestMapping("/getStockNum")
     @ResponseBody
-    public String getStockNum(){
+    public String getStockNum() {
         int currentCount = stockService.getCurrentCount();
-        System.out.println("currentCount=" + currentCount);
-        return String.valueOf(currentCount) ;
+        logger.info("currentCount={}", currentCount);
+        return String.valueOf(currentCount);
     }
 }

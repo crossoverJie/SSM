@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+	<!--<variable resource="props/common.properties" /> -->
+	<!--默认在/data/www/java/work/logs目录 -->
+	<property name="logger.root" value="/data/work/logs/" />
+	<property name="app.name" value="ssm-seconds-kill-web" />
+	<property name="MY_PATTERN"
+		value="%d{HH:mm:ss.SSS} | %thread | %X{__X-TraceID__} | [%-5level] %logger{36}:%line | %msg%n" />
+	<!-- contextName主要是为了区分在一个web容器下部署多个应用启用jmx时，不会出现混乱 -->
+	<contextName>${app.name}</contextName>
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<!-- encoder 默认配置为PatternLayoutEncoder -->
+		<encoder>
+			<pattern>${MY_PATTERN}</pattern>
+		</encoder>
+	</appender>
+	<appender name="debug"
+			  class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${logger.root}/${app.name}-debug.log</file>
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>debug</level>
+		</filter>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${logger.root:-/data/www/java/work/logs}/${app.name}-debug.%d{yyyy-MM-dd}.log.zip
+			</fileNamePattern>
+			<maxHistory>7</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>${MY_PATTERN}</pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+	</appender>
+
+
+	<appender name="dubboProvider"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${logger.root}/${app.name}-dubboProvider.log</file>
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>info</level>
+		</filter>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${logger.root:-/data/www/java/work/logs}/${app.name}-dubboProvider.%d{yyyy-MM-dd}.log.zip
+			</fileNamePattern>
+			<maxHistory>7</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>${MY_PATTERN}</pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+	</appender>
+
+	<appender name="info"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${logger.root}/${app.name}-info.log</file>
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>info</level>
+		</filter>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${logger.root:-/data/www/java/work/logs}/${app.name}-info.%d{yyyy-MM-dd}.log.zip
+			</fileNamePattern>
+			<maxHistory>7</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>${MY_PATTERN}</pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+	</appender>
+
+	<appender name="error"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${logger.root}/${app.name}-error.log</file>
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>warn</level>
+		</filter>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${logger.root:-/data/www/java/work/logs}/${app.name}-error.%d{yyyy-MM-dd}.log.zip
+			</fileNamePattern>
+			<maxHistory>7</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<!--<pattern>%-4relative [%thread] %-5level %logger{36} - %msg%n</pattern> -->
+			<!--<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern> -->
+			<pattern>${MY_PATTERN}</pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+	</appender>
+
+	<!-- sql -->
+	<appender name="sql"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${logger.root}/${app.name}-sql.log</file>
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>info</level>
+		</filter>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${logger.root:-/data/www/java/work/logs}/${app.name}-sql.%d{yyyy-MM-dd}.log.zip
+			</fileNamePattern>
+			<maxHistory>7</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>${MY_PATTERN}</pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+	</appender>
+
+
+	<!-- 过滤指定类的日志 -->
+	<logger name="org.apache.zookeeper.ClientCnxn" level="WARN">
+	</logger>
+	<logger name="com.alibaba.dubbo.remoting.transport.DecodeHandler"
+		level="WARN">
+	</logger>
+	<logger
+		name="org.springframework.beans.factory.support.DefaultListableBeanFactory"
+		level="INFO">
+	</logger>
+	<logger
+		name="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"
+		level="INFO">
+	</logger>
+	<logger name="com.alibaba.dubbo" level="INFO" additivity="false">
+		<appender-ref ref="dubboProvider" />
+	</logger>
+	<root level="debug">
+		<!--测试，开发环境需要打印日志 jvm环境变量-Dlogback.env=dev -->
+		<appender-ref ref="debug" />
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="info" />
+		<!-- <appender-ref ref="warn" /> -->
+		<appender-ref ref="error" />
+	</root>
+
+</configuration>
