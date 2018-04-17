@@ -8,7 +8,7 @@
 	   http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
     <!-- 提供方应用信息，用于计算依赖关系 -->
-    <dubbo:application name="stock-Service" owner="crossoverJie"/>
+    <dubbo:application name="stock-service" owner="crossoverJie"/>
 
     <!-- 使用multicast广播注册中心暴露服务地址 -->
     <dubbo:registry address="zookeeper://47.98.194.60:2181" />
