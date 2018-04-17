@@ -23,6 +23,7 @@
     </parent>
     <artifactId>SSM-SECONDS-KILL-SERVICE</artifactId>
     <packaging>war</packaging>
+    <description>服务 provider</description>
 
 
     <dependencies>
@@ -91,6 +92,21 @@
             <artifactId>spring-webmvc</artifactId>
         </dependency>
 
+
+        <!-- slf4j -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+        </dependency>
 
         <!-- log4j -->
         <dependency>
