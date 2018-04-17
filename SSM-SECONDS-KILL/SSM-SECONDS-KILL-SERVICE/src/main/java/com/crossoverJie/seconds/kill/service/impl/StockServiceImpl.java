@@ -20,8 +20,8 @@ public class StockServiceImpl implements StockService {
 
     @Override
     public int getCurrentCount() {
-        String remoteAddressString = RpcContext.getContext().getRemoteAddressString();
-        logger.debug("request ={}",remoteAddressString);
+        String remoteAddressString = RpcContext.getContext().getRemoteHostName();
+        logger.info("request ={}",remoteAddressString);
         return 10;
     }
 }

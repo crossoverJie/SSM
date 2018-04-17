@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-	<property name="LOG_PATH" value="/data/work/logs/" />
+	<property name="LOG_PATH" value="/data/work/logs/kill-web" />
 	<property name="LOG_FILE_NAME" value="ssm-seconds-kill-web" />
 
 	<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
