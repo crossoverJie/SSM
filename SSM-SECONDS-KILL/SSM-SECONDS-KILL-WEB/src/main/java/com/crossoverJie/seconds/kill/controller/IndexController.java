@@ -35,7 +35,7 @@ public class IndexController {
     @ResponseBody
     public String getStockNum() {
         int currentCount = stockService.getCurrentCount();
-        logger.debug("currentCount={}", currentCount);
+        logger.info("currentCount={}", currentCount);
         return String.valueOf(currentCount);
     }
 }
