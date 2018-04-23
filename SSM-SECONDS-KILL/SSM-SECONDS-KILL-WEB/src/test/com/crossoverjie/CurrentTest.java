@@ -21,9 +21,14 @@ public class CurrentTest {
 
     public static void main(String[] args) throws InterruptedException {
         init();
-        for (int i = 0; i < 250; i++) {
+        //单机极限并发450 配置 Tomcat 最大线程 250 acceptCount="200"
+        try {
+            for (int i = 0; i < 400; i++) {
 
-            executorServicePool.execute(new Worker(i));
+                executorServicePool.execute(new Worker(i));
+            }
+        }catch (RejectedExecutionException e){
+            logger.error("RejectedExecutionException",e);
         }
 
         executorServicePool.shutdown() ;
@@ -36,7 +41,8 @@ public class CurrentTest {
     public static void init() {
         ThreadFactory namedThreadFactory = new ThreadFactoryBuilder()
                 .setNameFormat("current-thread-%d").build();
-        executorServicePool = new ThreadPoolExecutor(150, 150, 0L, TimeUnit.MILLISECONDS,
+        executorServicePool = new ThreadPoolExecutor(550, 550
+                , 0L, TimeUnit.MILLISECONDS,
                 new ArrayBlockingQueue<Runnable>(200), namedThreadFactory, new ThreadPoolExecutor.AbortPolicy());
 
     }
