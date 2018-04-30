@@ -22,6 +22,8 @@ else
     echo "kill $appname fail"
 fi
 
+cd ..
+
 git pull
 
 cd SSM-SECONDS-KILL
