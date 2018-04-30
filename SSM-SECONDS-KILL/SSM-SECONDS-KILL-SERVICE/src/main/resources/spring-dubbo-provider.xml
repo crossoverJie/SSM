@@ -17,5 +17,5 @@
     <dubbo:protocol name="dubbo" port="20880"/>
 
     <!-- 声明需要暴露的接口 -->
-    <dubbo:annotation package="com.crossoverJie.seconds.kill.service.impl" />
+    <dubbo:annotation package="com.crossoverJie.seconds.kill.api.impl" />
 </beans>

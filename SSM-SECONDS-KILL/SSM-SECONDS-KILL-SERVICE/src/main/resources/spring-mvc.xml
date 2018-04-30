@@ -12,14 +12,12 @@
 
 
 
-    <context:component-scan base-package="com.crossoverJie" />
+    <context:component-scan base-package="com.crossoverJie.seconds.kill" />
     <!--开启cglib代理-->
     <aop:aspectj-autoproxy proxy-target-class="true"></aop:aspectj-autoproxy>
 
 
     <mvc:annotation-driven/>
-    <!-- 启动SpringMVC的注解功能，完成请求和注解POJO的映射
-    -->
 
     <!-- 定义跳转的文件的前后缀 ，视图模式配置-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
