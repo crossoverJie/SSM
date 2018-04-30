@@ -18,7 +18,7 @@ echo "cp war ok!"
 
 
 
-PID=$(ps -e|grep $input1|awk '{printf $1}')
+PID=$(ps -ef | grep $input1 | grep -v grep | awk '{print $2}')
 
 if [ $? -eq 0 ]; then
     echo "process id:$PID"
