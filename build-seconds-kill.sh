@@ -1,8 +1,28 @@
 #!/bin/bash
 
-read input1
+read appname
 
-echo "input="$input1
+echo "input="$appname
+
+
+PID=$(ps -ef | grep $appname | grep -v grep | awk '{print $2}')
+
+if [ $? -eq 0 ]; then
+    echo "process id:$PID"
+else
+    echo "process $appname not exit"
+    exit
+fi
+
+echo "pid = $PID"
+kill -9 ${PID}
+
+if [ $? -eq 0 ];then
+    echo "kill $appname success"
+else
+    echo "kill $appname fail"
+    exit
+fi
 
 git pull
 
@@ -18,24 +38,8 @@ echo "cp war ok!"
 
 
 
-PID=$(ps -ef | grep $input1 | grep -v grep | awk '{print $2}')
 
-if [ $? -eq 0 ]; then
-    echo "process id:$PID"
-else
-    echo "process $input1 not exit"
-    exit
-fi
-
-echo "pid = $PID"
-kill -9 ${PID}
-
-if [ $? -eq 0 ];then
-    echo "kill $input1 success"
-else
-    echo "kill $input1 fail"
-fi
 
 sh /home/crossoverJie/tomcat/tomcat-dubbo-provider-8080/bin/startup.sh
 
-echo "start $input1 success"
+echo "start $appname success"
