@@ -8,6 +8,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import javax.annotation.Resource;
+
 /**
  * Function:
  *
@@ -20,13 +22,14 @@ public class StockServiceImpl implements StockService {
 
     private Logger logger = LoggerFactory.getLogger(StockServiceImpl.class);
 
-    @Autowired
-    private SsmStockMapper ssmStockMapper ;
+    @Resource(name = "DBStockService")
+    private com.crossoverJie.seconds.kill.service.StockService stockService ;
 
     @Override
     public int getCurrentCount() {
         String remoteAddressString = RpcContext.getContext().getRemoteHostName();
         logger.info("request ={}",remoteAddressString);
-        return 10;
+        int stockCount = stockService.getStockCount(1);
+        return stockCount;
     }
 }
