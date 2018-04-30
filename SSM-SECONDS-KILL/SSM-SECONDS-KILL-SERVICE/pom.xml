@@ -112,6 +112,11 @@
             <artifactId>spring-orm</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+
 
         <!-- slf4j -->
         <dependency>
