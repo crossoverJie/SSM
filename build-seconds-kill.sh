@@ -27,7 +27,7 @@ else
     exit
 fi
 
-
+echo "pid = $PID"
 kill -9 ${PID}
 
 if [ $? -eq 0 ];then
