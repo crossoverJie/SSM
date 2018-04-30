@@ -3,14 +3,14 @@ package com.crossoverJie.seconds.kill.pojo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SsmStockExample {
+public class StockExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public SsmStockExample() {
+    public StockExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 

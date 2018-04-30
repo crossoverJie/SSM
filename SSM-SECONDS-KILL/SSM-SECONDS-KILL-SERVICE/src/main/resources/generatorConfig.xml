@@ -13,18 +13,19 @@
             <property name="suppressAllComments" value="true"/>
         </commentGenerator>
         <jdbcConnection
-                connectionURL="jdbc:mysql://127.0.0.1:3306/ssm-seconds-kill?characterEncoding=utf8"
-                driverClass="com.mysql.jdbc.Driver" password="123456" userId="root"/>
+                connectionURL="jdbc:mysql://47.98.194.60:3306/ssm-seconds-kill?characterEncoding=utf8"
+                driverClass="com.mysql.jdbc.Driver" password="i6-1Or0uqX%2" userId="root"/>
         <javaModelGenerator targetPackage="com.crossoverJie.seconds.kill.pojo"
                             targetProject="src/main/java"/>
-        <sqlMapGenerator targetPackage="com.crossoverJie.seconds.kill.pojo.dao"
+        <sqlMapGenerator targetPackage="com.crossoverJie.seconds.kill.dao"
                          targetProject="src/main/resources/mapping"/>
-        <javaClientGenerator targetPackage="com.crossoverJie.seconds.kill.pojo.dao"
+
+        <javaClientGenerator targetPackage="com.crossoverJie.seconds.kill.dao"
                              targetProject="src/main/java" type="XMLMAPPER"/>
 
-        <table schema="ssm-seconds-kill" tableName="ssm-order">
+        <table schema="ssm-seconds-kill" tableName="order">
         </table>
-        <table schema="ssm-seconds-kill" tableName="ssm-stock">
+        <table schema="ssm-seconds-kill" tableName="stock">
         </table>
 
     </context>

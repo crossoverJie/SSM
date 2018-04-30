@@ -1,7 +1,7 @@
 package com.crossoverJie.seconds.kill.service.impl;
 
-import com.crossoverJie.seconds.kill.dao.SsmStockMapper;
-import com.crossoverJie.seconds.kill.pojo.SsmStock;
+import com.crossoverJie.seconds.kill.dao.StockMapper;
+import com.crossoverJie.seconds.kill.pojo.Stock;
 import com.crossoverJie.seconds.kill.service.StockService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,11 +17,11 @@ import org.springframework.stereotype.Service;
 public class StockServiceImpl implements StockService {
 
     @Autowired
-    private SsmStockMapper ssmStockMapper ;
+    private StockMapper ssmStockMapper ;
 
     @Override
     public int getStockCount(int id) {
-        SsmStock ssmStock = ssmStockMapper.selectByPrimaryKey(id);
+        Stock ssmStock = ssmStockMapper.selectByPrimaryKey(id);
         return ssmStock.getCount();
     }
 }

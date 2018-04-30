@@ -2,7 +2,7 @@ package com.crossoverJie.seconds.kill.pojo;
 
 import java.util.Date;
 
-public class SsmOrder {
+public class Order {
     private Integer id;
 
     private Integer sid;

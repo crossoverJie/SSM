@@ -1,6 +1,6 @@
 package com.crossoverJie.seconds.kill.pojo;
 
-public class SsmStock {
+public class Stock {
     private Integer id;
 
     private String name;

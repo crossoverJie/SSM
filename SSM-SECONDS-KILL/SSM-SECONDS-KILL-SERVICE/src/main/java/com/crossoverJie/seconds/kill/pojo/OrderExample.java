@@ -5,14 +5,14 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
-public class SsmOrderExample {
+public class OrderExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public SsmOrderExample() {
+    public OrderExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
