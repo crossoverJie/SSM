@@ -3,7 +3,6 @@ package com.crossoverJie.seconds.kill.api.impl;
 import com.alibaba.dubbo.config.annotation.Service;
 import com.alibaba.dubbo.rpc.RpcContext;
 import com.crossoverJie.seconds.kill.api.StockService;
-import com.crossoverJie.seconds.kill.dao.SsmStockMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
