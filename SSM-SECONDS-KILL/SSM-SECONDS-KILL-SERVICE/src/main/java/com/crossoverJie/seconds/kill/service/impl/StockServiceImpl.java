@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
  *         Date: 30/04/2018 22:39
  * @since JDK 1.8
  */
-//@Service
+@Service("DBStockService")
 public class StockServiceImpl implements StockService {
 
     @Autowired
