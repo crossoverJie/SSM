@@ -17,4 +17,13 @@ public interface OrderService {
      *  订单ID
      */
     int createWrongOrder(int sid) ;
+
+
+    /**
+     * 创建订单 乐观锁
+     * @param sid
+     * @return
+     * @throws Exception
+     */
+    int createOptimisticOrder(int sid) throws Exception;
 }

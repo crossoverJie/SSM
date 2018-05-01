@@ -23,9 +23,8 @@
         <javaClientGenerator targetPackage="com.crossoverJie.seconds.kill.dao"
                              targetProject="src/main/java" type="XMLMAPPER"/>
 
-        <table schema="ssm-seconds-kill" tableName="stock_order">
+        <table schema="ssm-seconds-kill" tableName="stock">
         </table>
-
 
     </context>
 

@@ -22,4 +22,9 @@ public class OrderServiceImpl implements OrderService {
     public int createWrongOrder(int sid) throws Exception {
         return orderService.createWrongOrder(sid);
     }
+
+    @Override
+    public int createOptimisticOrder(int sid) throws Exception {
+        return 0;
+    }
 }

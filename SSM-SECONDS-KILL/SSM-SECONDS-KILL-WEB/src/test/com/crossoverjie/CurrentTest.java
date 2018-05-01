@@ -16,14 +16,14 @@ public class CurrentTest {
 
     private static Logger logger = LoggerFactory.getLogger(CurrentTest.class);
     private static ExecutorService executorServicePool;
-    private static String url="http://47.98.194.60:8083/SSM-SECONDS-KILL-WEB-2.2.0-SNAPSHOT/getStockNum" ;
+    private static String url="http://47.98.194.60:8083/SSM-SECONDS-KILL-WEB-2.2.0-SNAPSHOT/createWrongOrder/1" ;
 
 
     public static void main(String[] args) throws InterruptedException {
         init();
         //单机极限并发450 配置 Tomcat 最大线程 250 acceptCount="200"
         try {
-            for (int i = 0; i < 400; i++) {
+            for (int i = 0; i < 15; i++) {
 
                 executorServicePool.execute(new Worker(i));
             }
@@ -62,7 +62,7 @@ public class CurrentTest {
         public void run() {
 
             String res = HttpTools.doGet(url, HttpClients.createDefault()) ;
-            logger.info("=======index{}====res{}====",index,res);
+            logger.info("=======index={}====res={}====",index,res);
         }
     }
 

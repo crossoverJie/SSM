@@ -6,6 +6,7 @@
     <result column="name" property="name" jdbcType="VARCHAR" />
     <result column="count" property="count" jdbcType="INTEGER" />
     <result column="sale" property="sale" jdbcType="INTEGER" />
+    <result column="version" property="version" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -66,7 +67,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, name, count, sale
+    id, name, count, sale, version
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.crossoverJie.seconds.kill.pojo.StockExample" >
     select
@@ -99,10 +100,10 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.crossoverJie.seconds.kill.pojo.Stock" >
-    insert into stock (id, name, count, 
-      sale)
-    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{count,jdbcType=INTEGER}, 
-      #{sale,jdbcType=INTEGER})
+    insert into stock (id, name, count,
+    sale, version)
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{count,jdbcType=INTEGER},
+    #{sale,jdbcType=INTEGER}, #{version,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.crossoverJie.seconds.kill.pojo.Stock" >
     insert into stock
@@ -119,6 +120,9 @@
       <if test="sale != null" >
         sale,
       </if>
+      <if test="version != null" >
+        version,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -132,6 +136,9 @@
       </if>
       <if test="sale != null" >
         #{sale,jdbcType=INTEGER},
+      </if>
+      <if test="version != null" >
+        #{version,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -156,6 +163,9 @@
       <if test="record.sale != null" >
         sale = #{record.sale,jdbcType=INTEGER},
       </if>
+      <if test="record.version != null" >
+        version = #{record.version,jdbcType=INTEGER},
+      </if>
     </set>
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -166,7 +176,8 @@
     set id = #{record.id,jdbcType=INTEGER},
     name = #{record.name,jdbcType=VARCHAR},
     count = #{record.count,jdbcType=INTEGER},
-    sale = #{record.sale,jdbcType=INTEGER}
+    sale = #{record.sale,jdbcType=INTEGER},
+    version = #{record.version,jdbcType=INTEGER}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -183,6 +194,9 @@
       <if test="sale != null" >
         sale = #{sale,jdbcType=INTEGER},
       </if>
+      <if test="version != null" >
+        version = #{version,jdbcType=INTEGER},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -190,7 +204,8 @@
     update stock
     set name = #{name,jdbcType=VARCHAR},
       count = #{count,jdbcType=INTEGER},
-      sale = #{sale,jdbcType=INTEGER}
+      sale = #{sale,jdbcType=INTEGER},
+      version = #{version,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

@@ -31,7 +31,12 @@ public class StockServiceImpl implements StockService {
     }
 
     @Override
-    public void updateStockById(Stock stock) {
-        stockMapper.updateByPrimaryKeySelective(stock) ;
+    public int updateStockById(Stock stock) {
+        return stockMapper.updateByPrimaryKeySelective(stock) ;
+    }
+
+    @Override
+    public int updateStockByOptimistic(Stock stock) {
+        return stockMapper.updateByOptimistic(stock);
     }
 }

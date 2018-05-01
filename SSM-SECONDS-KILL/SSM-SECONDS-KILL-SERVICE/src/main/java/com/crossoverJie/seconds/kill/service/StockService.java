@@ -28,6 +28,16 @@ public interface StockService {
     /**
      * 更新库存信息
      * @param stock
+     * return
      */
-    void updateStockById(Stock stock);
+    int updateStockById(Stock stock);
+
+    /**
+     * 乐观锁更新库存
+     * @param stock
+     * @return
+     */
+    int updateStockByOptimistic(Stock stock);
+
+
 }
