@@ -64,4 +64,23 @@ public class IndexController {
     }
 
 
+    /**
+     * 乐观锁更新库存
+     * @param sid
+     * @return
+     */
+    @RequestMapping("/createOptimisticOrder/{sid}")
+    @ResponseBody
+    public String createOptimisticOrder(@PathVariable int sid) {
+        logger.info("sid=[{}]", sid);
+        int id = 0;
+        try {
+            id = orderService.createOptimisticOrder(sid);
+        } catch (Exception e) {
+            logger.error("Exception",e);
+        }
+        return String.valueOf(id);
+    }
+
+
 }
