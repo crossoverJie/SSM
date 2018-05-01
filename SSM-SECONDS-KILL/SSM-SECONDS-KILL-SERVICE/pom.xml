@@ -118,6 +118,17 @@
         </dependency>
 
 
+        <!--redis-->
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-redis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+        </dependency>
+
+
         <!-- slf4j -->
         <dependency>
             <groupId>org.slf4j</groupId>

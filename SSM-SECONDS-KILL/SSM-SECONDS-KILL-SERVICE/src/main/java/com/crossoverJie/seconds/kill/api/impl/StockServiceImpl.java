@@ -6,6 +6,7 @@ import com.crossoverJie.seconds.kill.api.StockService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 
 import javax.annotation.Resource;
 
@@ -24,11 +25,20 @@ public class StockServiceImpl implements StockService {
     @Resource(name = "DBStockService")
     private com.crossoverJie.seconds.kill.service.StockService stockService ;
 
+    @Autowired
+    private RedisTemplate<String,Integer> redisTemplate ;
+
     @Override
     public int getCurrentCount() {
         String remoteAddressString = RpcContext.getContext().getRemoteHostName();
         logger.info("request ={}",remoteAddressString);
-        int stockCount = stockService.getStockCount(1);
-        return stockCount;
+
+        Integer count = redisTemplate.opsForValue().get("sid_1") ;
+        if (count == null){
+            count = stockService.getStockCount(1) ;
+            redisTemplate.opsForValue().set("sid_1",count) ;
+        }
+
+        return count;
     }
 }
