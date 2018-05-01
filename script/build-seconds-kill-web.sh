@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# 构建服务提供者
+# 构建 web 消费者
 
 read appname
 
@@ -36,7 +36,7 @@ mvn -Dmaven.test.skip=true clean package
 
 echo "build war success"
 
-cp /home/crossoverJie/SSM/SSM-SECONDS-KILL/SSM-SECONDS-KILL-SERVICE/target/SSM-SECONDS-KILL-SERVICE-2.2.0-SNAPSHOT.war /home/crossoverJie/tomcat/tomcat-dubbo-provider-8080/webapps
+cp /home/crossoverJie/SSM/SSM-SECONDS-KILL/SSM-SECONDS-KILL-WEB/target/SSM-SECONDS-KILL-WEB-2.2.0-SNAPSHOT.war /home/crossoverJie/tomcat/tomcat-dubbo-consumer-8083/webapps
 
 echo "cp war ok!"
 
@@ -44,6 +44,6 @@ echo "cp war ok!"
 
 
 
-sh /home/crossoverJie/tomcat/tomcat-dubbo-provider-8080/bin/startup.sh
+sh /home/crossoverJie/tomcat/tomcat-dubbo-consumer-8083/bin/startup.sh
 
 echo "start $appname success"
