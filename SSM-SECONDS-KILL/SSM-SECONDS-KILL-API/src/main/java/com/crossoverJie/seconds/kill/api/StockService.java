@@ -9,5 +9,10 @@ package com.crossoverJie.seconds.kill.api;
  */
 public interface StockService {
 
+    /**
+     * 获取当前库存
+     * @return
+     *  当前库存
+     */
     int getCurrentCount() ;
 }
