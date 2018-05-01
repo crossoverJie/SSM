@@ -98,13 +98,13 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.crossoverJie.seconds.kill.pojo.StockOrder" >
+  <insert id="insert" parameterType="com.crossoverJie.seconds.kill.pojo.StockOrder" useGeneratedKeys="true" keyProperty="id" >
     insert into stock_order (id, sid, name,
     create_time)
     values (#{id,jdbcType=INTEGER}, #{sid,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR},
     #{createTime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.crossoverJie.seconds.kill.pojo.StockOrder" >
+  <insert id="insertSelective" parameterType="com.crossoverJie.seconds.kill.pojo.StockOrder" useGeneratedKeys="true" keyProperty="id" >
     insert into stock_order
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >

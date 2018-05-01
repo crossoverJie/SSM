@@ -16,7 +16,7 @@ import java.io.IOException;
  * ClassName: HttpTools <br/>
  * Function: httpClent工具类. <br/>
  *
- * @author chenjie
+ * @author crossoverJie
  * @since JDK 1.7
  */
 public class HttpTools {
