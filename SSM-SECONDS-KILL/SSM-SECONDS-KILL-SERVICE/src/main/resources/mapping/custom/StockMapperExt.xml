@@ -5,7 +5,7 @@
     <update id="updateByOptimistic" parameterType="com.crossoverJie.seconds.kill.pojo.Stock">
         update stock
         <set>
-            sale = sele + 1,
+            sale = sale + 1,
             version = version + 1,
         </set>
 
