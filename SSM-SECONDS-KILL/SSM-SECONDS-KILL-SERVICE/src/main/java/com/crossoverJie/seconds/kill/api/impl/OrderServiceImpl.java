@@ -19,7 +19,7 @@ public class OrderServiceImpl implements OrderService {
     private com.crossoverJie.seconds.kill.service.OrderService orderService ;
 
     @Override
-    public int createWrongOrder(int sid) {
+    public int createWrongOrder(int sid) throws Exception {
         return orderService.createWrongOrder(sid);
     }
 }

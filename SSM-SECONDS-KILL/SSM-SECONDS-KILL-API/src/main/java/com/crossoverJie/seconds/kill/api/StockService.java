@@ -14,5 +14,5 @@ public interface StockService {
      * @return
      *  当前库存
      */
-    int getCurrentCount() ;
+    int getCurrentCount() throws Exception;
 }

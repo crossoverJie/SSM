@@ -39,7 +39,12 @@ public class IndexController {
     @RequestMapping("/getStockNum")
     @ResponseBody
     public String getStockNum() {
-        int currentCount = stockService.getCurrentCount();
+        int currentCount = 0;
+        try {
+            currentCount = stockService.getCurrentCount();
+        } catch (Exception e) {
+            logger.error("Exception",e);
+        }
         logger.info("currentCount={}", currentCount);
         return String.valueOf(currentCount);
     }
@@ -49,7 +54,12 @@ public class IndexController {
     @ResponseBody
     public String createWrongOrder(@PathVariable int sid) {
         logger.info("sid=[{}]", sid);
-        int id = orderService.createWrongOrder(sid);
+        int id = 0;
+        try {
+            id = orderService.createWrongOrder(sid);
+        } catch (Exception e) {
+            logger.error("Exception",e);
+        }
         return String.valueOf(id);
     }
 

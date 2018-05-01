@@ -17,5 +17,5 @@ public interface OrderService {
      * @return
      *  订单ID
      */
-    int createWrongOrder(int sid) ;
+    int createWrongOrder(int sid) throws Exception;
 }
