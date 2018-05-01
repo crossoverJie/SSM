@@ -52,7 +52,6 @@ public class OrderServiceImpl implements OrderService {
         Order order = new Order() ;
         order.setSid(stock.getId());
         order.setName(stock.getName());
-        order.setCreateTime(new Date());
         int id = orderMapper.insertSelective(order);
         return id ;
     }
