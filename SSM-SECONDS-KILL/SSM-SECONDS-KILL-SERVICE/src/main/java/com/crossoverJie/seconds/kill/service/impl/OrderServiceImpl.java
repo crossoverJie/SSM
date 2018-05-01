@@ -1,8 +1,8 @@
 package com.crossoverJie.seconds.kill.service.impl;
 
-import com.crossoverJie.seconds.kill.dao.OrderMapper;
-import com.crossoverJie.seconds.kill.pojo.Order;
+import com.crossoverJie.seconds.kill.dao.StockOrderMapper;
 import com.crossoverJie.seconds.kill.pojo.Stock;
+import com.crossoverJie.seconds.kill.pojo.StockOrder;
 import com.crossoverJie.seconds.kill.service.OrderService;
 import com.crossoverJie.seconds.kill.service.StockService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +27,7 @@ public class OrderServiceImpl implements OrderService {
     private com.crossoverJie.seconds.kill.service.StockService stockService ;
 
     @Autowired
-    private OrderMapper orderMapper ;
+    private StockOrderMapper orderMapper ;
 
     @Override
     public int createWrongOrder(int sid) {
@@ -49,7 +49,7 @@ public class OrderServiceImpl implements OrderService {
 
 
     private int createOrder(Stock stock) {
-        Order order = new Order() ;
+        StockOrder order = new StockOrder() ;
         order.setSid(stock.getId());
         order.setName(stock.getName());
         int id = orderMapper.insertSelective(order);
