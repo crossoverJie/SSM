@@ -2,14 +2,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.crossoverJie.seconds.kill.dao.StockMapper">
 
-    <resultMap id="BaseResultMap" type="com.crossoverJie.seconds.kill.pojo.Stock" >
-        <id column="id" property="id" jdbcType="INTEGER" />
-        <result column="name" property="name" jdbcType="VARCHAR" />
-        <result column="count" property="count" jdbcType="INTEGER" />
-        <result column="sale" property="sale" jdbcType="INTEGER" />
-        <result column="version" property="version" jdbcType="INTEGER" />
-    </resultMap>
-
     <update id="updateByOptimistic" parameterType="com.crossoverJie.seconds.kill.pojo.Stock">
         update stock
         <set>
