@@ -1,10 +1,12 @@
 package com.crossoverJie.seconds.kill.controller;
 
+import com.crossoverJie.seconds.kill.api.OrderService;
 import com.crossoverJie.seconds.kill.api.StockService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -24,6 +26,9 @@ public class IndexController {
     @Autowired
     private StockService stockService;
 
+    @Autowired
+    private OrderService orderService;
+
     @RequestMapping("/health")
     @ResponseBody
     public String health() {
@@ -38,4 +43,15 @@ public class IndexController {
         logger.info("currentCount={}", currentCount);
         return String.valueOf(currentCount);
     }
+
+
+    @RequestMapping("/createWrongOrder/{sid}")
+    @ResponseBody
+    public String createWrongOrder(@PathVariable int sid) {
+        logger.info("sid=[{}]", sid);
+        int id = orderService.createWrongOrder(sid);
+        return String.valueOf(id);
+    }
+
+
 }
