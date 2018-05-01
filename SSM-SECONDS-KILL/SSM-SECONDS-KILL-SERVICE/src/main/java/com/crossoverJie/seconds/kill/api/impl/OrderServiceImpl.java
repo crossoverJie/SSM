@@ -1,7 +1,7 @@
 package com.crossoverJie.seconds.kill.api.impl;
 
+import com.alibaba.dubbo.config.annotation.Service;
 import com.crossoverJie.seconds.kill.api.OrderService;
-import com.crossoverJie.seconds.kill.pojo.Stock;
 
 import javax.annotation.Resource;
 
@@ -12,6 +12,7 @@ import javax.annotation.Resource;
  *         Date: 01/05/2018 14:01
  * @since JDK 1.8
  */
+@Service
 public class OrderServiceImpl implements OrderService {
 
     @Resource(name = "DBOrderService")
