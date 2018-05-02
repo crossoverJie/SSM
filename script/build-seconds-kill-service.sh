@@ -9,22 +9,21 @@ echo "input="$appname
 
 PID=$(ps -ef | grep $appname | grep -v grep | awk '{print $2}')
 
-if [ $? -eq 0 ]; then
-    echo "process id:$PID"
-else
-    echo "process $appname not exit"
-    exit
-fi
+#if [ $? -eq 0 ]; then
+#    echo "process id:$PID"
+#else
+#    echo "process $appname not exit"
+#    exit
+#fi
 
-echo "pid = $PID"
-kill -9 ${PID}
+for var in ${PID[@]};
+do
+    echo "loop pid= $var"
+    kill -9 $var
+done
 
-if [ $? -eq 0 ];then
-    echo "kill $appname success"
-else
-    echo "kill $appname fail"
-    exit
-fi
+echo "kill $appname success"
+
 
 cd ..
 
