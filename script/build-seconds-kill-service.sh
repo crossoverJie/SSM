@@ -37,12 +37,18 @@ echo "build war success"
 
 cp /home/crossoverJie/SSM/SSM-SECONDS-KILL/SSM-SECONDS-KILL-SERVICE/target/SSM-SECONDS-KILL-SERVICE-2.2.0-SNAPSHOT.war /home/crossoverJie/tomcat/tomcat-dubbo-provider-8080/webapps
 
-echo "cp war ok!"
+echo "cp tomcat-dubbo-provider-8080/webapps ok!"
 
+cp /home/crossoverJie/SSM/SSM-SECONDS-KILL/SSM-SECONDS-KILL-SERVICE/target/SSM-SECONDS-KILL-SERVICE-2.2.0-SNAPSHOT.war /home/crossoverJie/tomcat/tomcat-dubbo-provider-7080-slave/webapps
 
+echo "cp tomcat-dubbo-provider-7080-slave/webapps ok!"
 
 
 
 sh /home/crossoverJie/tomcat/tomcat-dubbo-provider-8080/bin/startup.sh
+echo "tomcat-dubbo-provider-8080/bin/startup.sh success"
+
+sh /home/crossoverJie/tomcat/tomcat-dubbo-provider-7080-slave/bin/startup.sh
+echo "tomcat-dubbo-provider-8080/bin/startup.sh success"
 
 echo "start $appname success"
