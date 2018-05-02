@@ -2,7 +2,9 @@
 
 # 构建服务提供者
 
-read appname
+#read appname
+
+appname="provider"
 
 echo "input="$appname
 
@@ -16,6 +18,7 @@ PID=$(ps -ef | grep $appname | grep -v grep | awk '{print $2}')
 #    exit
 #fi
 
+# 遍历杀掉 pid
 for var in ${PID[@]};
 do
     echo "loop pid= $var"
