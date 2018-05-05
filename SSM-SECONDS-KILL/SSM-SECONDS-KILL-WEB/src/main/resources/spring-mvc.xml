@@ -12,15 +12,22 @@
 
 
 
-    <context:component-scan base-package="com.crossoverJie,com.crossoverjie.distributed.intercept" />
+    <context:component-scan base-package="com.crossoverJie" />
     <!--开启cglib代理-->
     <aop:aspectj-autoproxy proxy-target-class="true"></aop:aspectj-autoproxy>
 
 
     <mvc:annotation-driven/>
-    <!-- 启动SpringMVC的注解功能，完成请求和注解POJO的映射
-    -->
 
+
+    <!--拦截器-->
+    <mvc:interceptors>
+        <!-- 多个拦截器，按顺序执行 -->
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/> <!-- 表示拦截所有的url包括子url路径 -->
+            <bean class="com.crossoverjie.distributed.intercept.SpringMVCIntercept"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
 
     <!-- 引入配置文件 -->
     <bean id="propertyConfigurer"

@@ -3,6 +3,7 @@ package com.crossoverJie.seconds.kill.controller;
 import com.crossoverJie.seconds.kill.api.OrderService;
 import com.crossoverJie.seconds.kill.api.StockService;
 import com.crossoverjie.distributed.annotation.ControllerLimit;
+import com.crossoverjie.distributed.annotation.SpringControllerLimit;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -88,7 +89,7 @@ public class IndexController {
      * @param sid
      * @return
      */
-    @ControllerLimit
+    @SpringControllerLimit
     @RequestMapping("/createOptimisticLimitOrder/{sid}")
     @ResponseBody
     public String createOptimisticLimitOrder(@PathVariable int sid) {

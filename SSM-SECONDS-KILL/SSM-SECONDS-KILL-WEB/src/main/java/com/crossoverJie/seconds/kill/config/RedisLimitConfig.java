@@ -7,7 +7,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.redis.connection.RedisConnection;
 import org.springframework.data.redis.connection.jedis.JedisConnection;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import redis.clients.jedis.Jedis;
@@ -34,8 +36,8 @@ public class RedisLimitConfig {
 
     @Bean
     public RedisLimit build() {
-        JedisConnection clusterConnection = jedisConnectionFactory.getConnection();
-        Jedis jedis =  clusterConnection.getNativeConnection();
+        RedisConnection redisConnection = jedisConnectionFactory.getConnection();
+        Jedis jedis = (Jedis) redisConnection.getNativeConnection();
         RedisLimit redisLimit = new RedisLimit.Builder<>(jedis)
                 .limit(limit)
                 .build();

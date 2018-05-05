@@ -18,7 +18,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring.version>4.1.4.RELEASE</spring.version>
+        <spring.version>4.3.7.RELEASE</spring.version>
         <jackson.version>2.5.0</jackson.version>
         <lucene.version>6.0.1</lucene.version>
         <dubbo.version>2.6.1</dubbo.version>
@@ -414,7 +414,7 @@
             <dependency>
                 <groupId>org.springframework.data</groupId>
                 <artifactId>spring-data-redis</artifactId>
-                <version>1.6.1.RELEASE</version>
+                <version>1.8.6.RELEASE</version>
             </dependency>
             <dependency>
                 <groupId>redis.clients</groupId>
