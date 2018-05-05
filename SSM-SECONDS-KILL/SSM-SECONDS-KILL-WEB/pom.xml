@@ -154,7 +154,7 @@
         <dependency>
             <groupId>top.crossoverjie.opensource</groupId>
             <artifactId>distributed-redis-tool</artifactId>
-            <version>1.0.2</version>
+            <version>1.0.3</version>
         </dependency>
 
         <!--redis-->
