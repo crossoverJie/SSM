@@ -36,7 +36,9 @@ public class RedisLimitConfig {
 
     @Bean
     public RedisLimit build() {
-        RedisLimit redisLimit = new RedisLimit.Builder(jedisConnectionFactory)
+        RedisConnection redisConnection = jedisConnectionFactory.getConnection();
+        Jedis jedis = (Jedis) redisConnection.getNativeConnection();
+        RedisLimit redisLimit = new RedisLimit.Builder<>(jedis)
                 .limit(limit)
                 .build();
 
