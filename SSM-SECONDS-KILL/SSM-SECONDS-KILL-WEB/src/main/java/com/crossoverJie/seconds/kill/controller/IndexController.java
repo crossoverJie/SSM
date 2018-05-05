@@ -2,6 +2,7 @@ package com.crossoverJie.seconds.kill.controller;
 
 import com.crossoverJie.seconds.kill.api.OrderService;
 import com.crossoverJie.seconds.kill.api.StockService;
+import com.crossoverjie.distributed.annotation.ControllerLimit;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -72,6 +73,25 @@ public class IndexController {
     @RequestMapping("/createOptimisticOrder/{sid}")
     @ResponseBody
     public String createOptimisticOrder(@PathVariable int sid) {
+        logger.info("sid=[{}]", sid);
+        int id = 0;
+        try {
+            id = orderService.createOptimisticOrder(sid);
+        } catch (Exception e) {
+            logger.error("Exception",e);
+        }
+        return String.valueOf(id);
+    }
+
+    /**
+     * 乐观锁更新库存 限流
+     * @param sid
+     * @return
+     */
+    @ControllerLimit
+    @RequestMapping("/createOptimisticLimitOrder/{sid}")
+    @ResponseBody
+    public String createOptimisticLimitOrder(@PathVariable int sid) {
         logger.info("sid=[{}]", sid);
         int id = 0;
         try {

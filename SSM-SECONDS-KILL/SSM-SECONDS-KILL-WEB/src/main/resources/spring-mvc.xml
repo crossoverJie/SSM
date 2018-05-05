@@ -12,7 +12,7 @@
 
 
 
-    <context:component-scan base-package="com.crossoverJie" />
+    <context:component-scan base-package="com.crossoverJie,com.crossoverjie.distributed.intercept" />
     <!--开启cglib代理-->
     <aop:aspectj-autoproxy proxy-target-class="true"></aop:aspectj-autoproxy>
 
@@ -20,6 +20,13 @@
     <mvc:annotation-driven/>
     <!-- 启动SpringMVC的注解功能，完成请求和注解POJO的映射
     -->
+
+
+    <!-- 引入配置文件 -->
+    <bean id="propertyConfigurer"
+          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location" value="${appprop}" />
+    </bean>
 
     <!-- 定义跳转的文件的前后缀 ，视图模式配置-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -37,6 +44,21 @@
         <property name="maxUploadSize" value="10485760000"/>
         <!-- 内存中的最大值 -->
         <property name="maxInMemorySize" value="40960"/>
+    </bean>
+
+    <!-- jedis 配置 -->
+    <bean id="JedispoolConfig" class="redis.clients.jedis.JedisPoolConfig">
+        <property name="maxIdle" value="${redis.maxIdle}"/>
+        <property name="maxWaitMillis" value="${redis.maxWait}"/>
+        <property name="testOnBorrow" value="${redis.testOnBorrow}"/>
+    </bean>
+    <!-- redis服务器中心 -->
+    <bean id="connectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
+        <property name="poolConfig" ref="JedispoolConfig"/>
+        <property name="port" value="${redis.port}"/>
+        <property name="hostName" value="${redis.host}"/>
+        <property name="password" value="${redis.password}"/>
+        <property name="timeout" value="${redis.timeout}"></property>
     </bean>
 
 </beans>
