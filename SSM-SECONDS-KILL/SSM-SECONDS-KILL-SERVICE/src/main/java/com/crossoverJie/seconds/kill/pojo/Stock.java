@@ -1,6 +1,12 @@
 package com.crossoverJie.seconds.kill.pojo;
 
-public class Stock {
+import java.io.Serializable;
+
+/**
+ * @author crossoverJie
+ */
+public class Stock implements Serializable{
+    private static final long serialVersionUID = -8437012513227627973L;
     private Integer id;
 
     private String name;

@@ -6,6 +6,7 @@ import com.crossoverJie.seconds.kill.pojo.StockOrder;
 import com.crossoverJie.seconds.kill.service.OrderService;
 import com.crossoverJie.seconds.kill.service.StockService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -28,6 +29,12 @@ public class OrderServiceImpl implements OrderService {
 
     @Autowired
     private StockOrderMapper orderMapper;
+
+    @Autowired
+    private com.crossoverJie.seconds.kill.api.StockService stockDubboService ;
+
+    @Autowired
+    private RedisTemplate<String,Stock> redisTemplate ;
 
     @Override
     public int createWrongOrder(int sid) {
@@ -59,11 +66,12 @@ public class OrderServiceImpl implements OrderService {
         return id;
     }
 
-    private void saleStockOptimistic(Stock stock) {
-        int count = stockService.updateStockByOptimistic(stock);
-        if (count == 0){
-            throw new RuntimeException("并发更新库存失败") ;
+    private Stock checkStockByRedis(int sid) throws Exception {
+        int currentCount = stockDubboService.getCurrentCount() ;
+        if (currentCount == 0){
+
         }
+        return null;
     }
 
     private Stock checkStock(int sid) {
@@ -72,6 +80,13 @@ public class OrderServiceImpl implements OrderService {
             throw new RuntimeException("库存不足");
         }
         return stock;
+    }
+
+    private void saleStockOptimistic(Stock stock) {
+        int count = stockService.updateStockByOptimistic(stock);
+        if (count == 0){
+            throw new RuntimeException("并发更新库存失败") ;
+        }
     }
 
 
