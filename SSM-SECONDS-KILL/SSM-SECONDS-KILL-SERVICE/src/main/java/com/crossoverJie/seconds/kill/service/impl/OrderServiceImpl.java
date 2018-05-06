@@ -74,8 +74,8 @@ public class OrderServiceImpl implements OrderService {
         //检验库存，从 Redis 获取
         Stock stock = checkStockByRedis(sid);
 
-        //乐观锁更新库存
-        saleStockOptimistic(stock);
+        //乐观锁更新库存 以及更新 Redis
+        saleStockOptimisticByRedis(stock);
 
         //创建订单
         int id = createOrder(stock);
@@ -83,12 +83,11 @@ public class OrderServiceImpl implements OrderService {
     }
 
     private Stock checkStockByRedis(int sid) throws Exception {
-        int currentCount = stockDubboService.getCurrentCount() ;
-        if (currentCount == 0){
-            throw new RuntimeException("库存不足 Redis currentCount=" + currentCount);
-        }
         Integer count = redisTemplate.opsForValue().get(RedisKeysConstant.STOCK_COUNT + sid);
         Integer sale = redisTemplate.opsForValue().get(RedisKeysConstant.STOCK_SALE + sid);
+        if (count.equals(sale)){
+            throw new RuntimeException("库存不足 Redis currentCount=" + sale);
+        }
         Integer version = redisTemplate.opsForValue().get(RedisKeysConstant.STOCK_VERSION + sid);
         Stock stock = new Stock() ;
         stock.setId(sid);
@@ -97,6 +96,20 @@ public class OrderServiceImpl implements OrderService {
         stock.setVersion(version);
 
         return stock;
+    }
+
+    /**
+     * 乐观锁更新数据库 还要更新 Redis
+     * @param stock
+     */
+    private void saleStockOptimisticByRedis(Stock stock) {
+        int count = stockService.updateStockByOptimistic(stock);
+        if (count == 0){
+            throw new RuntimeException("并发更新库存失败") ;
+        }
+        //自增
+        redisTemplate.opsForValue().increment(RedisKeysConstant.STOCK_SALE + stock.getId(),1) ;
+        redisTemplate.opsForValue().increment(RedisKeysConstant.STOCK_VERSION + stock.getId(),1) ;
     }
 
     private Stock checkStock(int sid) {
