@@ -32,4 +32,9 @@ public class OrderServiceImpl implements OrderService {
     public int createOptimisticOrderUseRedis(int sid) throws Exception {
         return orderService.createOptimisticOrderUseRedis(sid);
     }
+
+    @Override
+    public void createOptimisticOrderUseRedisAndKafka(int sid) throws Exception {
+        orderService.createOptimisticOrderUseRedisAndKafka(sid);
+    }
 }

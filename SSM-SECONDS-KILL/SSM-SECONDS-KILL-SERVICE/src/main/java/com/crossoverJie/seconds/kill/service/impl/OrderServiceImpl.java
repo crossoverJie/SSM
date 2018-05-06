@@ -7,7 +7,12 @@ import com.crossoverJie.seconds.kill.pojo.Stock;
 import com.crossoverJie.seconds.kill.pojo.StockOrder;
 import com.crossoverJie.seconds.kill.service.OrderService;
 import com.crossoverJie.seconds.kill.service.StockService;
+import org.apache.kafka.clients.producer.KafkaProducer;
+import org.apache.kafka.clients.producer.ProducerRecord;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
@@ -27,6 +32,9 @@ import java.util.Date;
 @Service(value = "DBOrderService")
 public class OrderServiceImpl implements OrderService {
 
+    private Logger logger = LoggerFactory.getLogger(OrderServiceImpl.class);
+
+
     @Resource(name = "DBStockService")
     private com.crossoverJie.seconds.kill.service.StockService stockService;
 
@@ -35,6 +43,13 @@ public class OrderServiceImpl implements OrderService {
 
     @Autowired
     private RedisTemplate<String,String> redisTemplate ;
+
+
+    @Autowired
+    private KafkaProducer kafkaProducer ;
+
+    @Value("${kafka.topic}")
+    private String kafkaTopic ;
 
     @Override
     public int createWrongOrder(int sid) throws Exception{
@@ -77,6 +92,21 @@ public class OrderServiceImpl implements OrderService {
         //创建订单
         int id = createOrder(stock);
         return id ;
+    }
+
+    @Override
+    public void createOptimisticOrderUseRedisAndKafka(int sid) throws Exception {
+
+        //检验库存，从 Redis 获取
+        Stock stock = checkStockByRedis(sid);
+
+        //乐观锁更新库存 以及更新 Redis
+        saleStockOptimisticByRedis(stock);
+
+        //利用 Kafka 创建订单
+        kafkaProducer.send(new ProducerRecord<String,Stock>(kafkaTopic,stock)) ;
+        logger.info("send Kafka success");
+
     }
 
     private Stock checkStockByRedis(int sid) throws Exception {
