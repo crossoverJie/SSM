@@ -34,9 +34,6 @@ public class OrderServiceImpl implements OrderService {
     private StockOrderMapper orderMapper;
 
     @Autowired
-    private com.crossoverJie.seconds.kill.api.StockService stockDubboService ;
-
-    @Autowired
     private RedisTemplate<String,Integer> redisTemplate ;
 
     @Override
@@ -108,8 +105,8 @@ public class OrderServiceImpl implements OrderService {
             throw new RuntimeException("并发更新库存失败") ;
         }
         //自增
-        redisTemplate.opsForValue().increment(RedisKeysConstant.STOCK_SALE + stock.getId(),Integer.valueOf(1)) ;
-        redisTemplate.opsForValue().increment(RedisKeysConstant.STOCK_VERSION + stock.getId(),Integer.valueOf(1)) ;
+        redisTemplate.opsForValue().increment(RedisKeysConstant.STOCK_SALE + stock.getId(),1) ;
+        redisTemplate.opsForValue().increment(RedisKeysConstant.STOCK_VERSION + stock.getId(),1) ;
     }
 
     private Stock checkStock(int sid) {
