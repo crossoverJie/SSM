@@ -29,7 +29,7 @@ public class StockServiceImpl implements StockService {
     private com.crossoverJie.seconds.kill.service.StockService stockService;
 
     @Autowired
-    private RedisTemplate<String, Integer> redisTemplate;
+    private RedisTemplate<String, String> redisTemplate;
 
     @Override
     public Integer getCurrentCount() {
@@ -47,15 +47,15 @@ public class StockServiceImpl implements StockService {
      * @return
      */
     private Integer getStockCount() {
-        Integer count = redisTemplate.opsForValue().get(RedisKeysConstant.STOCK_COUNT + 1);
+        String count = redisTemplate.opsForValue().get(RedisKeysConstant.STOCK_COUNT + 1);
         if (count == null) {
             Stock stock = stockService.getStockById(1);
-            count = stock.getCount() ;
-            redisTemplate.opsForValue().set(RedisKeysConstant.STOCK_COUNT + 1, stock.getCount());
-            redisTemplate.opsForValue().set(RedisKeysConstant.STOCK_SALE + 1, stock.getSale());
-            redisTemplate.opsForValue().set(RedisKeysConstant.STOCK_VERSION + 1, stock.getVersion());
+            count = stock.getCount().toString() ;
+            redisTemplate.opsForValue().set(RedisKeysConstant.STOCK_COUNT + 1, stock.getCount().toString());
+            redisTemplate.opsForValue().set(RedisKeysConstant.STOCK_SALE + 1, stock.getSale().toString());
+            redisTemplate.opsForValue().set(RedisKeysConstant.STOCK_VERSION + 1, stock.getVersion().toString());
         }
 
-        return count;
+        return Integer.parseInt(count);
     }
 }
