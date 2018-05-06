@@ -32,11 +32,11 @@ public class StockServiceImpl implements StockService {
     private RedisTemplate<String, Integer> redisTemplate;
 
     @Override
-    public int getCurrentCount() {
+    public Integer getCurrentCount() {
         String remoteAddressString = RpcContext.getContext().getRemoteHostName();
         logger.info("request ={}", remoteAddressString);
 
-        int count = getStockCount();
+        Integer count = getStockCount();
 
         return count;
     }
@@ -46,13 +46,14 @@ public class StockServiceImpl implements StockService {
      *
      * @return
      */
-    private int getStockCount() {
-        int count = redisTemplate.opsForValue().get("sid_1");
-        if (count == 0) {
+    private Integer getStockCount() {
+        Integer count = redisTemplate.opsForValue().get(RedisKeysConstant.STOCK_COUNT + 1);
+        if (count == null) {
             Stock stock = stockService.getStockById(1);
-            redisTemplate.opsForValue().set(RedisKeysConstant.STOCK_COUNT + "1", stock.getCount());
-            redisTemplate.opsForValue().set(RedisKeysConstant.STOCK_SALE + "1", stock.getSale());
-            redisTemplate.opsForValue().set(RedisKeysConstant.STOCK_VERSION + "1", stock.getVersion());
+            count = stock.getCount() ;
+            redisTemplate.opsForValue().set(RedisKeysConstant.STOCK_COUNT + 1, stock.getCount());
+            redisTemplate.opsForValue().set(RedisKeysConstant.STOCK_SALE + 1, stock.getSale());
+            redisTemplate.opsForValue().set(RedisKeysConstant.STOCK_VERSION + 1, stock.getVersion());
         }
 
         return count;

@@ -12,7 +12,7 @@ public interface StockService {
     /**
      * 获取当前库存
      * @return
-     *  当前库存
+     * @throws Exception
      */
-    int getCurrentCount() throws Exception;
+    Integer getCurrentCount() throws Exception;
 }
