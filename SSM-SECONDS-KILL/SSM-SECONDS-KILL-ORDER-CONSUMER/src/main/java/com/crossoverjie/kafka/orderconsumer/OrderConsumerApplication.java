@@ -16,7 +16,9 @@ public class OrderConsumerApplication {
 	private static Logger LOGGER = LoggerFactory.getLogger(OrderConsumerApplication.class);
 
 	public static void main(String[] args) {
-		new SpringApplicationBuilder(OrderConsumerApplication.class).listeners(new ApplicationPidFileWriter())
+		new SpringApplicationBuilder(OrderConsumerApplication.class).
+				listeners(new ApplicationPidFileWriter())
+				.web(false)
 				.run(args);
 
 		ConsumerGroup consumerGroup = SpringBeanFactory.getBean(ConsumerGroup.class);
