@@ -34,7 +34,7 @@ public class OrderServiceImpl implements OrderService {
     private StockOrderMapper orderMapper;
 
     @Autowired
-    private RedisTemplate<String,Integer> redisTemplate ;
+    private RedisTemplate<String,String> redisTemplate ;
 
     @Override
     public int createWrongOrder(int sid) throws Exception{
@@ -80,12 +80,12 @@ public class OrderServiceImpl implements OrderService {
     }
 
     private Stock checkStockByRedis(int sid) throws Exception {
-        Integer count = redisTemplate.opsForValue().get(RedisKeysConstant.STOCK_COUNT + sid);
-        Integer sale = redisTemplate.opsForValue().get(RedisKeysConstant.STOCK_SALE + sid);
+        Integer count = Integer.parseInt(redisTemplate.opsForValue().get(RedisKeysConstant.STOCK_COUNT + sid));
+        Integer sale = Integer.parseInt(redisTemplate.opsForValue().get(RedisKeysConstant.STOCK_SALE + sid));
         if (count.equals(sale)){
             throw new RuntimeException("库存不足 Redis currentCount=" + sale);
         }
-        Integer version = redisTemplate.opsForValue().get(RedisKeysConstant.STOCK_VERSION + sid);
+        Integer version = Integer.parseInt(redisTemplate.opsForValue().get(RedisKeysConstant.STOCK_VERSION + sid));
         Stock stock = new Stock() ;
         stock.setId(sid);
         stock.setCount(count);
