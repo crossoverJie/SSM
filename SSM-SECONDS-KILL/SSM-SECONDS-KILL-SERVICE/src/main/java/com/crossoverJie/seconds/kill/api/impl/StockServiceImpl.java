@@ -51,9 +51,9 @@ public class StockServiceImpl implements StockService {
         if (count == null) {
             Stock stock = stockService.getStockById(1);
             count = stock.getCount() ;
-            redisTemplate.opsForValue().set(RedisKeysConstant.STOCK_COUNT + 1, stock.getCount().intValue());
-            redisTemplate.opsForValue().set(RedisKeysConstant.STOCK_SALE + 1, stock.getSale().intValue());
-            redisTemplate.opsForValue().set(RedisKeysConstant.STOCK_VERSION + 1, stock.getVersion().intValue());
+            redisTemplate.opsForValue().set(RedisKeysConstant.STOCK_COUNT + 1, stock.getCount());
+            redisTemplate.opsForValue().set(RedisKeysConstant.STOCK_SALE + 1, stock.getSale());
+            redisTemplate.opsForValue().set(RedisKeysConstant.STOCK_VERSION + 1, stock.getVersion());
         }
 
         return count;
