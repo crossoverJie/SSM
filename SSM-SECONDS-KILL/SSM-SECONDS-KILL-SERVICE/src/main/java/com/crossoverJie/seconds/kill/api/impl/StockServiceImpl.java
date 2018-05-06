@@ -34,8 +34,9 @@ public class StockServiceImpl implements StockService {
         String remoteAddressString = RpcContext.getContext().getRemoteHostName();
         logger.info("request ={}",remoteAddressString);
 
-        int count = (int) redisTemplate.opsForValue().get("sid_1");
-        if (count == 0){
+        Object oCount = redisTemplate.opsForValue().get("sid_1");
+        int count =0 ;
+        if (oCount == null){
             Stock stock = stockService.getStockById(1);
             count = stock.getCount() ;
             redisTemplate.opsForValue().set("sid_1",count) ;
