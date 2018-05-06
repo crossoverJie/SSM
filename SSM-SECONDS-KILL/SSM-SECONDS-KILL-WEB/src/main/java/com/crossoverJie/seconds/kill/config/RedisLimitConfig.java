@@ -1,6 +1,7 @@
 package com.crossoverJie.seconds.kill.config;
 
 import com.crossoverJie.seconds.kill.controller.IndexController;
+import com.crossoverjie.distributed.constant.RedisToolsConstant;
 import com.crossoverjie.distributed.limit.RedisLimit;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -36,9 +37,7 @@ public class RedisLimitConfig {
 
     @Bean
     public RedisLimit build() {
-        RedisConnection redisConnection = jedisConnectionFactory.getConnection();
-        Jedis jedis = (Jedis) redisConnection.getNativeConnection();
-        RedisLimit redisLimit = new RedisLimit.Builder<>(jedis)
+        RedisLimit redisLimit = new RedisLimit.Builder(jedisConnectionFactory, RedisToolsConstant.SINGLE)
                 .limit(limit)
                 .build();
 
