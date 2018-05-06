@@ -95,6 +95,7 @@
         <property name="maxTotal" value="${redis.maxTotal}"/>
         <property name="maxWaitMillis" value="${redis.maxWait}"/>
         <property name="testOnBorrow" value="${redis.testOnBorrow}"/>
+        <property name="testOnReturn" value="${redis.testOnBorrow}"/>
     </bean>
     <!-- redis服务器中心 -->
     <bean id="connectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
