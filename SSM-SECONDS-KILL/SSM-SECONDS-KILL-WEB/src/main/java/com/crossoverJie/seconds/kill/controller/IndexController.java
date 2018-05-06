@@ -89,7 +89,7 @@ public class IndexController {
      * @param sid
      * @return
      */
-    @SpringControllerLimit
+    @SpringControllerLimit(errorCode = 200)
     @RequestMapping("/createOptimisticLimitOrder/{sid}")
     @ResponseBody
     public String createOptimisticLimitOrder(@PathVariable int sid) {
