@@ -1,11 +1,14 @@
 package com.crossoverJie.seconds.kill.service.impl;
 
+import com.alibaba.druid.sql.visitor.functions.Concat;
+import com.crossoverJie.seconds.kill.constant.RedisKeysConstant;
 import com.crossoverJie.seconds.kill.dao.StockOrderMapper;
 import com.crossoverJie.seconds.kill.pojo.Stock;
 import com.crossoverJie.seconds.kill.pojo.StockOrder;
 import com.crossoverJie.seconds.kill.service.OrderService;
 import com.crossoverJie.seconds.kill.service.StockService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -34,10 +37,10 @@ public class OrderServiceImpl implements OrderService {
     private com.crossoverJie.seconds.kill.api.StockService stockDubboService ;
 
     @Autowired
-    private RedisTemplate<String,Stock> redisTemplate ;
+    private RedisTemplate<String,Integer> redisTemplate ;
 
     @Override
-    public int createWrongOrder(int sid) {
+    public int createWrongOrder(int sid) throws Exception{
 
         //校验库存
         Stock stock = checkStock(sid);
@@ -66,12 +69,34 @@ public class OrderServiceImpl implements OrderService {
         return id;
     }
 
+    @Override
+    public int createOptimisticOrderUseRedis(int sid) throws Exception {
+        //检验库存，从 Redis 获取
+        Stock stock = checkStockByRedis(sid);
+
+        //乐观锁更新库存
+        saleStockOptimistic(stock);
+
+        //创建订单
+        int id = createOrder(stock);
+        return id ;
+    }
+
     private Stock checkStockByRedis(int sid) throws Exception {
         int currentCount = stockDubboService.getCurrentCount() ;
         if (currentCount == 0){
-
+            throw new RuntimeException("库存不足 Redis currentCount=" + currentCount);
         }
-        return null;
+        Integer count = redisTemplate.opsForValue().get(RedisKeysConstant.STOCK_COUNT + sid);
+        Integer sale = redisTemplate.opsForValue().get(RedisKeysConstant.STOCK_SALE + sid);
+        Integer version = redisTemplate.opsForValue().get(RedisKeysConstant.STOCK_VERSION + sid);
+        Stock stock = new Stock() ;
+        stock.setId(sid);
+        stock.setCount(count);
+        stock.setSale(sale);
+        stock.setVersion(version);
+
+        return stock;
     }
 
     private Stock checkStock(int sid) {

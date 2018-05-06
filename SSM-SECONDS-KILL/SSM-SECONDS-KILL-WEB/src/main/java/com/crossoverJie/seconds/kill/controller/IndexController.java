@@ -102,6 +102,24 @@ public class IndexController {
         }
         return String.valueOf(id);
     }
+    /**
+     * 乐观锁更新库存 限流 库存改为查询 Redis 提高性能
+     * @param sid
+     * @return
+     */
+    @SpringControllerLimit
+    @RequestMapping("/createOptimisticLimitOrderByRedis/{sid}")
+    @ResponseBody
+    public String createOptimisticLimitOrderByRedis(@PathVariable int sid) {
+        logger.info("sid=[{}]", sid);
+        int id = 0;
+        try {
+            id = orderService.createOptimisticOrderUseRedis(sid);
+        } catch (Exception e) {
+            logger.error("Exception",e);
+        }
+        return String.valueOf(id);
+    }
 
 
 }
