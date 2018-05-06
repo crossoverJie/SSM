@@ -65,7 +65,7 @@ public class ConsumerTask implements Runnable {
 
             for (ConsumerRecord<String, String> record : records) {
                 // 简单地打印消息
-                LOGGER.debug("==="+record.value() + " consumed " + record.partition() +
+                LOGGER.info("==="+record.value() + " consumed " + record.partition() +
                         " message with offset: " + record.offset());
 
                 dealMessage(record.value()) ;
