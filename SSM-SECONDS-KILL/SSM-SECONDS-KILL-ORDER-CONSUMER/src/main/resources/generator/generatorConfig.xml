@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+
+    <classPathEntry
+            location="/Users/chenjie/Documents/dev/apache-maven-3.3.9/repository/mysql/mysql-connector-java/5.1.21/mysql-connector-java-5.1.21.jar"/>
+
+
+    <context id="context">
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+
+        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+            <property name="mappers" value="com.crossoverjie.kafka.orderconsumer.util.IOPMapper"/>
+        </plugin>
+
+        <jdbcConnection
+                connectionURL="jdbc:mysql://47.98.194.60:3306/ssm-seconds-kill?characterEncoding=utf8"
+                driverClass="com.mysql.jdbc.Driver" password="i6-1Or0uqX%2" userId="root"/>
+
+
+        <javaModelGenerator targetPackage="com.crossoverjie.kafka.orderconsumer.pojo" targetProject="src/main/java"/>
+
+        <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources"/>
+
+        <javaClientGenerator targetPackage="com.crossoverjie.kafka.orderconsumer.mapper" targetProject="src/main/java"
+                             type="XMLMAPPER"/>
+
+        <table schema="ssm-seconds-kill" tableName="stock">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <table schema="ssm-seconds-kill" tableName="stock_order">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+
+    </context>
+
+
+</generatorConfiguration>
