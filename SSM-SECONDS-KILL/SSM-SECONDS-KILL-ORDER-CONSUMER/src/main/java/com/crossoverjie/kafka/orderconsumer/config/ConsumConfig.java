@@ -64,7 +64,7 @@ public class ConsumConfig {
 
     @Bean
     public Gson build(){
-        return new Gson() ;2
+        return new Gson() ;
     }
 
 
