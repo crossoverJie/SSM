@@ -26,5 +26,17 @@
     <name>${project.artifactId}</name>
 
 
+    <dependencies>
+        <!-- json -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka-clients</artifactId>
+            <version>0.9.0.0</version>
+        </dependency>
+    </dependencies>
 
 </project>

@@ -1,10 +1,9 @@
 package com.crossoverJie.seconds.kill.config;
 
-import com.crossoverJie.seconds.kill.pojo.Stock;
-import com.crossoverJie.seconds.kill.pojo.StockOrder;
+import com.crossoverJie.seconds.kill.api.dto.JsonSerializer;
+import com.crossoverJie.seconds.kill.api.dto.Stock;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.common.serialization.StringSerializer;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -32,8 +31,8 @@ public class KafkaConfig {
         props.put("serializer.class", "kafka.serializer.StringEncoder");
         props.put("metadata.broker.list", brokerList);
         props.put("bootstrap.servers", brokerList);
-        props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
-        props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
+        props.put("key.serializer", StringSerializer.class);
+        props.put("value.serializer", JsonSerializer.class);
         KafkaProducer<String, Stock> producer = new KafkaProducer<String, Stock>(props);
         return producer ;
     }
