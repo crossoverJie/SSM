@@ -29,7 +29,7 @@ public class OrderConsumerApplication {
 				.run(args);
 
 		ConsumerGroup consumerGroup = SpringBeanFactory.getBean(ConsumerGroup.class);
-		//consumerGroup.execute();
+		consumerGroup.execute();
 
 		LOGGER.info("启动成功");
 	}
