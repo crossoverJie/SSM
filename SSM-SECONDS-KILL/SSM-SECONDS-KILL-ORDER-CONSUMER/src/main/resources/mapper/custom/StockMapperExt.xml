@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.crossoverjie.kafka.orderconsumer.mapper.StockMapper">
+
+    <update id="updateByOptimistic" parameterType="com.crossoverjie.kafka.orderconsumer.pojo.Stock">
+        update stock
+        <set>
+            sale = sale + 1,
+            version = version + 1,
+        </set>
+
+        WHERE id = #{id,jdbcType=INTEGER}
+        AND version = #{version,jdbcType=INTEGER}
+
+    </update>
+</mapper>
