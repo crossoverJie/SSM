@@ -3,7 +3,7 @@ package com.crossoverJie.seconds.kill.api.impl;
 import com.alibaba.dubbo.config.annotation.Service;
 import com.alibaba.dubbo.rpc.RpcContext;
 import com.crossoverJie.seconds.kill.api.StockService;
-import com.crossoverJie.seconds.kill.constant.RedisKeysConstant;
+import com.crossoverJie.seconds.kill.api.constant.RedisKeysConstant;
 import com.crossoverJie.seconds.kill.pojo.Stock;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
