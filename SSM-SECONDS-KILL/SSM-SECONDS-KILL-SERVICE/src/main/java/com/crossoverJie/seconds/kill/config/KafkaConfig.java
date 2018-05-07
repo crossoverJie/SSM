@@ -24,8 +24,16 @@ public class KafkaConfig {
     @Value("${kafka.brokerList}")
     private String brokerList ;
 
+    @Value("${kafka.swicth}")
+    private boolean check ;
+
     @Bean
     public KafkaProducer<String,Stock> build(){
+
+        if (!check){
+            return null ;
+        }
+
         //初始化生产者
         Map<String, Object> props = new HashMap<String, Object>(16);
         props.put("serializer.class", "kafka.serializer.StringEncoder");
