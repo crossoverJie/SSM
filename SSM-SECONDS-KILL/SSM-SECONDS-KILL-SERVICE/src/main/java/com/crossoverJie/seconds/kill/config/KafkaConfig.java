@@ -33,7 +33,7 @@ public class KafkaConfig {
         props.put("bootstrap.servers", brokerList);
         props.put("key.serializer", StringSerializer.class);
         props.put("value.serializer", JsonSerializer.class);
-        KafkaProducer<String, Stock> producer = new KafkaProducer<String, Stock>(props);
+        KafkaProducer<String, Stock> producer = new KafkaProducer(props);
         return producer ;
     }
 

@@ -104,7 +104,7 @@ public class OrderServiceImpl implements OrderService {
         saleStockOptimisticByRedis(stock);
 
         //利用 Kafka 创建订单
-        kafkaProducer.send(new ProducerRecord<String,Stock>(kafkaTopic,stock)) ;
+        kafkaProducer.send(new ProducerRecord(kafkaTopic,stock)) ;
         logger.info("send Kafka success");
 
     }

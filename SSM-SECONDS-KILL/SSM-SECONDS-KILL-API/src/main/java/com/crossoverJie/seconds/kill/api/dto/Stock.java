@@ -56,4 +56,15 @@ public class Stock implements Serializable{
     public void setVersion(Integer version) {
         this.version = version;
     }
+
+    @Override
+    public String toString() {
+        return "Stock{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", count=" + count +
+                ", sale=" + sale +
+                ", version=" + version +
+                '}';
+    }
 }

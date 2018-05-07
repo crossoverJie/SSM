@@ -7,53 +7,59 @@ import java.io.Serializable;
  */
 public class Stock implements Serializable{
     private static final long serialVersionUID = -8437012513227627973L;
-    private Integer id;
 
-    private String name;
+    /**
+     * @type : com.crossoverJie.seconds.kill.pojo.Stock
+     * count : 10
+     * id : 1
+     * name : null
+     * sale : 2
+     * version : 2
+     */
 
-    private Integer count;
+    private int count;
+    private int id;
+    private Object name;
+    private int sale;
+    private int version;
 
-    private Integer sale;
-
-    private Integer version;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Integer getCount() {
+    public int getCount() {
         return count;
     }
 
-    public void setCount(Integer count) {
+    public void setCount(int count) {
         this.count = count;
     }
 
-    public Integer getSale() {
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Object getName() {
+        return name;
+    }
+
+    public void setName(Object name) {
+        this.name = name;
+    }
+
+    public int getSale() {
         return sale;
     }
 
-    public void setSale(Integer sale) {
+    public void setSale(int sale) {
         this.sale = sale;
     }
 
-    public Integer getVersion() {
+    public int getVersion() {
         return version;
     }
 
-    public void setVersion(Integer version) {
+    public void setVersion(int version) {
         this.version = version;
     }
 }

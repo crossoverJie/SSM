@@ -21,7 +21,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 public class KafkaProductTest {
 
     @Autowired
-    private KafkaProducer<String, Stock> producer;
+    private KafkaProducer<String,Stock> producer;
 
     @Test
     public void product(){

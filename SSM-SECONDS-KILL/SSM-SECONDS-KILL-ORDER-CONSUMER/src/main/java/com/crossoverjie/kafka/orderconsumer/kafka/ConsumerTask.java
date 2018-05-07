@@ -5,6 +5,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.crossoverjie.kafka.orderconsumer.dto.Stock;
 import com.crossoverjie.kafka.orderconsumer.util.SpringBeanFactory;
+import com.google.gson.Gson;
 import org.apache.kafka.clients.CommonClientConfigs;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
@@ -13,6 +14,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.util.StringUtils;
 
+import javax.swing.*;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
@@ -36,8 +38,10 @@ public class ConsumerTask implements Runnable {
      */
     private final KafkaConsumer<String, String> consumer;
 
+    private Gson gson ;
 
     public ConsumerTask(String brokerList, String groupId, String topic) {
+        this.gson = SpringBeanFactory.getBean(Gson.class) ;
 
         Properties props = new Properties();
         props.put("bootstrap.servers", brokerList);
@@ -82,7 +86,7 @@ public class ConsumerTask implements Runnable {
     private void dealMessage(String value) {
         try {
 
-            Stock stock = JSON.parseObject(value, Stock.class);
+            Stock stock = gson.fromJson(value, Stock.class);
             LOGGER.info("consumer stock={}",JSON.toJSONString(stock));
 
         }catch (RejectedExecutionException e){

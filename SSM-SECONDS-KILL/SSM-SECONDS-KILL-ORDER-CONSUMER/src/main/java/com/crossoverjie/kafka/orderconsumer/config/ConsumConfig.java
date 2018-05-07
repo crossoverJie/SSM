@@ -2,6 +2,7 @@ package com.crossoverjie.kafka.orderconsumer.config;
 
 import com.crossoverjie.kafka.orderconsumer.kafka.ConsumerGroup;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
+import com.google.gson.Gson;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -59,6 +60,11 @@ public class ConsumConfig {
         ConsumerGroup consumerGroup = new ConsumerGroup(threadNum, groupId, topic, brokerList);
         LOGGER.info("ConsumerGroup 初始化成功");
         return consumerGroup;
+    }
+
+    @Bean
+    public Gson build(){
+        return new Gson() ;2
     }
 
 
