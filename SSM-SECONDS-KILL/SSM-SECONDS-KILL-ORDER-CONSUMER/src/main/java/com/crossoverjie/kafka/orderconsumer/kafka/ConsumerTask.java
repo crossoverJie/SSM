@@ -1,7 +1,9 @@
 package com.crossoverjie.kafka.orderconsumer.kafka;
 
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.crossoverJie.seconds.kill.api.dto.Stock;
 import com.crossoverjie.kafka.orderconsumer.util.SpringBeanFactory;
 import org.apache.kafka.clients.CommonClientConfigs;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
@@ -80,6 +82,8 @@ public class ConsumerTask implements Runnable {
     private void dealMessage(String value) {
         try {
 
+            Stock stock = JSON.parseObject(value, Stock.class);
+            LOGGER.info("consumer stock={}",JSON.toJSONString(stock));
 
         }catch (RejectedExecutionException e){
             LOGGER.error("rejected message = " + value);
