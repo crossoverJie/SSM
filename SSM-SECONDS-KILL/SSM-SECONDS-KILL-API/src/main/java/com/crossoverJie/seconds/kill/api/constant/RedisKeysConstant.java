@@ -1,4 +1,4 @@
-package com.crossoverJie.seconds.kill.constant;
+package com.crossoverJie.seconds.kill.api.constant;
 
 /**
  * Function:

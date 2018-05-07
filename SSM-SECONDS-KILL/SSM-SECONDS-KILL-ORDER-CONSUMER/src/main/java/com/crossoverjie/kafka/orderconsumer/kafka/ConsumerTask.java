@@ -3,7 +3,9 @@ package com.crossoverjie.kafka.orderconsumer.kafka;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.crossoverjie.kafka.orderconsumer.dto.Stock;
+import com.crossoverjie.kafka.orderconsumer.pojo.Stock;
+import com.crossoverjie.kafka.orderconsumer.service.OrderService;
+import com.crossoverjie.kafka.orderconsumer.service.StockService;
 import com.crossoverjie.kafka.orderconsumer.util.SpringBeanFactory;
 import com.google.gson.Gson;
 import org.apache.kafka.clients.CommonClientConfigs;
@@ -14,6 +16,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.util.StringUtils;
 
+import javax.annotation.Resource;
 import javax.swing.*;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -40,8 +43,11 @@ public class ConsumerTask implements Runnable {
 
     private Gson gson ;
 
+    private OrderService orderService;
+
     public ConsumerTask(String brokerList, String groupId, String topic) {
         this.gson = SpringBeanFactory.getBean(Gson.class) ;
+        this.orderService = SpringBeanFactory.getBean(OrderService.class) ;
 
         Properties props = new Properties();
         props.put("bootstrap.servers", brokerList);
@@ -89,6 +95,9 @@ public class ConsumerTask implements Runnable {
             Stock stock = gson.fromJson(value, Stock.class);
             LOGGER.info("consumer stock={}",JSON.toJSONString(stock));
 
+            //创建订单
+            orderService.createOptimisticOrderUseRedisAndKafka(stock);
+
         }catch (RejectedExecutionException e){
             LOGGER.error("rejected message = " + value);
         }catch (Exception e){
@@ -96,5 +105,6 @@ public class ConsumerTask implements Runnable {
         }
 
     }
+
 
 }

@@ -1,7 +1,7 @@
 package com.crossoverJie.seconds.kill.service.impl;
 
 import com.alibaba.druid.sql.visitor.functions.Concat;
-import com.crossoverJie.seconds.kill.constant.RedisKeysConstant;
+import com.crossoverJie.seconds.kill.api.constant.RedisKeysConstant;
 import com.crossoverJie.seconds.kill.dao.StockOrderMapper;
 import com.crossoverJie.seconds.kill.pojo.Stock;
 import com.crossoverJie.seconds.kill.pojo.StockOrder;
@@ -99,9 +99,6 @@ public class OrderServiceImpl implements OrderService {
 
         //检验库存，从 Redis 获取
         Stock stock = checkStockByRedis(sid);
-
-        //乐观锁更新库存 以及更新 Redis
-        saleStockOptimisticByRedis(stock);
 
         //利用 Kafka 创建订单
         kafkaProducer.send(new ProducerRecord(kafkaTopic,stock)) ;

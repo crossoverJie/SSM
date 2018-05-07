@@ -20,14 +20,12 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<java.version>1.7</java.version>
+		<java.version>1.8</java.version>
 		<validation.version>1.0.0.GA</validation.version>
 		<spring.version>4.3.10.RELEASE</spring.version>
 		<spring-boot.version>1.5.6.RELEASE</spring-boot.version>
 		<spring-data-commons.version>1.12.2.RELEASE</spring-data-commons.version>
 		<springside.version>4.2.3-GA</springside.version>
-		<spring-data-jpa.version>1.10.2.RELEASE</spring-data-jpa.version>
-		<spring-data-redis.version>1.7.1.RELEASE</spring-data-redis.version>
 		<spring-data-mongodb.version>1.9.2.RELEASE</spring-data-mongodb.version>
 		<spring-dao.version>2.0.8</spring-dao.version>
 		<tomcat-jdbc.version>8.0.33</tomcat-jdbc.version>
@@ -83,7 +81,6 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-
 
 		<dependency>
 			<groupId>com.google.code.gson</groupId>
@@ -144,6 +141,13 @@
 			<groupId>com.alibaba</groupId>
 			<artifactId>fastjson</artifactId>
 			<version>1.1.40</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-redis</artifactId>
+			<version>1.4.7.RELEASE</version>
 		</dependency>
 
 

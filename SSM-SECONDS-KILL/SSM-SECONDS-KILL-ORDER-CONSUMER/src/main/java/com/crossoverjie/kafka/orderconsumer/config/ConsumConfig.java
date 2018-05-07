@@ -12,6 +12,8 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
+import org.springframework.data.redis.core.RedisTemplate;
 import tk.mybatis.mapper.autoconfigure.MapperProperties;
 import tk.mybatis.mapper.common.Mapper;
 import tk.mybatis.mapper.mapperhelper.MapperHelper;
@@ -54,7 +56,6 @@ public class ConsumConfig {
     @Autowired
     private List<SqlSessionFactory> sqlSessionFactoryList;
 
-
     @Bean(value = "consumerGroup")
     public ConsumerGroup createConsumerGroup() {
         ConsumerGroup consumerGroup = new ConsumerGroup(threadNum, groupId, topic, brokerList);
@@ -66,6 +67,7 @@ public class ConsumConfig {
     public Gson build(){
         return new Gson() ;
     }
+
 
 
     @PostConstruct
