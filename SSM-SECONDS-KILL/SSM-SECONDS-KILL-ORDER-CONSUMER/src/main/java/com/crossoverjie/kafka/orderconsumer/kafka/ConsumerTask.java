@@ -3,7 +3,7 @@ package com.crossoverjie.kafka.orderconsumer.kafka;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.crossoverJie.seconds.kill.api.dto.Stock;
+import com.crossoverjie.kafka.orderconsumer.dto.Stock;
 import com.crossoverjie.kafka.orderconsumer.util.SpringBeanFactory;
 import org.apache.kafka.clients.CommonClientConfigs;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
