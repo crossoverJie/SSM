@@ -108,7 +108,7 @@ public class IndexController {
      * @param sid
      * @return
      */
-    @SpringControllerLimit(errorCode = 200)
+    @SpringControllerLimit(errorCode = 200,errorMsg = "request has limited")
     @RequestMapping("/createOptimisticLimitOrderByRedis/{sid}")
     @ResponseBody
     public String createOptimisticLimitOrderByRedis(@PathVariable int sid) {
