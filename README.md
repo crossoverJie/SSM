@@ -97,9 +97,6 @@ I'll update some skills in actual development aperiodically.There are no complic
 
 --- 
 
-# Special Note 
-
-On the project,`SSM-SERVICE` `SSM-WEB` module is only used to demonstrate the use of normal circumstances will only appear a service or web module.
 
 
 # Quick Start
