@@ -15,7 +15,7 @@ public class HttpToolsTest {
 
     @Test
     public void doGet() throws Exception {
-        String url="http://47.98.194.60:8083/SSM-SECONDS-KILL-WEB-2.2.0-SNAPSHOT/getStockNum" ;
+        String url="http://127.0.0.1:8083/SSM-SECONDS-KILL-WEB-2.2.0-SNAPSHOT/getStockNum" ;
 
         String res = HttpTools.doGet(url, HttpClients.createDefault()) ;
 
