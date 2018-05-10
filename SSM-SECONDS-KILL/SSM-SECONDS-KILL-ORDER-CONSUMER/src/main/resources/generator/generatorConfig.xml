@@ -16,8 +16,8 @@
         </plugin>
 
         <jdbcConnection
-                connectionURL="jdbc:mysql://47.98.194.60:3306/ssm-seconds-kill?characterEncoding=utf8"
-                driverClass="com.mysql.jdbc.Driver" password="i6-1Or0uqX%2" userId="root"/>
+                connectionURL="jdbc:mysql://127.0.0.1:3306/ssm-seconds-kill?characterEncoding=utf8"
+                driverClass="com.mysql.jdbc.Driver" password="root" userId="root"/>
 
 
         <javaModelGenerator targetPackage="com.crossoverjie.kafka.orderconsumer.pojo" targetProject="src/main/java"/>
