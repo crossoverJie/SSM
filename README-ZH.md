@@ -26,6 +26,11 @@
 │   ├── ├──resources
 ├── SSM-BOOT                                   // 提供给内部使用的dubbo依赖
 │   ├── ├──resources/spring                    // dubbo consumer相关配置
+├── SSM-SECONDS-KILL                           // 秒杀模块
+│   ├── ├──SSM-SECONDS-KILL-API                // 对外 dubbo 相关的 api
+│   ├── ├──SSM-SECONDS-KILL-ORDER-CONSUMER     // 订单的 kafka 消费
+│   ├── ├──SSM-SECONDS-KILL-SERVICE            // dubbo 服务模块
+│   ├── ├──SSM-SECONDS-KILL-WEB                // Web 模块
 ├── SSM-SERVICE                                // dubbo应用的service实现
 │   ├── src/main
 │   ├── ├──java/com/crossoverJie/api           // 具体代码
