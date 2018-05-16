@@ -29,6 +29,11 @@ I'll update some skills in actual development aperiodically.There are no complic
 │   ├── ├──resources
 ├── SSM-BOOT                                   // Available for internal use of dubbo dependencies 
 │   ├── ├──resources/spring                    // dubbo consumer configuration
+├── SSM-SECONDS-KILL                           // seckill module
+│   ├── ├──SSM-SECONDS-KILL-API                // seckill open api
+│   ├── ├──SSM-SECONDS-KILL-ORDER-CONSUMER     // Kafka consumer module
+│   ├── ├──SSM-SECONDS-KILL-SERVICE            // service module
+│   ├── ├──SSM-SECONDS-KILL-WEB                // web module
 ├── SSM-SERVICE                                // The service implementation of the dubbo application 
 │   ├── src/main
 │   ├── ├──java/com/crossoverJie/api           // specific code
