@@ -125,7 +125,7 @@ https://github.com/crossoverJie/SSM-DUBBO-FILTER
 
 # 应用截图
 
-![](https://ws4.sinaimg.cn/large/006tNc79ly1fj8jl8t42oj30bo072q3g.jpg)
+![](https://i.imgur.com/6of3Z5K.gif)
 
 ![封面.jpg](https://ooo.0o0.ooo/2017/05/24/59253bc0291c1.jpg)
 
