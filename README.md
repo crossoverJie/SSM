@@ -174,10 +174,11 @@ and Installed locally。
 
 # More Information
 
-[使用`springBoot+SpringCloud`构建微服务项目](https://github.com/crossoverJie/springboot-cloud)
+- [使用 `springBoot+SpringCloud`构建微服务项目](https://github.com/crossoverJie/springboot-cloud)
+- [Java 知识点](https://github.com/crossoverJie/Java-Interview)
 
 # Contact Author
 - [crossoverJie@gmail.com](mailto:crossoverJie@gmail.com)
 
-![weixinchat.jpg](https://crossoverjie.top/uploads/weixinchat.jpg)
+![](https://ws1.sinaimg.cn/large/006tKfTcly1frz6eaf3s4j308c0au0ss.jpg)
 
