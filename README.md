@@ -13,6 +13,9 @@
  <a href="https://github.com/ellerbrock/open-source-badge/">
     <img src="https://badges.frapsoft.com/os/v1/open-source.svg?v=103" >
  </a>
+ <a href="https://jq.qq.com/?_wv=1027&k=5HPYvQk">
+    <img src="https://img.shields.io/badge/QQ%E7%BE%A4-787381170-yellowgreen.svg" >
+ </a>
 <p>
 
 
