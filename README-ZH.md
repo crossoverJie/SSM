@@ -7,6 +7,9 @@
  <a href="https://travis-ci.org/crossoverJie/SSM">
     <img src="https://travis-ci.org/crossoverJie/SSM.svg?branch=master" >
  </a>
+ <a href="https://jq.qq.com/?_wv=1027&k=5HPYvQk">
+    <img src="https://img.shields.io/badge/QQ%E7%BE%A4-787381170-yellowgreen.svg" >
+ </a>
  <a href="https://badge.juejin.im/entry/5856c00061ff4b0063be6be0/likes.svg?style=flat-square">
     <img src="https://badge.juejin.im/entry/5856c00061ff4b0063be6be0/likes.svg?style=flat-square" >
  </a>
